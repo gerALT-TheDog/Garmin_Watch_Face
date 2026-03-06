@@ -1,0 +1,2799 @@
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Application,1,14,25]; ]
+import Toybox.Application;
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Graphics,2,14,22]; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [System,4,14,20]; ]
+import Toybox.System;
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [WatchUi,5,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Time,6,14,18]; ]
+import Toybox.Time;
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Time,7,14,18]; @symbol_importdef<2> = [Gregorian,7,19,28]; ]
+import Toybox.Time.Gregorian;
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [ActivityMonitor,8,14,29]; ]
+import Toybox.ActivityMonitor;
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [Weather,9,14,21]; ]
+import Toybox.Weather;
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 15; @symbol_classdef = [WeatherManager,15,6,20]; ]
+class WeatherManager {
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 15; ]
+    <init> {
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 15; ]
+    static
+    <init> {
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 18 23 ]
+        %tmp.1 = newd 28;
+        symbol [ Weather %tmp.2 19 8 15 ];
+        %tmp.2 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLEAR %tmp.3 19 16 31 ];
+        %tmp.3 = getv %tmp.2 :CONDITION_CLEAR;
+        %tmp.4 = "Clear";
+        %tmp.5 = dup %tmp.1;
+        %tmp.6 = aputv %tmp.5 %tmp.3 %tmp.4;
+        symbol [ Weather %tmp.7 20 8 15 ];
+        %tmp.7 = getm $.Toybox.Weather;
+        symbol [ CONDITION_PARTLY_CLOUDY %tmp.8 20 16 39 ];
+        %tmp.8 = getv %tmp.7 :CONDITION_PARTLY_CLOUDY;
+        %tmp.9 = "Partly Cloudy";
+        %tmp.10 = dup %tmp.6;
+        %tmp.11 = aputv %tmp.10 %tmp.8 %tmp.9;
+        symbol [ Weather %tmp.12 21 8 15 ];
+        %tmp.12 = getm $.Toybox.Weather;
+        symbol [ CONDITION_MOSTLY_CLOUDY %tmp.13 21 16 39 ];
+        %tmp.13 = getv %tmp.12 :CONDITION_MOSTLY_CLOUDY;
+        %tmp.14 = "Mostly Cloudy";
+        %tmp.15 = dup %tmp.11;
+        %tmp.16 = aputv %tmp.15 %tmp.13 %tmp.14;
+        symbol [ Weather %tmp.17 22 8 15 ];
+        %tmp.17 = getm $.Toybox.Weather;
+        symbol [ CONDITION_RAIN %tmp.18 22 16 30 ];
+        %tmp.18 = getv %tmp.17 :CONDITION_RAIN;
+        %tmp.19 = "Rain";
+        %tmp.20 = dup %tmp.16;
+        %tmp.21 = aputv %tmp.20 %tmp.18 %tmp.19;
+        symbol [ Weather %tmp.22 23 8 15 ];
+        %tmp.22 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SNOW %tmp.23 23 16 30 ];
+        %tmp.23 = getv %tmp.22 :CONDITION_SNOW;
+        %tmp.24 = "Snow";
+        %tmp.25 = dup %tmp.21;
+        %tmp.26 = aputv %tmp.25 %tmp.23 %tmp.24;
+        symbol [ Weather %tmp.27 24 8 15 ];
+        %tmp.27 = getm $.Toybox.Weather;
+        symbol [ CONDITION_WINDY %tmp.28 24 16 31 ];
+        %tmp.28 = getv %tmp.27 :CONDITION_WINDY;
+        %tmp.29 = "Windy";
+        %tmp.30 = dup %tmp.26;
+        %tmp.31 = aputv %tmp.30 %tmp.28 %tmp.29;
+        symbol [ Weather %tmp.32 25 8 15 ];
+        %tmp.32 = getm $.Toybox.Weather;
+        symbol [ CONDITION_THUNDERSTORMS %tmp.33 25 16 39 ];
+        %tmp.33 = getv %tmp.32 :CONDITION_THUNDERSTORMS;
+        %tmp.34 = "Thunderstorms";
+        %tmp.35 = dup %tmp.31;
+        %tmp.36 = aputv %tmp.35 %tmp.33 %tmp.34;
+        symbol [ Weather %tmp.37 26 8 15 ];
+        %tmp.37 = getm $.Toybox.Weather;
+        symbol [ CONDITION_WINTRY_MIX %tmp.38 26 16 36 ];
+        %tmp.38 = getv %tmp.37 :CONDITION_WINTRY_MIX;
+        %tmp.39 = "Wintry Mix";
+        %tmp.40 = dup %tmp.36;
+        %tmp.41 = aputv %tmp.40 %tmp.38 %tmp.39;
+        symbol [ Weather %tmp.42 27 8 15 ];
+        %tmp.42 = getm $.Toybox.Weather;
+        symbol [ CONDITION_FOG %tmp.43 27 16 29 ];
+        %tmp.43 = getv %tmp.42 :CONDITION_FOG;
+        %tmp.44 = "Fog";
+        %tmp.45 = dup %tmp.41;
+        %tmp.46 = aputv %tmp.45 %tmp.43 %tmp.44;
+        symbol [ Weather %tmp.47 28 8 15 ];
+        %tmp.47 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HAZY %tmp.48 28 16 30 ];
+        %tmp.48 = getv %tmp.47 :CONDITION_HAZY;
+        %tmp.49 = "Hazy";
+        %tmp.50 = dup %tmp.46;
+        %tmp.51 = aputv %tmp.50 %tmp.48 %tmp.49;
+        symbol [ Weather %tmp.52 29 8 15 ];
+        %tmp.52 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HAIL %tmp.53 29 16 30 ];
+        %tmp.53 = getv %tmp.52 :CONDITION_HAIL;
+        %tmp.54 = "Hail";
+        %tmp.55 = dup %tmp.51;
+        %tmp.56 = aputv %tmp.55 %tmp.53 %tmp.54;
+        symbol [ Weather %tmp.57 30 8 15 ];
+        %tmp.57 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SCATTERED_SHOWERS %tmp.58 30 16 43 ];
+        %tmp.58 = getv %tmp.57 :CONDITION_SCATTERED_SHOWERS;
+        %tmp.59 = "Showers";
+        %tmp.60 = dup %tmp.56;
+        %tmp.61 = aputv %tmp.60 %tmp.58 %tmp.59;
+        symbol [ Weather %tmp.62 31 8 15 ];
+        %tmp.62 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SCATTERED_THUNDERSTORMS %tmp.63 31 16 49 ];
+        %tmp.63 = getv %tmp.62 :CONDITION_SCATTERED_THUNDERSTORMS;
+        %tmp.64 = "T-Storms";
+        %tmp.65 = dup %tmp.61;
+        %tmp.66 = aputv %tmp.65 %tmp.63 %tmp.64;
+        symbol [ Weather %tmp.67 32 8 15 ];
+        %tmp.67 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLOUDY %tmp.68 32 16 32 ];
+        %tmp.68 = getv %tmp.67 :CONDITION_CLOUDY;
+        %tmp.69 = "Cloudy";
+        %tmp.70 = dup %tmp.66;
+        %tmp.71 = aputv %tmp.70 %tmp.68 %tmp.69;
+        symbol [ Weather %tmp.72 33 8 15 ];
+        %tmp.72 = getm $.Toybox.Weather;
+        symbol [ CONDITION_DRIZZLE %tmp.73 33 16 33 ];
+        %tmp.73 = getv %tmp.72 :CONDITION_DRIZZLE;
+        %tmp.74 = "Drizzle";
+        %tmp.75 = dup %tmp.71;
+        %tmp.76 = aputv %tmp.75 %tmp.73 %tmp.74;
+        symbol [ Weather %tmp.77 34 8 15 ];
+        %tmp.77 = getm $.Toybox.Weather;
+        symbol [ CONDITION_TORNADO %tmp.78 34 16 33 ];
+        %tmp.78 = getv %tmp.77 :CONDITION_TORNADO;
+        %tmp.79 = "Tornado";
+        %tmp.80 = dup %tmp.76;
+        %tmp.81 = aputv %tmp.80 %tmp.78 %tmp.79;
+        symbol [ Weather %tmp.82 35 8 15 ];
+        %tmp.82 = getm $.Toybox.Weather;
+        symbol [ CONDITION_DUST %tmp.83 35 16 30 ];
+        %tmp.83 = getv %tmp.82 :CONDITION_DUST;
+        %tmp.84 = "Dusty";
+        %tmp.85 = dup %tmp.81;
+        %tmp.86 = aputv %tmp.85 %tmp.83 %tmp.84;
+        symbol [ Weather %tmp.87 36 8 15 ];
+        %tmp.87 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SANDSTORM %tmp.88 36 16 35 ];
+        %tmp.88 = getv %tmp.87 :CONDITION_SANDSTORM;
+        %tmp.89 = "Sandstorm";
+        %tmp.90 = dup %tmp.86;
+        %tmp.91 = aputv %tmp.90 %tmp.88 %tmp.89;
+        symbol [ Weather %tmp.92 37 8 15 ];
+        %tmp.92 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLOUDY_CHANCE_OF_RAIN %tmp.93 37 16 47 ];
+        %tmp.93 = getv %tmp.92 :CONDITION_CLOUDY_CHANCE_OF_RAIN;
+        %tmp.94 = "Chance Rain";
+        %tmp.95 = dup %tmp.91;
+        %tmp.96 = aputv %tmp.95 %tmp.93 %tmp.94;
+        symbol [ Weather %tmp.97 38 8 15 ];
+        %tmp.97 = getm $.Toybox.Weather;
+        symbol [ CONDITION_RAIN_SNOW %tmp.98 38 16 35 ];
+        %tmp.98 = getv %tmp.97 :CONDITION_RAIN_SNOW;
+        %tmp.99 = "Rain/Snow";
+        %tmp.100 = dup %tmp.96;
+        %tmp.101 = aputv %tmp.100 %tmp.98 %tmp.99;
+        symbol [ Weather %tmp.102 39 8 15 ];
+        %tmp.102 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_OF_RAIN_SNOW %tmp.103 39 16 45 ];
+        %tmp.103 = getv %tmp.102 :CONDITION_CHANCE_OF_RAIN_SNOW;
+        %tmp.104 = "Chance Rain/Snow";
+        %tmp.105 = dup %tmp.101;
+        %tmp.106 = aputv %tmp.105 %tmp.103 %tmp.104;
+        symbol [ Weather %tmp.107 40 8 15 ];
+        %tmp.107 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_OF_SNOW %tmp.108 40 16 40 ];
+        %tmp.108 = getv %tmp.107 :CONDITION_CHANCE_OF_SNOW;
+        %tmp.109 = "Chance Snow";
+        %tmp.110 = dup %tmp.106;
+        %tmp.111 = aputv %tmp.110 %tmp.108 %tmp.109;
+        symbol [ Weather %tmp.112 41 8 15 ];
+        %tmp.112 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_OF_THUNDERSTORMS %tmp.113 41 16 49 ];
+        %tmp.113 = getv %tmp.112 :CONDITION_CHANCE_OF_THUNDERSTORMS;
+        %tmp.114 = "Chance T-Storm";
+        %tmp.115 = dup %tmp.111;
+        %tmp.116 = aputv %tmp.115 %tmp.113 %tmp.114;
+        symbol [ Weather %tmp.117 42 8 15 ];
+        %tmp.117 = getm $.Toybox.Weather;
+        symbol [ CONDITION_LIGHT_RAIN %tmp.118 42 16 36 ];
+        %tmp.118 = getv %tmp.117 :CONDITION_LIGHT_RAIN;
+        %tmp.119 = "Light Rain";
+        %tmp.120 = dup %tmp.116;
+        %tmp.121 = aputv %tmp.120 %tmp.118 %tmp.119;
+        symbol [ Weather %tmp.122 43 8 15 ];
+        %tmp.122 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HEAVY_RAIN %tmp.123 43 16 36 ];
+        %tmp.123 = getv %tmp.122 :CONDITION_HEAVY_RAIN;
+        %tmp.124 = "Heavy Rain";
+        %tmp.125 = dup %tmp.121;
+        %tmp.126 = aputv %tmp.125 %tmp.123 %tmp.124;
+        symbol [ Weather %tmp.127 44 8 15 ];
+        %tmp.127 = getm $.Toybox.Weather;
+        symbol [ CONDITION_LIGHT_SNOW %tmp.128 44 16 36 ];
+        %tmp.128 = getv %tmp.127 :CONDITION_LIGHT_SNOW;
+        %tmp.129 = "Light Snow";
+        %tmp.130 = dup %tmp.126;
+        %tmp.131 = aputv %tmp.130 %tmp.128 %tmp.129;
+        symbol [ Weather %tmp.132 45 8 15 ];
+        %tmp.132 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HEAVY_SNOW %tmp.133 45 16 36 ];
+        %tmp.133 = getv %tmp.132 :CONDITION_HEAVY_SNOW;
+        %tmp.134 = "Heavy Snow";
+        %tmp.135 = dup %tmp.131;
+        %tmp.136 = aputv %tmp.135 %tmp.133 %tmp.134;
+        symbol [ Weather %tmp.137 46 8 15 ];
+        %tmp.137 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SMOKE %tmp.138 46 16 31 ];
+        %tmp.138 = getv %tmp.137 :CONDITION_SMOKE;
+        %tmp.139 = "Smoke";
+        %tmp.140 = dup %tmp.136;
+        %tmp.141 = aputv %tmp.140 %tmp.138 %tmp.139;
+        putv self :CONDITION_LABELS %tmp.141;
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 18; @position = 23; @symbol_vardef = [CONDITION_LABELS,18,23,39]; @symbol_type<0> = [Dictionary,18,43,53]; ]
+    private static
+    var CONDITION_LABELS as Dictionary;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 50; @position = 16; @symbol_vardef = [_tempCelsius,50,16,28]; @symbol_type<0> = [Number,50,37,43]; ]
+    private
+    var _tempCelsius as Number = 0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 51; @position = 16; @symbol_vardef = [_feelsLike,51,16,26]; @symbol_type<0> = [Number,51,37,43]; ]
+    private
+    var _feelsLike as Number = 0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 52; @position = 16; @symbol_vardef = [_conditionCode,52,16,30]; @symbol_type<0> = [Number,52,37,43]; ]
+    private
+    var _conditionCode as Number = 13;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 53; @position = 16; @symbol_vardef = [_conditionLabel,53,16,31]; @symbol_type<0> = [String,53,37,43]; ]
+    private
+    var _conditionLabel as String = "Unknown";
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 54; @position = 16; @symbol_vardef = [_humidity,54,16,25]; @symbol_type<0> = [Number,54,37,43]; ]
+    private
+    var _humidity as Number = 0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 55; @position = 16; @symbol_vardef = [_windSpeed,55,16,26]; @symbol_type<0> = [Float,55,37,42]; ]
+    private
+    var _windSpeed as Float = 0.0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 56; @position = 16; @symbol_vardef = [_windDirection,56,16,30]; @symbol_type<0> = [Number,56,37,43]; ]
+    private
+    var _windDirection as Number = 0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 57; @position = 16; @symbol_vardef = [_uvIndex,57,16,24]; @symbol_type<0> = [Number,57,37,43]; ]
+    private
+    var _uvIndex as Number = 0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 58; @position = 16; @symbol_vardef = [_isMetric,58,16,25]; @symbol_type<0> = [Boolean,58,37,44]; ]
+    private
+    var _isMetric as Boolean = true;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 59; @position = 16; @symbol_vardef = [_dataAvailable,59,16,30]; @symbol_type<0> = [Boolean,59,37,44]; ]
+    private
+    var _dataAvailable as Boolean = false;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 60; @position = 16; @symbol_vardef = [_lastUpdateEpoch,60,16,32]; @symbol_type<0> = [Number,60,37,43]; ]
+    private
+    var _lastUpdateEpoch as Number = 0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 62; @position = 25; @symbol_constdef = [STALE_THRESHOLD_SEC,62,25,44]; @symbol_type<0> = [Number,62,48,54]; ]
+    private static
+    const STALE_THRESHOLD_SEC as Number = 1800;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 64; @symbol_functiondef = [update,64,13,19]; ]
+    function update() as Void {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_64_30_88_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 65 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_64_30_88_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_64_30_88_4_stop" ]
+        %devSettings.1 = local;
+        symbol [ devSettings %devSettings.1 65 12 23 ];
+        symbol [ System %tmp.1 65 26 32 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.2 65 33 50 ];
+        %tmp.2 = getv function %tmp.1 :getDeviceSettings;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %devSettings.1 %tmp.3;
+        symbol [ devSettings %devSettings.1 65 12 23 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 66 8 ]
+        %tmp.4 = lgetv %devSettings.1;
+        symbol [ devSettings %tmp.4 66 21 32 ];
+        symbol [ temperatureUnits %tmp.5 66 33 49 ];
+        %tmp.5 = getv %tmp.4 :temperatureUnits;
+        symbol [ System %tmp.6 66 53 59 ];
+        %tmp.6 = getm $.Toybox.System;
+        symbol [ UNIT_METRIC %tmp.7 66 60 71 ];
+        %tmp.7 = getv %tmp.6 :UNIT_METRIC;
+        %tmp.8 = eq %tmp.5 %tmp.7;
+        symbol [ _isMetric ? 66 8 17 ];
+        putv self :_isMetric %tmp.8;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 68 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_64_30_88_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_64_30_88_4_stop" ]
+        %conditions.2 = local;
+        symbol [ conditions %conditions.2 68 12 22 ];
+        symbol [ Weather %tmp.9 68 25 32 ];
+        %tmp.9 = getm $.Toybox.Weather;
+        symbol [ getCurrentConditions %tmp.10 68 33 53 ];
+        %tmp.10 = getv function %tmp.9 :getCurrentConditions;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %conditions.2 %tmp.11;
+        symbol [ conditions %conditions.2 68 12 22 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 70 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_70_8_73_8_if_stmt:
+        %tmp.12 = lgetv %conditions.2;
+        symbol [ conditions %tmp.12 70 12 22 ];
+        %tmp.13 = null;
+        %tmp.14 = eq %tmp.12 %tmp.13;
+        bf %tmp.14 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_70_8_73_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_70_8_73_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_70_32_73_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 71 12 ]
+        %tmp.15 = false;
+        symbol [ _dataAvailable ? 71 12 26 ];
+        putv self :_dataAvailable %tmp.15;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 72 12 ]
+        ret ?;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_70_32_73_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_70_8_73_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_70_8_73_8_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 75 8 ]
+        %tmp.16 = true;
+        symbol [ _dataAvailable ? 75 8 22 ];
+        putv self :_dataAvailable %tmp.16;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 77 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_77_25_77_85_begin:
+        %tmp.17 = lgetv %conditions.2;
+        symbol [ conditions %tmp.17 77 26 36 ];
+        symbol [ temperature %tmp.18 77 37 48 ];
+        %tmp.18 = getv %tmp.17 :temperature;
+        %tmp.19 = null;
+        %tmp.20 = ne %tmp.18 %tmp.19;
+        bf %tmp.20 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_77_25_77_85_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_77_25_77_85_true:
+        %tmp.21 = lgetv %conditions.2;
+        symbol [ conditions %tmp.21 77 60 70 ];
+        symbol [ temperature %tmp.22 77 71 82 ];
+        %tmp.22 = getv %tmp.21 :temperature;
+        push %tmp.22;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_77_25_77_85_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_77_25_77_85_else_false:
+        %tmp.23 = 0;
+        push %tmp.23;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_77_25_77_85_end:
+        %tmp.24 = phi [%tmp.20 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_77_25_77_85_begin] [%tmp.22 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_77_25_77_85_true] [%tmp.23 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_77_25_77_85_else_false] [%tmp.24 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_77_25_77_85_end];
+        symbol [ _tempCelsius ? 77 8 20 ];
+        putv self :_tempCelsius %tmp.24;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 78 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_78_25_78_103_begin:
+        %tmp.25 = lgetv %conditions.2;
+        symbol [ conditions %tmp.25 78 26 36 ];
+        symbol [ feelsLikeTemperature %tmp.26 78 37 57 ];
+        %tmp.26 = getv %tmp.25 :feelsLikeTemperature;
+        %tmp.27 = null;
+        %tmp.28 = ne %tmp.26 %tmp.27;
+        bf %tmp.28 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_78_25_78_103_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_78_25_78_103_true:
+        %tmp.29 = lgetv %conditions.2;
+        symbol [ conditions %tmp.29 78 69 79 ];
+        symbol [ feelsLikeTemperature %tmp.30 78 80 100 ];
+        %tmp.30 = getv %tmp.29 :feelsLikeTemperature;
+        push %tmp.30;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_78_25_78_103_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_78_25_78_103_else_false:
+        symbol [ _tempCelsius %tmp.32 78 103 115 ];
+        %tmp.32 = getv ? :_tempCelsius;
+        push %tmp.32;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_78_25_78_103_end:
+        %tmp.33 = phi [%tmp.28 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_78_25_78_103_begin] [%tmp.30 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_78_25_78_103_true] [%tmp.32 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_78_25_78_103_else_false] [%tmp.33 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_78_25_78_103_end];
+        symbol [ _feelsLike ? 78 8 18 ];
+        putv self :_feelsLike %tmp.33;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 79 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_79_25_79_89_begin:
+        %tmp.34 = lgetv %conditions.2;
+        symbol [ conditions %tmp.34 79 26 36 ];
+        symbol [ condition %tmp.35 79 37 46 ];
+        %tmp.35 = getv %tmp.34 :condition;
+        %tmp.36 = null;
+        %tmp.37 = ne %tmp.35 %tmp.36;
+        bf %tmp.37 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_79_25_79_89_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_79_25_79_89_true:
+        %tmp.38 = lgetv %conditions.2;
+        symbol [ conditions %tmp.38 79 58 68 ];
+        symbol [ condition %tmp.39 79 69 78 ];
+        %tmp.39 = getv %tmp.38 :condition;
+        push %tmp.39;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_79_25_79_89_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_79_25_79_89_else_false:
+        symbol [ Weather %tmp.40 79 81 88 ];
+        %tmp.40 = getm $.Toybox.Weather;
+        symbol [ CONDITION_UNKNOWN_PRECIPITATION %tmp.41 79 89 120 ];
+        %tmp.41 = getv %tmp.40 :CONDITION_UNKNOWN_PRECIPITATION;
+        push %tmp.41;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_79_25_79_89_end:
+        %tmp.42 = phi [%tmp.37 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_79_25_79_89_begin] [%tmp.39 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_79_25_79_89_true] [%tmp.41 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_79_25_79_89_else_false] [%tmp.42 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_79_25_79_89_end];
+        symbol [ _conditionCode ? 79 8 22 ];
+        putv self :_conditionCode %tmp.42;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 80 8 ]
+        %tmp.43 = self;
+        symbol [ getLabel %tmp.44 80 26 34 ];
+        %tmp.44 = getv function %tmp.43 :getLabel;
+        symbol [ _conditionCode %tmp.46 80 35 49 ];
+        %tmp.46 = getv ? :_conditionCode;
+        %tmp.47 = invoke %tmp.43 %tmp.44(%tmp.46);
+        symbol [ _conditionLabel ? 80 8 23 ];
+        putv self :_conditionLabel %tmp.47;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 82 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_82_25_82_107_begin:
+        %tmp.48 = lgetv %conditions.2;
+        symbol [ conditions %tmp.48 82 26 36 ];
+        symbol [ relativeHumidity %tmp.49 82 37 53 ];
+        %tmp.49 = getv %tmp.48 :relativeHumidity;
+        %tmp.50 = null;
+        %tmp.51 = ne %tmp.49 %tmp.50;
+        bf %tmp.51 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_82_25_82_107_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_82_25_82_107_true:
+        %tmp.52 = lgetv %conditions.2;
+        symbol [ conditions %tmp.52 82 71 81 ];
+        symbol [ relativeHumidity %tmp.53 82 82 98 ];
+        %tmp.53 = getv %tmp.52 :relativeHumidity;
+        push %tmp.53;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_82_25_82_107_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_82_25_82_107_else_false:
+        %tmp.54 = 0;
+        push %tmp.54;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_82_25_82_107_end:
+        %tmp.55 = phi [%tmp.51 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_82_25_82_107_begin] [%tmp.53 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_82_25_82_107_true] [%tmp.54 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_82_25_82_107_else_false] [%tmp.55 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_82_25_82_107_end];
+        symbol [ _humidity ? 82 8 17 ];
+        putv self :_humidity %tmp.55;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 83 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_83_25_83_108_begin:
+        %tmp.56 = lgetv %conditions.2;
+        symbol [ conditions %tmp.56 83 26 36 ];
+        symbol [ windSpeed %tmp.57 83 37 46 ];
+        %tmp.57 = getv %tmp.56 :windSpeed;
+        %tmp.58 = null;
+        %tmp.59 = ne %tmp.57 %tmp.58;
+        bf %tmp.59 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_83_25_83_108_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_83_25_83_108_true:
+        %tmp.60 = lgetv %conditions.2;
+        symbol [ conditions %tmp.60 83 72 82 ];
+        symbol [ windSpeed %tmp.61 83 83 92 ];
+        %tmp.61 = getv %tmp.60 :windSpeed;
+        symbol [ toFloat %tmp.62 83 93 100 ];
+        %tmp.62 = getv function %tmp.61 :toFloat;
+        %tmp.63 = invoke %tmp.61 %tmp.62();
+        push %tmp.63;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_83_25_83_108_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_83_25_83_108_else_false:
+        %tmp.64 = 0.0;
+        push %tmp.64;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_83_25_83_108_end:
+        %tmp.65 = phi [%tmp.59 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_83_25_83_108_begin] [%tmp.63 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_83_25_83_108_true] [%tmp.64 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_83_25_83_108_else_false] [%tmp.65 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_83_25_83_108_end];
+        symbol [ _windSpeed ? 83 8 18 ];
+        putv self :_windSpeed %tmp.65;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 84 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_84_25_84_109_begin:
+        %tmp.66 = lgetv %conditions.2;
+        symbol [ conditions %tmp.66 84 26 36 ];
+        symbol [ windBearing %tmp.67 84 37 48 ];
+        %tmp.67 = getv %tmp.66 :windBearing;
+        %tmp.68 = null;
+        %tmp.69 = ne %tmp.67 %tmp.68;
+        bf %tmp.69 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_84_25_84_109_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_84_25_84_109_true:
+        %tmp.70 = lgetv %conditions.2;
+        symbol [ conditions %tmp.70 84 72 82 ];
+        symbol [ windBearing %tmp.71 84 83 94 ];
+        %tmp.71 = getv %tmp.70 :windBearing;
+        push %tmp.71;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_84_25_84_109_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_84_25_84_109_else_false:
+        %tmp.72 = 0;
+        push %tmp.72;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_84_25_84_109_end:
+        %tmp.73 = phi [%tmp.69 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_84_25_84_109_begin] [%tmp.71 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_84_25_84_109_true] [%tmp.72 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_84_25_84_109_else_false] [%tmp.73 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_84_25_84_109_end];
+        symbol [ _windDirection ? 84 8 22 ];
+        putv self :_windDirection %tmp.73;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 85 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_85_25_85_109_begin:
+        %tmp.74 = lgetv %conditions.2;
+        symbol [ conditions %tmp.74 85 26 36 ];
+        symbol [ uvIndex %tmp.75 85 37 44 ];
+        %tmp.75 = getv %tmp.74 :uvIndex;
+        %tmp.76 = null;
+        %tmp.77 = ne %tmp.75 %tmp.76;
+        bf %tmp.77 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_85_25_85_109_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_85_25_85_109_true:
+        %tmp.78 = lgetv %conditions.2;
+        symbol [ conditions %tmp.78 85 72 82 ];
+        symbol [ uvIndex %tmp.79 85 83 90 ];
+        %tmp.79 = getv %tmp.78 :uvIndex;
+        push %tmp.79;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_85_25_85_109_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_85_25_85_109_else_false:
+        %tmp.80 = 0;
+        push %tmp.80;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_85_25_85_109_end:
+        %tmp.81 = phi [%tmp.77 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_85_25_85_109_begin] [%tmp.79 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_85_25_85_109_true] [%tmp.80 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_85_25_85_109_else_false] [%tmp.81 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_85_25_85_109_end];
+        symbol [ _uvIndex ? 85 8 16 ];
+        putv self :_uvIndex %tmp.81;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 87 8 ]
+        symbol [ System %tmp.82 87 27 33 ];
+        %tmp.82 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.83 87 34 46 ];
+        %tmp.83 = getv function %tmp.82 :getClockTime;
+        %tmp.84 = invoke %tmp.82 %tmp.83();
+        symbol [ sec %tmp.85 87 49 52 ];
+        %tmp.85 = getv %tmp.84 :sec;
+        symbol [ _lastUpdateEpoch ? 87 8 24 ];
+        putv self :_lastUpdateEpoch %tmp.85;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_64_30_88_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 90; @symbol_functiondef = [getTemperature,90,13,27]; @symbol_return<0> = [Number,90,33,39]; ]
+    function getTemperature() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_90_40_92_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 91 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_91_15_91_74_begin:
+        symbol [ _isMetric %tmp.2 91 15 24 ];
+        %tmp.2 = getv ? :_isMetric;
+        bf %tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_91_15_91_74_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_91_15_91_74_true:
+        symbol [ _tempCelsius %tmp.4 91 27 39 ];
+        %tmp.4 = getv ? :_tempCelsius;
+        push %tmp.4;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_91_15_91_74_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_91_15_91_74_else_false:
+        %tmp.5 = self;
+        symbol [ celsiusToFahrenheit %tmp.6 91 42 61 ];
+        %tmp.6 = getv function %tmp.5 :celsiusToFahrenheit;
+        symbol [ _tempCelsius %tmp.8 91 62 74 ];
+        %tmp.8 = getv ? :_tempCelsius;
+        %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
+        push %tmp.9;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_91_15_91_74_end:
+        %tmp.10 = phi [%tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_91_15_91_74_begin] [%tmp.4 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_91_15_91_74_true] [%tmp.9 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_91_15_91_74_else_false] [%tmp.10 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_91_15_91_74_end];
+        ret %tmp.10;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_90_40_92_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 94; @symbol_functiondef = [getTemperatureCelsius,94,13,34]; @symbol_return<0> = [Number,94,40,46]; ]
+    function getTemperatureCelsius() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_94_47_96_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 95 8 ]
+        symbol [ _tempCelsius %tmp.2 95 15 27 ];
+        %tmp.2 = getv ? :_tempCelsius;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_94_47_96_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 98; @symbol_functiondef = [getTemperatureFahrenheit,98,13,37]; @symbol_return<0> = [Number,98,43,49]; ]
+    function getTemperatureFahrenheit() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_98_50_100_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 99 8 ]
+        %tmp.1 = self;
+        symbol [ celsiusToFahrenheit %tmp.2 99 15 34 ];
+        %tmp.2 = getv function %tmp.1 :celsiusToFahrenheit;
+        symbol [ _tempCelsius %tmp.4 99 35 47 ];
+        %tmp.4 = getv ? :_tempCelsius;
+        %tmp.5 = invoke %tmp.1 %tmp.2(%tmp.4);
+        ret %tmp.5;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_98_50_100_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 102; @symbol_functiondef = [getFeelsLike,102,13,25]; @symbol_return<0> = [Number,102,31,37]; ]
+    function getFeelsLike() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_102_38_104_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 103 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_103_15_103_70_begin:
+        symbol [ _isMetric %tmp.2 103 15 24 ];
+        %tmp.2 = getv ? :_isMetric;
+        bf %tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_103_15_103_70_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_103_15_103_70_true:
+        symbol [ _feelsLike %tmp.4 103 27 37 ];
+        %tmp.4 = getv ? :_feelsLike;
+        push %tmp.4;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_103_15_103_70_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_103_15_103_70_else_false:
+        %tmp.5 = self;
+        symbol [ celsiusToFahrenheit %tmp.6 103 40 59 ];
+        %tmp.6 = getv function %tmp.5 :celsiusToFahrenheit;
+        symbol [ _feelsLike %tmp.8 103 60 70 ];
+        %tmp.8 = getv ? :_feelsLike;
+        %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
+        push %tmp.9;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_103_15_103_70_end:
+        %tmp.10 = phi [%tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_103_15_103_70_begin] [%tmp.4 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_103_15_103_70_true] [%tmp.9 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_103_15_103_70_else_false] [%tmp.10 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_103_15_103_70_end];
+        ret %tmp.10;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_102_38_104_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 106; @symbol_functiondef = [getTemperatureUnit,106,13,31]; @symbol_return<0> = [String,106,37,43]; ]
+    function getTemperatureUnit() as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_106_44_108_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 107 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_107_15_107_34_begin:
+        symbol [ _isMetric %tmp.2 107 15 24 ];
+        %tmp.2 = getv ? :_isMetric;
+        bf %tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_107_15_107_34_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_107_15_107_34_true:
+        %tmp.3 = "°C";
+        push %tmp.3;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_107_15_107_34_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_107_15_107_34_else_false:
+        %tmp.4 = "°F";
+        push %tmp.4;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_107_15_107_34_end:
+        %tmp.5 = phi [%tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_107_15_107_34_begin] [%tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_107_15_107_34_true] [%tmp.4 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_107_15_107_34_else_false] [%tmp.5 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_107_15_107_34_end];
+        ret %tmp.5;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_106_44_108_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 110; @symbol_functiondef = [getConditionCode,110,13,29]; @symbol_return<0> = [Number,110,35,41]; ]
+    function getConditionCode() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_110_42_112_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 111 8 ]
+        symbol [ _conditionCode %tmp.2 111 15 29 ];
+        %tmp.2 = getv ? :_conditionCode;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_110_42_112_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 114; @symbol_functiondef = [getConditionLabel,114,13,30]; @symbol_return<0> = [String,114,36,42]; ]
+    function getConditionLabel() as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_114_43_116_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 115 8 ]
+        symbol [ _conditionLabel %tmp.2 115 15 30 ];
+        %tmp.2 = getv ? :_conditionLabel;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_114_43_116_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 118; @symbol_functiondef = [getHumidity,118,13,24]; @symbol_return<0> = [Number,118,30,36]; ]
+    function getHumidity() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_118_37_120_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 119 8 ]
+        symbol [ _humidity %tmp.2 119 15 24 ];
+        %tmp.2 = getv ? :_humidity;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_118_37_120_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 122; @symbol_functiondef = [getWindSpeed,122,13,25]; @symbol_return<0> = [Float,122,31,36]; ]
+    function getWindSpeed() as Float {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_122_37_128_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 123 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_123_8_127_8_if_stmt:
+        symbol [ _isMetric %tmp.2 123 12 21 ];
+        %tmp.2 = getv ? :_isMetric;
+        bf %tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_123_8_127_8_if_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_123_8_127_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_123_23_125_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 124 12 ]
+        symbol [ _windSpeed %tmp.4 124 19 29 ];
+        %tmp.4 = getv ? :_windSpeed;
+        %tmp.5 = 3.6;
+        %tmp.6 = mul %tmp.4 %tmp.5;
+        ret %tmp.6;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_123_23_125_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_123_8_127_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_123_8_127_8_if_else_false:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_125_15_127_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 126 12 ]
+        symbol [ _windSpeed %tmp.8 126 19 29 ];
+        %tmp.8 = getv ? :_windSpeed;
+        %tmp.9 = 2.237;
+        %tmp.10 = mul %tmp.8 %tmp.9;
+        ret %tmp.10;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_125_15_127_8_stop:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_123_8_127_8_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_122_37_128_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 130; @symbol_functiondef = [getWindSpeedUnit,130,13,29]; @symbol_return<0> = [String,130,35,41]; ]
+    function getWindSpeedUnit() as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_130_42_132_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 131 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_131_15_131_36_begin:
+        symbol [ _isMetric %tmp.2 131 15 24 ];
+        %tmp.2 = getv ? :_isMetric;
+        bf %tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_131_15_131_36_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_131_15_131_36_true:
+        %tmp.3 = "km/h";
+        push %tmp.3;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_131_15_131_36_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_131_15_131_36_else_false:
+        %tmp.4 = "mph";
+        push %tmp.4;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_131_15_131_36_end:
+        %tmp.5 = phi [%tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_131_15_131_36_begin] [%tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_131_15_131_36_true] [%tmp.4 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_131_15_131_36_else_false] [%tmp.5 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_131_15_131_36_end];
+        ret %tmp.5;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_130_42_132_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 134; @symbol_functiondef = [getWindDirection,134,13,29]; @symbol_return<0> = [Number,134,35,41]; ]
+    function getWindDirection() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_134_42_136_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 135 8 ]
+        symbol [ _windDirection %tmp.2 135 15 29 ];
+        %tmp.2 = getv ? :_windDirection;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_134_42_136_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 138; @symbol_functiondef = [getWindCardinal,138,13,28]; @symbol_return<0> = [String,138,34,40]; ]
+    function getWindCardinal() as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_138_41_142_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 139 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_138_41_142_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_138_41_142_4_stop" ]
+        %dirs.1 = local;
+        symbol [ dirs %dirs.1 139 12 16 ];
+        %tmp.1 = newa 9;
+        %tmp.2 = "N";
+        %tmp.3 = dup %tmp.1;
+        %tmp.4 = aputv %tmp.3 0 %tmp.2;
+        %tmp.5 = "NE";
+        %tmp.6 = dup %tmp.4;
+        %tmp.7 = aputv %tmp.6 1 %tmp.5;
+        %tmp.8 = "E";
+        %tmp.9 = dup %tmp.7;
+        %tmp.10 = aputv %tmp.9 2 %tmp.8;
+        %tmp.11 = "SE";
+        %tmp.12 = dup %tmp.10;
+        %tmp.13 = aputv %tmp.12 3 %tmp.11;
+        %tmp.14 = "S";
+        %tmp.15 = dup %tmp.13;
+        %tmp.16 = aputv %tmp.15 4 %tmp.14;
+        %tmp.17 = "SW";
+        %tmp.18 = dup %tmp.16;
+        %tmp.19 = aputv %tmp.18 5 %tmp.17;
+        %tmp.20 = "W";
+        %tmp.21 = dup %tmp.19;
+        %tmp.22 = aputv %tmp.21 6 %tmp.20;
+        %tmp.23 = "NW";
+        %tmp.24 = dup %tmp.22;
+        %tmp.25 = aputv %tmp.24 7 %tmp.23;
+        %tmp.26 = "N";
+        %tmp.27 = dup %tmp.25;
+        %tmp.28 = aputv %tmp.27 8 %tmp.26;
+        lputv %dirs.1 %tmp.28;
+        symbol [ dirs %dirs.1 139 12 16 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 140 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_138_41_142_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_138_41_142_4_stop" ]
+        %idx.2 = local;
+        symbol [ idx %idx.2 140 12 15 ];
+        symbol [ _windDirection %tmp.30 140 21 35 ];
+        %tmp.30 = getv ? :_windDirection;
+        %tmp.31 = 22;
+        %tmp.32 = add %tmp.30 %tmp.31;
+        %tmp.33 = 45;
+        %tmp.34 = div %tmp.32 %tmp.33;
+        symbol [ toNumber %tmp.35 140 48 56 ];
+        %tmp.35 = getv function %tmp.34 :toNumber;
+        %tmp.36 = invoke %tmp.34 %tmp.35();
+        lputv %idx.2 %tmp.36;
+        symbol [ idx %idx.2 140 12 15 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 141 8 ]
+        %tmp.37 = lgetv %dirs.1;
+        symbol [ dirs %tmp.37 141 15 19 ];
+        %tmp.38 = lgetv %idx.2;
+        symbol [ idx %tmp.38 141 20 23 ];
+        %tmp.39 = agetv %tmp.37 %tmp.38;
+        ret %tmp.39;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_138_41_142_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 144; @symbol_functiondef = [getUVIndex,144,13,23]; @symbol_return<0> = [Number,144,29,35]; ]
+    function getUVIndex() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_144_36_146_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 145 8 ]
+        symbol [ _uvIndex %tmp.2 145 15 23 ];
+        %tmp.2 = getv ? :_uvIndex;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_144_36_146_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 148; @symbol_functiondef = [getUVLabel,148,13,23]; @symbol_return<0> = [String,148,29,35]; ]
+    function getUVLabel() as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_148_36_154_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 149 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_149_8_149_44_if_stmt:
+        symbol [ _uvIndex %tmp.2 149 12 20 ];
+        %tmp.2 = getv ? :_uvIndex;
+        %tmp.3 = 2;
+        %tmp.4 = lte %tmp.2 %tmp.3;
+        bf %tmp.4 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_149_8_149_44_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_149_8_149_44_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_149_28_149_44_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 149 30 ]
+        %tmp.5 = "Low";
+        ret %tmp.5;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_149_28_149_44_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_149_8_149_44_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_149_8_149_44_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 150 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_150_8_150_49_if_stmt:
+        symbol [ _uvIndex %tmp.7 150 12 20 ];
+        %tmp.7 = getv ? :_uvIndex;
+        %tmp.8 = 5;
+        %tmp.9 = lte %tmp.7 %tmp.8;
+        bf %tmp.9 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_150_8_150_49_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_150_8_150_49_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_150_28_150_49_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 150 30 ]
+        %tmp.10 = "Moderate";
+        ret %tmp.10;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_150_28_150_49_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_150_8_150_49_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_150_8_150_49_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 151 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_151_8_151_45_if_stmt:
+        symbol [ _uvIndex %tmp.12 151 12 20 ];
+        %tmp.12 = getv ? :_uvIndex;
+        %tmp.13 = 7;
+        %tmp.14 = lte %tmp.12 %tmp.13;
+        bf %tmp.14 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_151_8_151_45_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_151_8_151_45_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_151_28_151_45_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 151 30 ]
+        %tmp.15 = "High";
+        ret %tmp.15;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_151_28_151_45_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_151_8_151_45_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_151_8_151_45_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 152 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_152_8_152_50_if_stmt:
+        symbol [ _uvIndex %tmp.17 152 12 20 ];
+        %tmp.17 = getv ? :_uvIndex;
+        %tmp.18 = 10;
+        %tmp.19 = lte %tmp.17 %tmp.18;
+        bf %tmp.19 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_152_8_152_50_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_152_8_152_50_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_152_28_152_50_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 152 30 ]
+        %tmp.20 = "Very High";
+        ret %tmp.20;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_152_28_152_50_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_152_8_152_50_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_152_8_152_50_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 153 8 ]
+        %tmp.21 = "Extreme";
+        ret %tmp.21;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_148_36_154_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 156; @symbol_functiondef = [isDataAvailable,156,13,28]; @symbol_return<0> = [Boolean,156,34,41]; ]
+    function isDataAvailable() as Boolean {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_156_42_158_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 157 8 ]
+        symbol [ _dataAvailable %tmp.2 157 15 29 ];
+        %tmp.2 = getv ? :_dataAvailable;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_156_42_158_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 160; @symbol_functiondef = [isDataStale,160,13,24]; @symbol_return<0> = [Boolean,160,30,37]; ]
+    function isDataStale() as Boolean {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_160_38_164_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 161 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_161_8_161_44_if_stmt:
+        symbol [ _dataAvailable %tmp.2 161 13 27 ];
+        %tmp.2 = getv ? :_dataAvailable;
+        %tmp.3 = not %tmp.2;
+        bf %tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_161_8_161_44_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_161_8_161_44_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_161_29_161_44_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 161 31 ]
+        %tmp.4 = true;
+        ret %tmp.4;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_161_29_161_44_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_161_8_161_44_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_161_8_161_44_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 162 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_160_38_164_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_160_38_164_4_stop" ]
+        %now.1 = local;
+        symbol [ now %now.1 162 12 15 ];
+        symbol [ System %tmp.5 162 18 24 ];
+        %tmp.5 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.6 162 25 37 ];
+        %tmp.6 = getv function %tmp.5 :getClockTime;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        symbol [ sec %tmp.8 162 40 43 ];
+        %tmp.8 = getv %tmp.7 :sec;
+        lputv %now.1 %tmp.8;
+        symbol [ now %now.1 162 12 15 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 163 8 ]
+        %tmp.9 = lgetv %now.1;
+        symbol [ now %tmp.9 163 16 19 ];
+        symbol [ _lastUpdateEpoch %tmp.11 163 22 38 ];
+        %tmp.11 = getv ? :_lastUpdateEpoch;
+        %tmp.12 = sub %tmp.9 %tmp.11;
+        symbol [ STALE_THRESHOLD_SEC %tmp.14 163 42 61 ];
+        %tmp.14 = getv ? :STALE_THRESHOLD_SEC;
+        %tmp.15 = gt %tmp.12 %tmp.14;
+        ret %tmp.15;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_160_38_164_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 166; @symbol_functiondef = [isMetric,166,13,21]; @symbol_return<0> = [Boolean,166,27,34]; ]
+    function isMetric() as Boolean {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_166_35_168_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 167 8 ]
+        symbol [ _isMetric %tmp.2 167 15 24 ];
+        %tmp.2 = getv ? :_isMetric;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_166_35_168_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 170; @symbol_functiondef = [celsiusToFahrenheit,170,21,40]; @symbol_param<0> = [c,170,41,42]; @symbol_param<0>_type<0> = [Number,170,46,52]; @symbol_return<0> = [Number,170,57,63]; ]
+    private
+    function celsiusToFahrenheit(c as Number) as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_170_64_172_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 171 8 ]
+        %tmp.1 = lgetv %c;
+        symbol [ c %tmp.1 171 16 17 ];
+        %tmp.2 = 9;
+        %tmp.3 = mul %tmp.1 %tmp.2;
+        %tmp.4 = 5;
+        %tmp.5 = div %tmp.3 %tmp.4;
+        %tmp.6 = 32;
+        %tmp.7 = add %tmp.5 %tmp.6;
+        ret %tmp.7;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_170_64_172_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 174; @symbol_functiondef = [getLabel,174,21,29]; @symbol_param<0> = [code,174,30,34]; @symbol_param<0>_type<0> = [Number,174,38,44]; @symbol_return<0> = [String,174,49,55]; ]
+    private
+    function getLabel(code as Number) as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_174_56_179_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 175 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_175_8_177_8_if_stmt:
+        symbol [ CONDITION_LABELS %tmp.2 175 12 28 ];
+        %tmp.2 = getv ? :CONDITION_LABELS;
+        symbol [ hasKey %tmp.3 175 29 35 ];
+        %tmp.3 = getv function %tmp.2 :hasKey;
+        %tmp.4 = lgetv %code;
+        symbol [ code %tmp.4 175 36 40 ];
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        bf %tmp.5 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_175_8_177_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_175_8_177_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_175_43_177_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 176 12 ]
+        symbol [ CONDITION_LABELS %tmp.7 176 19 35 ];
+        %tmp.7 = getv ? :CONDITION_LABELS;
+        %tmp.8 = lgetv %code;
+        symbol [ code %tmp.8 176 36 40 ];
+        %tmp.9 = agetv %tmp.7 %tmp.8;
+        %tmp.10 = as %tmp.9 String;
+        symbol [ String %tmp.10 176 45 51 ];
+        ret %tmp.10;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_175_43_177_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_175_8_177_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_175_8_177_8_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 178 8 ]
+        %tmp.11 = "Unknown";
+        ret %tmp.11;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_174_56_179_4_stop:
+    }
+}
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 198; @symbol_classdef = [Watchface1View,198,6,20]; @symbol_extends<0> = [WatchUi,198,29,36]; @symbol_extends<1> = [WatchFace,198,37,46]; ]
+class Watchface1View extends WatchUi.WatchFace {
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 198; ]
+    <init> {
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 198; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 200; @position = 16; @symbol_vardef = [_weatherMgr,200,16,27]; @symbol_type<0> = [WeatherManager,200,31,45]; ]
+    private
+    var _weatherMgr as WeatherManager;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 202; @symbol_functiondef = [initialize,202,13,23]; ]
+    function initialize() as Void {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_202_26_205_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 203 8 ]
+        symbol [ WatchFace %tmp.2 203 8 17 ];
+        %tmp.2 = getv ? :WatchFace;
+        symbol [ initialize %tmp.3 203 18 28 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 204 8 ]
+        symbol [ WeatherManager %tmp.7 204 26 40 ];
+        %tmp.7 = getv ? :WeatherManager;
+        %tmp.4 = newc %tmp.7 ();
+        symbol [ _weatherMgr ? 204 8 19 ];
+        putv self :_weatherMgr %tmp.4;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_202_26_205_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 207; @symbol_functiondef = [onLayout,207,13,21]; @symbol_param<0> = [dc,207,22,24]; @symbol_param<0>_type<0> = [Dc,207,28,30]; ]
+    function onLayout(dc as Dc) as Void {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_207_40_209_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 208 8 ]
+        %tmp.1 = self;
+        symbol [ setLayout %tmp.2 208 8 17 ];
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        symbol [ Rez %tmp.4 208 18 21 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Layouts %tmp.5 208 22 29 ];
+        %tmp.5 = getv %tmp.4 :Layouts;
+        symbol [ WatchFace %tmp.6 208 30 39 ];
+        %tmp.6 = getv function %tmp.5 :WatchFace;
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 208 40 42 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        invoke %tmp.1 %tmp.2(%tmp.8);
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_207_40_209_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 211; @symbol_functiondef = [onShow,211,13,19]; ]
+    function onShow() as Void {
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 217; @symbol_functiondef = [getBackgroundColor,217,21,39]; @symbol_param<0> = [h,217,40,41]; @symbol_param<0>_type<0> = [Number,217,45,51]; @symbol_return<0> = [Number,217,56,62]; ]
+    private
+    function getBackgroundColor(h as Number) as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_217_63_226_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 218 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_8_224_8_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_12_218_26_begin:
+        %tmp.1 = lgetv %h;
+        symbol [ h %tmp.1 218 12 13 ];
+        %tmp.2 = 6;
+        %tmp.3 = gte %tmp.1 %tmp.2;
+        bf %tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_8_224_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_22_218_26_true:
+        %tmp.4 = lgetv %h;
+        symbol [ h %tmp.4 218 22 23 ];
+        %tmp.5 = 11;
+        %tmp.6 = lt %tmp.4 %tmp.5;
+        push %tmp.6;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_22_218_26_end:
+        %tmp.7 = phi [%tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_12_218_26_begin] [%tmp.6 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_22_218_26_true] [%tmp.7 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_22_218_26_end];
+        bf %tmp.7 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_8_224_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_8_224_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_30_220_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 219 12 ]
+        %tmp.8 = 0x1A1A2E;
+        ret %tmp.8;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_30_220_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_8_224_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_8_224_8_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 220 15 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_15_224_8_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_19_220_34_begin:
+        %tmp.9 = lgetv %h;
+        symbol [ h %tmp.9 220 19 20 ];
+        %tmp.10 = 11;
+        %tmp.11 = gte %tmp.9 %tmp.10;
+        bf %tmp.11 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_15_224_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_30_220_34_true:
+        %tmp.12 = lgetv %h;
+        symbol [ h %tmp.12 220 30 31 ];
+        %tmp.13 = 14;
+        %tmp.14 = lt %tmp.12 %tmp.13;
+        push %tmp.14;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_30_220_34_end:
+        %tmp.15 = phi [%tmp.11 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_19_220_34_begin] [%tmp.14 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_30_220_34_true] [%tmp.15 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_30_220_34_end];
+        bf %tmp.15 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_15_224_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_15_224_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_38_222_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 221 12 ]
+        %tmp.16 = 0x16213E;
+        ret %tmp.16;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_38_222_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_15_224_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_15_224_8_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 222 15 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_15_224_8_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_19_222_34_begin:
+        %tmp.17 = lgetv %h;
+        symbol [ h %tmp.17 222 19 20 ];
+        %tmp.18 = 14;
+        %tmp.19 = gte %tmp.17 %tmp.18;
+        bf %tmp.19 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_15_224_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_30_222_34_true:
+        %tmp.20 = lgetv %h;
+        symbol [ h %tmp.20 222 30 31 ];
+        %tmp.21 = 18;
+        %tmp.22 = lt %tmp.20 %tmp.21;
+        push %tmp.22;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_30_222_34_end:
+        %tmp.23 = phi [%tmp.19 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_19_222_34_begin] [%tmp.22 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_30_222_34_true] [%tmp.23 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_30_222_34_end];
+        bf %tmp.23 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_15_224_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_15_224_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_38_224_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 223 12 ]
+        %tmp.24 = 0x1B1B2F;
+        ret %tmp.24;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_38_224_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_15_224_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_222_15_224_8_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_220_15_224_8_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_218_8_224_8_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 225 8 ]
+        %tmp.25 = 0x000000;
+        ret %tmp.25;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_217_63_226_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 229; @symbol_functiondef = [getTimeColor,229,21,33]; @symbol_param<0> = [h,229,34,35]; @symbol_param<0>_type<0> = [Number,229,39,45]; @symbol_return<0> = [Number,229,50,56]; ]
+    private
+    function getTimeColor(h as Number) as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_229_57_238_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 230 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_8_236_8_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_12_230_26_begin:
+        %tmp.1 = lgetv %h;
+        symbol [ h %tmp.1 230 12 13 ];
+        %tmp.2 = 6;
+        %tmp.3 = gte %tmp.1 %tmp.2;
+        bf %tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_8_236_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_22_230_26_true:
+        %tmp.4 = lgetv %h;
+        symbol [ h %tmp.4 230 22 23 ];
+        %tmp.5 = 11;
+        %tmp.6 = lt %tmp.4 %tmp.5;
+        push %tmp.6;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_22_230_26_end:
+        %tmp.7 = phi [%tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_12_230_26_begin] [%tmp.6 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_22_230_26_true] [%tmp.7 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_22_230_26_end];
+        bf %tmp.7 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_8_236_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_8_236_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_30_232_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 231 12 ]
+        %tmp.8 = 0xFFBE76;
+        ret %tmp.8;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_30_232_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_8_236_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_8_236_8_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 232 15 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_15_236_8_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_19_232_34_begin:
+        %tmp.9 = lgetv %h;
+        symbol [ h %tmp.9 232 19 20 ];
+        %tmp.10 = 11;
+        %tmp.11 = gte %tmp.9 %tmp.10;
+        bf %tmp.11 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_15_236_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_30_232_34_true:
+        %tmp.12 = lgetv %h;
+        symbol [ h %tmp.12 232 30 31 ];
+        %tmp.13 = 14;
+        %tmp.14 = lt %tmp.12 %tmp.13;
+        push %tmp.14;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_30_232_34_end:
+        %tmp.15 = phi [%tmp.11 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_19_232_34_begin] [%tmp.14 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_30_232_34_true] [%tmp.15 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_30_232_34_end];
+        bf %tmp.15 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_15_236_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_15_236_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_38_234_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 233 12 ]
+        %tmp.16 = 0xFFFFFF;
+        ret %tmp.16;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_38_234_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_15_236_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_15_236_8_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 234 15 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_15_236_8_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_19_234_34_begin:
+        %tmp.17 = lgetv %h;
+        symbol [ h %tmp.17 234 19 20 ];
+        %tmp.18 = 14;
+        %tmp.19 = gte %tmp.17 %tmp.18;
+        bf %tmp.19 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_15_236_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_30_234_34_true:
+        %tmp.20 = lgetv %h;
+        symbol [ h %tmp.20 234 30 31 ];
+        %tmp.21 = 18;
+        %tmp.22 = lt %tmp.20 %tmp.21;
+        push %tmp.22;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_30_234_34_end:
+        %tmp.23 = phi [%tmp.19 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_19_234_34_begin] [%tmp.22 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_30_234_34_true] [%tmp.23 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_30_234_34_end];
+        bf %tmp.23 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_15_236_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_15_236_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_38_236_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 235 12 ]
+        %tmp.24 = 0xF6B93B;
+        ret %tmp.24;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_38_236_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_15_236_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_234_15_236_8_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_232_15_236_8_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_230_8_236_8_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 237 8 ]
+        %tmp.25 = 0xA4B0BE;
+        ret %tmp.25;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_229_57_238_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 241; @symbol_functiondef = [getDateColor,241,21,33]; @symbol_param<0> = [h,241,34,35]; @symbol_param<0>_type<0> = [Number,241,39,45]; @symbol_return<0> = [Number,241,50,56]; ]
+    private
+    function getDateColor(h as Number) as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_241_57_250_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 242 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_8_248_8_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_12_242_26_begin:
+        %tmp.1 = lgetv %h;
+        symbol [ h %tmp.1 242 12 13 ];
+        %tmp.2 = 6;
+        %tmp.3 = gte %tmp.1 %tmp.2;
+        bf %tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_8_248_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_22_242_26_true:
+        %tmp.4 = lgetv %h;
+        symbol [ h %tmp.4 242 22 23 ];
+        %tmp.5 = 11;
+        %tmp.6 = lt %tmp.4 %tmp.5;
+        push %tmp.6;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_22_242_26_end:
+        %tmp.7 = phi [%tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_12_242_26_begin] [%tmp.6 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_22_242_26_true] [%tmp.7 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_22_242_26_end];
+        bf %tmp.7 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_8_248_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_8_248_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_30_244_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 243 12 ]
+        %tmp.8 = 0xD4A76A;
+        ret %tmp.8;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_30_244_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_8_248_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_8_248_8_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 244 15 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_15_248_8_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_19_244_34_begin:
+        %tmp.9 = lgetv %h;
+        symbol [ h %tmp.9 244 19 20 ];
+        %tmp.10 = 11;
+        %tmp.11 = gte %tmp.9 %tmp.10;
+        bf %tmp.11 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_15_248_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_30_244_34_true:
+        %tmp.12 = lgetv %h;
+        symbol [ h %tmp.12 244 30 31 ];
+        %tmp.13 = 14;
+        %tmp.14 = lt %tmp.12 %tmp.13;
+        push %tmp.14;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_30_244_34_end:
+        %tmp.15 = phi [%tmp.11 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_19_244_34_begin] [%tmp.14 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_30_244_34_true] [%tmp.15 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_30_244_34_end];
+        bf %tmp.15 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_15_248_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_15_248_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_38_246_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 245 12 ]
+        %tmp.16 = 0xC8D6E5;
+        ret %tmp.16;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_38_246_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_15_248_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_15_248_8_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 246 15 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_15_248_8_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_19_246_34_begin:
+        %tmp.17 = lgetv %h;
+        symbol [ h %tmp.17 246 19 20 ];
+        %tmp.18 = 14;
+        %tmp.19 = gte %tmp.17 %tmp.18;
+        bf %tmp.19 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_15_248_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_30_246_34_true:
+        %tmp.20 = lgetv %h;
+        symbol [ h %tmp.20 246 30 31 ];
+        %tmp.21 = 18;
+        %tmp.22 = lt %tmp.20 %tmp.21;
+        push %tmp.22;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_30_246_34_end:
+        %tmp.23 = phi [%tmp.19 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_19_246_34_begin] [%tmp.22 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_30_246_34_true] [%tmp.23 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_30_246_34_end];
+        bf %tmp.23 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_15_248_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_15_248_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_38_248_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 247 12 ]
+        %tmp.24 = 0xD4A76A;
+        ret %tmp.24;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_38_248_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_15_248_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_246_15_248_8_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_244_15_248_8_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_242_8_248_8_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 249 8 ]
+        %tmp.25 = 0x636E72;
+        ret %tmp.25;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_241_57_250_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 253; @symbol_functiondef = [getDividerColor,253,21,36]; @symbol_param<0> = [h,253,37,38]; @symbol_param<0>_type<0> = [Number,253,42,48]; @symbol_return<0> = [Number,253,53,59]; ]
+    private
+    function getDividerColor(h as Number) as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_253_60_262_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 254 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_8_260_8_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_12_254_26_begin:
+        %tmp.1 = lgetv %h;
+        symbol [ h %tmp.1 254 12 13 ];
+        %tmp.2 = 6;
+        %tmp.3 = gte %tmp.1 %tmp.2;
+        bf %tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_8_260_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_22_254_26_true:
+        %tmp.4 = lgetv %h;
+        symbol [ h %tmp.4 254 22 23 ];
+        %tmp.5 = 11;
+        %tmp.6 = lt %tmp.4 %tmp.5;
+        push %tmp.6;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_22_254_26_end:
+        %tmp.7 = phi [%tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_12_254_26_begin] [%tmp.6 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_22_254_26_true] [%tmp.7 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_22_254_26_end];
+        bf %tmp.7 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_8_260_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_8_260_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_30_256_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 255 12 ]
+        %tmp.8 = 0x8B7355;
+        ret %tmp.8;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_30_256_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_8_260_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_8_260_8_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 256 15 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_15_260_8_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_19_256_34_begin:
+        %tmp.9 = lgetv %h;
+        symbol [ h %tmp.9 256 19 20 ];
+        %tmp.10 = 11;
+        %tmp.11 = gte %tmp.9 %tmp.10;
+        bf %tmp.11 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_15_260_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_30_256_34_true:
+        %tmp.12 = lgetv %h;
+        symbol [ h %tmp.12 256 30 31 ];
+        %tmp.13 = 14;
+        %tmp.14 = lt %tmp.12 %tmp.13;
+        push %tmp.14;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_30_256_34_end:
+        %tmp.15 = phi [%tmp.11 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_19_256_34_begin] [%tmp.14 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_30_256_34_true] [%tmp.15 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_30_256_34_end];
+        bf %tmp.15 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_15_260_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_15_260_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_38_258_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 257 12 ]
+        %tmp.16 = 0x576574;
+        ret %tmp.16;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_38_258_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_15_260_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_15_260_8_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 258 15 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_15_260_8_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_19_258_34_begin:
+        %tmp.17 = lgetv %h;
+        symbol [ h %tmp.17 258 19 20 ];
+        %tmp.18 = 14;
+        %tmp.19 = gte %tmp.17 %tmp.18;
+        bf %tmp.19 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_15_260_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_30_258_34_true:
+        %tmp.20 = lgetv %h;
+        symbol [ h %tmp.20 258 30 31 ];
+        %tmp.21 = 18;
+        %tmp.22 = lt %tmp.20 %tmp.21;
+        push %tmp.22;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_30_258_34_end:
+        %tmp.23 = phi [%tmp.19 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_19_258_34_begin] [%tmp.22 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_30_258_34_true] [%tmp.23 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_30_258_34_end];
+        bf %tmp.23 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_15_260_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_15_260_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_38_260_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 259 12 ]
+        %tmp.24 = 0x8B7355;
+        ret %tmp.24;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_38_260_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_15_260_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_258_15_260_8_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_256_15_260_8_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_254_8_260_8_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 261 8 ]
+        %tmp.25 = 0x2F3640;
+        ret %tmp.25;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_253_60_262_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 266; @symbol_functiondef = [onUpdate,266,13,21]; @symbol_param<0> = [dc,266,22,24]; @symbol_param<0>_type<0> = [Dc,266,28,30]; ]
+    function onUpdate(dc as Dc) as Void {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 267 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %clockTime.1 = local;
+        symbol [ clockTime %clockTime.1 267 12 21 ];
+        symbol [ System %tmp.1 267 24 30 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.2 267 31 43 ];
+        %tmp.2 = getv function %tmp.1 :getClockTime;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %clockTime.1 %tmp.3;
+        symbol [ clockTime %clockTime.1 267 12 21 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 268 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %hour.2 = local;
+        symbol [ hour %hour.2 268 12 16 ];
+        %tmp.4 = lgetv %clockTime.1;
+        symbol [ clockTime %tmp.4 268 24 33 ];
+        symbol [ hour %tmp.5 268 34 38 ];
+        %tmp.5 = getv %tmp.4 :hour;
+        lputv %hour.2 %tmp.5;
+        symbol [ hour %hour.2 268 12 16 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 271 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %bgColor.3 = local;
+        symbol [ bgColor %bgColor.3 271 12 19 ];
+        %tmp.6 = self;
+        symbol [ getBackgroundColor %tmp.7 271 22 40 ];
+        %tmp.7 = getv function %tmp.6 :getBackgroundColor;
+        %tmp.8 = lgetv %hour.2;
+        symbol [ hour %tmp.8 271 41 45 ];
+        %tmp.9 = invoke %tmp.6 %tmp.7(%tmp.8);
+        lputv %bgColor.3 %tmp.9;
+        symbol [ bgColor %bgColor.3 271 12 19 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 272 8 ]
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 272 8 10 ];
+        symbol [ setColor %tmp.11 272 11 19 ];
+        %tmp.11 = getv function %tmp.10 :setColor;
+        %tmp.12 = lgetv %bgColor.3;
+        symbol [ bgColor %tmp.12 272 20 27 ];
+        %tmp.13 = lgetv %bgColor.3;
+        symbol [ bgColor %tmp.13 272 29 36 ];
+        invoke %tmp.10 %tmp.11(%tmp.12, %tmp.13);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 273 8 ]
+        %tmp.14 = lgetv %dc;
+        symbol [ dc %tmp.14 273 8 10 ];
+        symbol [ clear %tmp.15 273 11 16 ];
+        %tmp.15 = getv function %tmp.14 :clear;
+        invoke %tmp.14 %tmp.15();
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 275 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %width.4 = local;
+        symbol [ width %width.4 275 12 17 ];
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 275 22 24 ];
+        symbol [ getWidth %tmp.17 275 25 33 ];
+        %tmp.17 = getv function %tmp.16 :getWidth;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        lputv %width.4 %tmp.18;
+        symbol [ width %width.4 275 12 17 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 276 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %height.5 = local;
+        symbol [ height %height.5 276 12 18 ];
+        %tmp.19 = lgetv %dc;
+        symbol [ dc %tmp.19 276 22 24 ];
+        symbol [ getHeight %tmp.20 276 25 34 ];
+        %tmp.20 = getv function %tmp.19 :getHeight;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        lputv %height.5 %tmp.21;
+        symbol [ height %height.5 276 12 18 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 277 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %centerX.6 = local;
+        symbol [ centerX %centerX.6 277 12 19 ];
+        %tmp.22 = lgetv %width.4;
+        symbol [ width %tmp.22 277 22 27 ];
+        %tmp.23 = 2;
+        %tmp.24 = div %tmp.22 %tmp.23;
+        lputv %centerX.6 %tmp.24;
+        symbol [ centerX %centerX.6 277 12 19 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 278 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %centerY.7 = local;
+        symbol [ centerY %centerY.7 278 12 19 ];
+        %tmp.25 = lgetv %height.5;
+        symbol [ height %tmp.25 278 22 28 ];
+        %tmp.26 = 2;
+        %tmp.27 = div %tmp.25 %tmp.26;
+        lputv %centerY.7 %tmp.27;
+        symbol [ centerY %centerY.7 278 12 19 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 281 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %minutes.8 = local;
+        symbol [ minutes %minutes.8 281 12 19 ];
+        %tmp.28 = lgetv %clockTime.1;
+        symbol [ clockTime %tmp.28 281 25 34 ];
+        symbol [ min %tmp.29 281 35 38 ];
+        %tmp.29 = getv %tmp.28 :min;
+        symbol [ format %tmp.30 281 39 45 ];
+        %tmp.30 = getv function %tmp.29 :format;
+        %tmp.31 = "%02d";
+        %tmp.32 = invoke %tmp.29 %tmp.30(%tmp.31);
+        lputv %minutes.8 %tmp.32;
+        symbol [ minutes %minutes.8 281 12 19 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 282 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %timeString.9 = local;
+        symbol [ timeString %timeString.9 282 12 22 ];
+        symbol [ Lang %tmp.33 282 25 29 ];
+        %tmp.33 = getm $.Toybox.Lang;
+        symbol [ format %tmp.34 282 30 36 ];
+        %tmp.34 = getv function %tmp.33 :format;
+        %tmp.35 = "$1$:$2$";
+        %tmp.36 = newa 2;
+        %tmp.37 = lgetv %hour.2;
+        symbol [ hour %tmp.37 282 49 53 ];
+        symbol [ format %tmp.38 282 54 60 ];
+        %tmp.38 = getv function %tmp.37 :format;
+        %tmp.39 = "%02d";
+        %tmp.40 = invoke %tmp.37 %tmp.38(%tmp.39);
+        %tmp.41 = dup %tmp.36;
+        %tmp.42 = aputv %tmp.41 0 %tmp.40;
+        %tmp.43 = lgetv %minutes.8;
+        symbol [ minutes %tmp.43 282 70 77 ];
+        %tmp.44 = dup %tmp.42;
+        %tmp.45 = aputv %tmp.44 1 %tmp.43;
+        %tmp.46 = invoke %tmp.33 %tmp.34(%tmp.35, %tmp.45);
+        lputv %timeString.9 %tmp.46;
+        symbol [ timeString %timeString.9 282 12 22 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 284 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %today.10 = local;
+        symbol [ today %today.10 284 12 17 ];
+        symbol [ Gregorian %tmp.47 284 25 34 ];
+        %tmp.47 = getm $.Toybox.Time.Gregorian;
+        symbol [ info %tmp.48 284 35 39 ];
+        %tmp.48 = getv function %tmp.47 :info;
+        symbol [ Time %tmp.49 284 40 44 ];
+        %tmp.49 = getm $.Toybox.Time;
+        symbol [ now %tmp.50 284 45 48 ];
+        %tmp.50 = getv function %tmp.49 :now;
+        %tmp.51 = invoke %tmp.49 %tmp.50();
+        symbol [ Time %tmp.52 284 52 56 ];
+        %tmp.52 = getm $.Toybox.Time;
+        symbol [ FORMAT_MEDIUM %tmp.53 284 57 70 ];
+        %tmp.53 = getv %tmp.52 :FORMAT_MEDIUM;
+        %tmp.54 = invoke %tmp.47 %tmp.48(%tmp.51, %tmp.53);
+        lputv %today.10 %tmp.54;
+        symbol [ today %today.10 284 12 17 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 285 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %dateString.11 = local;
+        symbol [ dateString %dateString.11 285 12 22 ];
+        symbol [ Lang %tmp.55 285 25 29 ];
+        %tmp.55 = getm $.Toybox.Lang;
+        symbol [ format %tmp.56 285 30 36 ];
+        %tmp.56 = getv function %tmp.55 :format;
+        %tmp.57 = "$1$ $2$ $3$";
+        %tmp.58 = newa 3;
+        %tmp.59 = lgetv %today.10;
+        symbol [ today %tmp.59 285 53 58 ];
+        symbol [ day_of_week %tmp.60 285 59 70 ];
+        %tmp.60 = getv %tmp.59 :day_of_week;
+        %tmp.61 = dup %tmp.58;
+        %tmp.62 = aputv %tmp.61 0 %tmp.60;
+        %tmp.63 = lgetv %today.10;
+        symbol [ today %tmp.63 285 72 77 ];
+        symbol [ month %tmp.64 285 78 83 ];
+        %tmp.64 = getv %tmp.63 :month;
+        %tmp.65 = dup %tmp.62;
+        %tmp.66 = aputv %tmp.65 1 %tmp.64;
+        %tmp.67 = lgetv %today.10;
+        symbol [ today %tmp.67 285 85 90 ];
+        symbol [ day %tmp.68 285 91 94 ];
+        %tmp.68 = getv %tmp.67 :day;
+        %tmp.69 = dup %tmp.66;
+        %tmp.70 = aputv %tmp.69 2 %tmp.68;
+        %tmp.71 = invoke %tmp.55 %tmp.56(%tmp.57, %tmp.70);
+        lputv %dateString.11 %tmp.71;
+        symbol [ dateString %dateString.11 285 12 22 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 287 8 ]
+        %tmp.72 = lgetv %dc;
+        symbol [ dc %tmp.72 287 8 10 ];
+        symbol [ setColor %tmp.73 287 11 19 ];
+        %tmp.73 = getv function %tmp.72 :setColor;
+        %tmp.74 = self;
+        symbol [ getTimeColor %tmp.75 287 20 32 ];
+        %tmp.75 = getv function %tmp.74 :getTimeColor;
+        %tmp.76 = lgetv %hour.2;
+        symbol [ hour %tmp.76 287 33 37 ];
+        %tmp.77 = invoke %tmp.74 %tmp.75(%tmp.76);
+        symbol [ Graphics %tmp.78 287 40 48 ];
+        %tmp.78 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.79 287 49 66 ];
+        %tmp.79 = getv %tmp.78 :COLOR_TRANSPARENT;
+        invoke %tmp.72 %tmp.73(%tmp.77, %tmp.79);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 288 8 ]
+        %tmp.80 = lgetv %dc;
+        symbol [ dc %tmp.80 288 8 10 ];
+        symbol [ drawText %tmp.81 288 11 19 ];
+        %tmp.81 = getv function %tmp.80 :drawText;
+        %tmp.82 = lgetv %centerX.6;
+        symbol [ centerX %tmp.82 288 20 27 ];
+        %tmp.83 = lgetv %centerY.7;
+        symbol [ centerY %tmp.83 288 29 36 ];
+        %tmp.84 = 60;
+        %tmp.85 = sub %tmp.83 %tmp.84;
+        symbol [ Graphics %tmp.86 288 43 51 ];
+        %tmp.86 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.87 288 52 62 ];
+        %tmp.87 = getv %tmp.86 :FONT_LARGE;
+        %tmp.88 = lgetv %timeString.9;
+        symbol [ timeString %tmp.88 288 64 74 ];
+        symbol [ Graphics %tmp.89 288 76 84 ];
+        %tmp.89 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.90 288 85 104 ];
+        %tmp.90 = getv %tmp.89 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.80 %tmp.81(%tmp.82, %tmp.85, %tmp.87, %tmp.88, %tmp.90);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 290 8 ]
+        %tmp.91 = lgetv %dc;
+        symbol [ dc %tmp.91 290 8 10 ];
+        symbol [ setPenWidth %tmp.92 290 11 22 ];
+        %tmp.92 = getv function %tmp.91 :setPenWidth;
+        %tmp.93 = 1;
+        invoke %tmp.91 %tmp.92(%tmp.93);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 291 8 ]
+        %tmp.94 = lgetv %dc;
+        symbol [ dc %tmp.94 291 8 10 ];
+        symbol [ setColor %tmp.95 291 11 19 ];
+        %tmp.95 = getv function %tmp.94 :setColor;
+        %tmp.96 = self;
+        symbol [ getDividerColor %tmp.97 291 20 35 ];
+        %tmp.97 = getv function %tmp.96 :getDividerColor;
+        %tmp.98 = lgetv %hour.2;
+        symbol [ hour %tmp.98 291 36 40 ];
+        %tmp.99 = invoke %tmp.96 %tmp.97(%tmp.98);
+        symbol [ Graphics %tmp.100 291 43 51 ];
+        %tmp.100 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.101 291 52 69 ];
+        %tmp.101 = getv %tmp.100 :COLOR_TRANSPARENT;
+        invoke %tmp.94 %tmp.95(%tmp.99, %tmp.101);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 292 8 ]
+        %tmp.102 = lgetv %dc;
+        symbol [ dc %tmp.102 292 8 10 ];
+        symbol [ drawLine %tmp.103 292 11 19 ];
+        %tmp.103 = getv function %tmp.102 :drawLine;
+        %tmp.104 = lgetv %centerX.6;
+        symbol [ centerX %tmp.104 292 20 27 ];
+        %tmp.105 = 50;
+        %tmp.106 = sub %tmp.104 %tmp.105;
+        %tmp.107 = lgetv %centerY.7;
+        symbol [ centerY %tmp.107 292 34 41 ];
+        %tmp.108 = 5;
+        %tmp.109 = add %tmp.107 %tmp.108;
+        %tmp.110 = lgetv %centerX.6;
+        symbol [ centerX %tmp.110 292 47 54 ];
+        %tmp.111 = 50;
+        %tmp.112 = add %tmp.110 %tmp.111;
+        %tmp.113 = lgetv %centerY.7;
+        symbol [ centerY %tmp.113 292 61 68 ];
+        %tmp.114 = 5;
+        %tmp.115 = add %tmp.113 %tmp.114;
+        invoke %tmp.102 %tmp.103(%tmp.106, %tmp.109, %tmp.112, %tmp.115);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 294 8 ]
+        %tmp.116 = lgetv %dc;
+        symbol [ dc %tmp.116 294 8 10 ];
+        symbol [ setColor %tmp.117 294 11 19 ];
+        %tmp.117 = getv function %tmp.116 :setColor;
+        %tmp.118 = self;
+        symbol [ getDateColor %tmp.119 294 20 32 ];
+        %tmp.119 = getv function %tmp.118 :getDateColor;
+        %tmp.120 = lgetv %hour.2;
+        symbol [ hour %tmp.120 294 33 37 ];
+        %tmp.121 = invoke %tmp.118 %tmp.119(%tmp.120);
+        symbol [ Graphics %tmp.122 294 40 48 ];
+        %tmp.122 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.123 294 49 66 ];
+        %tmp.123 = getv %tmp.122 :COLOR_TRANSPARENT;
+        invoke %tmp.116 %tmp.117(%tmp.121, %tmp.123);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 295 8 ]
+        %tmp.124 = lgetv %dc;
+        symbol [ dc %tmp.124 295 8 10 ];
+        symbol [ drawText %tmp.125 295 11 19 ];
+        %tmp.125 = getv function %tmp.124 :drawText;
+        %tmp.126 = lgetv %centerX.6;
+        symbol [ centerX %tmp.126 295 20 27 ];
+        %tmp.127 = lgetv %centerY.7;
+        symbol [ centerY %tmp.127 295 29 36 ];
+        %tmp.128 = 10;
+        %tmp.129 = add %tmp.127 %tmp.128;
+        symbol [ Graphics %tmp.130 295 43 51 ];
+        %tmp.130 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.131 295 52 62 ];
+        %tmp.131 = getv %tmp.130 :FONT_SMALL;
+        %tmp.132 = lgetv %dateString.11;
+        symbol [ dateString %tmp.132 295 64 74 ];
+        symbol [ Graphics %tmp.133 295 76 84 ];
+        %tmp.133 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.134 295 85 104 ];
+        %tmp.134 = getv %tmp.133 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.124 %tmp.125(%tmp.126, %tmp.129, %tmp.131, %tmp.132, %tmp.134);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 298 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %ringRadius.12 = local;
+        symbol [ ringRadius %ringRadius.12 298 12 22 ];
+        %tmp.135 = lgetv %centerX.6;
+        symbol [ centerX %tmp.135 298 25 32 ];
+        %tmp.136 = 10;
+        %tmp.137 = sub %tmp.135 %tmp.136;
+        lputv %ringRadius.12 %tmp.137;
+        symbol [ ringRadius %ringRadius.12 298 12 22 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 299 8 ]
+        %tmp.138 = lgetv %dc;
+        symbol [ dc %tmp.138 299 8 10 ];
+        symbol [ setPenWidth %tmp.139 299 11 22 ];
+        %tmp.139 = getv function %tmp.138 :setPenWidth;
+        %tmp.140 = 10;
+        invoke %tmp.138 %tmp.139(%tmp.140);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 302 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %stepInfo.13 = local;
+        symbol [ stepInfo %stepInfo.13 302 12 20 ];
+        symbol [ ActivityMonitor %tmp.141 302 24 39 ];
+        %tmp.141 = getm $.Toybox.ActivityMonitor;
+        symbol [ getInfo %tmp.142 302 40 47 ];
+        %tmp.142 = getv function %tmp.141 :getInfo;
+        %tmp.143 = invoke %tmp.141 %tmp.142();
+        lputv %stepInfo.13 %tmp.143;
+        symbol [ stepInfo %stepInfo.13 302 12 20 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 303 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %calories.14 = local;
+        symbol [ calories %calories.14 303 12 20 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_303_24_303_82_begin:
+        %tmp.144 = lgetv %stepInfo.13;
+        symbol [ stepInfo %tmp.144 303 24 32 ];
+        symbol [ calories %tmp.145 303 33 41 ];
+        %tmp.145 = getv %tmp.144 :calories;
+        %tmp.146 = null;
+        %tmp.147 = ne %tmp.145 %tmp.146;
+        bf %tmp.147 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_303_24_303_82_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_303_24_303_82_true:
+        %tmp.148 = lgetv %stepInfo.13;
+        symbol [ stepInfo %tmp.148 303 52 60 ];
+        symbol [ calories %tmp.149 303 61 69 ];
+        %tmp.149 = getv %tmp.148 :calories;
+        symbol [ toFloat %tmp.150 303 70 77 ];
+        %tmp.150 = getv function %tmp.149 :toFloat;
+        %tmp.151 = invoke %tmp.149 %tmp.150();
+        push %tmp.151;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_303_24_303_82_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_303_24_303_82_else_false:
+        %tmp.152 = 0.0;
+        push %tmp.152;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_303_24_303_82_end:
+        %tmp.153 = phi [%tmp.147 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_303_24_303_82_begin] [%tmp.151 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_303_24_303_82_true] [%tmp.152 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_303_24_303_82_else_false] [%tmp.153 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_303_24_303_82_end];
+        lputv %calories.14 %tmp.153;
+        symbol [ calories %calories.14 303 12 20 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 304 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %calGoal.15 = local;
+        symbol [ calGoal %calGoal.15 304 12 19 ];
+        %tmp.154 = 500.0;
+        lputv %calGoal.15 %tmp.154;
+        symbol [ calGoal %calGoal.15 304 12 19 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 305 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %calPercent.16 = local;
+        symbol [ calPercent %calPercent.16 305 12 22 ];
+        %tmp.155 = lgetv %calories.14;
+        symbol [ calories %tmp.155 305 25 33 ];
+        %tmp.156 = lgetv %calGoal.15;
+        symbol [ calGoal %tmp.156 305 36 43 ];
+        %tmp.157 = div %tmp.155 %tmp.156;
+        lputv %calPercent.16 %tmp.157;
+        symbol [ calPercent %calPercent.16 305 12 22 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 306 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_306_8_306_50_if_stmt:
+        %tmp.158 = lgetv %calPercent.16;
+        symbol [ calPercent %tmp.158 306 12 22 ];
+        %tmp.159 = 1.0;
+        %tmp.160 = gt %tmp.158 %tmp.159;
+        bf %tmp.160 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_306_8_306_50_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_306_8_306_50_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_306_30_306_50_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 306 32 ]
+        %tmp.161 = 1.0;
+        lputv %calPercent.16 %tmp.161;
+        symbol [ calPercent %calPercent.16 306 32 42 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_306_30_306_50_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_306_8_306_50_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_306_8_306_50_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 308 8 ]
+        %tmp.162 = lgetv %dc;
+        symbol [ dc %tmp.162 308 8 10 ];
+        symbol [ setColor %tmp.163 308 11 19 ];
+        %tmp.163 = getv function %tmp.162 :setColor;
+        %tmp.164 = 0x4A5C3C;
+        symbol [ Graphics %tmp.165 308 30 38 ];
+        %tmp.165 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.166 308 39 56 ];
+        %tmp.166 = getv %tmp.165 :COLOR_TRANSPARENT;
+        invoke %tmp.162 %tmp.163(%tmp.164, %tmp.166);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 309 8 ]
+        %tmp.167 = lgetv %dc;
+        symbol [ dc %tmp.167 309 8 10 ];
+        symbol [ drawArc %tmp.168 309 11 18 ];
+        %tmp.168 = getv function %tmp.167 :drawArc;
+        %tmp.169 = lgetv %centerX.6;
+        symbol [ centerX %tmp.169 309 19 26 ];
+        %tmp.170 = lgetv %centerY.7;
+        symbol [ centerY %tmp.170 309 28 35 ];
+        %tmp.171 = lgetv %ringRadius.12;
+        symbol [ ringRadius %tmp.171 309 37 47 ];
+        symbol [ Graphics %tmp.172 309 49 57 ];
+        %tmp.172 = getm $.Toybox.Graphics;
+        symbol [ ARC_CLOCKWISE %tmp.173 309 58 71 ];
+        %tmp.173 = getv %tmp.172 :ARC_CLOCKWISE;
+        %tmp.174 = 180;
+        %tmp.175 = 90;
+        invoke %tmp.167 %tmp.168(%tmp.169, %tmp.170, %tmp.171, %tmp.173, %tmp.174, %tmp.175);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 311 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_311_8_314_8_if_stmt:
+        %tmp.176 = lgetv %calPercent.16;
+        symbol [ calPercent %tmp.176 311 12 22 ];
+        %tmp.177 = 0;
+        %tmp.178 = gt %tmp.176 %tmp.177;
+        bf %tmp.178 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_311_8_314_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_311_8_314_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_311_28_314_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 312 12 ]
+        %tmp.179 = lgetv %dc;
+        symbol [ dc %tmp.179 312 12 14 ];
+        symbol [ setColor %tmp.180 312 15 23 ];
+        %tmp.180 = getv function %tmp.179 :setColor;
+        %tmp.181 = 0x96BB7C;
+        symbol [ Graphics %tmp.182 312 34 42 ];
+        %tmp.182 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.183 312 43 60 ];
+        %tmp.183 = getv %tmp.182 :COLOR_TRANSPARENT;
+        invoke %tmp.179 %tmp.180(%tmp.181, %tmp.183);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 313 12 ]
+        %tmp.184 = lgetv %dc;
+        symbol [ dc %tmp.184 313 12 14 ];
+        symbol [ drawArc %tmp.185 313 15 22 ];
+        %tmp.185 = getv function %tmp.184 :drawArc;
+        %tmp.186 = lgetv %centerX.6;
+        symbol [ centerX %tmp.186 313 23 30 ];
+        %tmp.187 = lgetv %centerY.7;
+        symbol [ centerY %tmp.187 313 32 39 ];
+        %tmp.188 = lgetv %ringRadius.12;
+        symbol [ ringRadius %tmp.188 313 41 51 ];
+        symbol [ Graphics %tmp.189 313 53 61 ];
+        %tmp.189 = getm $.Toybox.Graphics;
+        symbol [ ARC_CLOCKWISE %tmp.190 313 62 75 ];
+        %tmp.190 = getv %tmp.189 :ARC_CLOCKWISE;
+        %tmp.191 = 180;
+        %tmp.192 = 180;
+        %tmp.193 = lgetv %calPercent.16;
+        symbol [ calPercent %tmp.193 313 89 99 ];
+        %tmp.194 = 90;
+        %tmp.195 = mul %tmp.193 %tmp.194;
+        symbol [ toNumber %tmp.196 313 106 114 ];
+        %tmp.196 = getv function %tmp.195 :toNumber;
+        %tmp.197 = invoke %tmp.195 %tmp.196();
+        %tmp.198 = sub %tmp.192 %tmp.197;
+        invoke %tmp.184 %tmp.185(%tmp.186, %tmp.187, %tmp.188, %tmp.190, %tmp.191, %tmp.198);
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_311_28_314_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_311_8_314_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_311_8_314_8_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 317 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %steps.17 = local;
+        symbol [ steps %steps.17 317 12 17 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_317_26_317_84_begin:
+        %tmp.199 = lgetv %stepInfo.13;
+        symbol [ stepInfo %tmp.199 317 26 34 ];
+        symbol [ steps %tmp.200 317 35 40 ];
+        %tmp.200 = getv %tmp.199 :steps;
+        %tmp.201 = null;
+        %tmp.202 = ne %tmp.200 %tmp.201;
+        bf %tmp.202 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_317_26_317_84_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_317_26_317_84_true:
+        %tmp.203 = lgetv %stepInfo.13;
+        symbol [ stepInfo %tmp.203 317 54 62 ];
+        symbol [ steps %tmp.204 317 63 68 ];
+        %tmp.204 = getv %tmp.203 :steps;
+        symbol [ toFloat %tmp.205 317 69 76 ];
+        %tmp.205 = getv function %tmp.204 :toFloat;
+        %tmp.206 = invoke %tmp.204 %tmp.205();
+        push %tmp.206;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_317_26_317_84_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_317_26_317_84_else_false:
+        %tmp.207 = 0.0;
+        push %tmp.207;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_317_26_317_84_end:
+        %tmp.208 = phi [%tmp.202 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_317_26_317_84_begin] [%tmp.206 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_317_26_317_84_true] [%tmp.207 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_317_26_317_84_else_false] [%tmp.208 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_317_26_317_84_end];
+        lputv %steps.17 %tmp.208;
+        symbol [ steps %steps.17 317 12 17 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 318 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %stepGoal.18 = local;
+        symbol [ stepGoal %stepGoal.18 318 12 20 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_318_26_318_84_begin:
+        %tmp.209 = lgetv %stepInfo.13;
+        symbol [ stepInfo %tmp.209 318 26 34 ];
+        symbol [ stepGoal %tmp.210 318 35 43 ];
+        %tmp.210 = getv %tmp.209 :stepGoal;
+        %tmp.211 = null;
+        %tmp.212 = ne %tmp.210 %tmp.211;
+        bf %tmp.212 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_318_26_318_84_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_318_26_318_84_true:
+        %tmp.213 = lgetv %stepInfo.13;
+        symbol [ stepInfo %tmp.213 318 54 62 ];
+        symbol [ stepGoal %tmp.214 318 63 71 ];
+        %tmp.214 = getv %tmp.213 :stepGoal;
+        symbol [ toFloat %tmp.215 318 72 79 ];
+        %tmp.215 = getv function %tmp.214 :toFloat;
+        %tmp.216 = invoke %tmp.214 %tmp.215();
+        push %tmp.216;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_318_26_318_84_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_318_26_318_84_else_false:
+        %tmp.217 = 10000.0;
+        push %tmp.217;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_318_26_318_84_end:
+        %tmp.218 = phi [%tmp.212 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_318_26_318_84_begin] [%tmp.216 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_318_26_318_84_true] [%tmp.217 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_318_26_318_84_else_false] [%tmp.218 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_318_26_318_84_end];
+        lputv %stepGoal.18 %tmp.218;
+        symbol [ stepGoal %stepGoal.18 318 12 20 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 319 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %stepPercent.19 = local;
+        symbol [ stepPercent %stepPercent.19 319 12 23 ];
+        %tmp.219 = lgetv %steps.17;
+        symbol [ steps %tmp.219 319 26 31 ];
+        %tmp.220 = lgetv %stepGoal.18;
+        symbol [ stepGoal %tmp.220 319 34 42 ];
+        %tmp.221 = div %tmp.219 %tmp.220;
+        lputv %stepPercent.19 %tmp.221;
+        symbol [ stepPercent %stepPercent.19 319 12 23 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 320 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_320_8_320_52_if_stmt:
+        %tmp.222 = lgetv %stepPercent.19;
+        symbol [ stepPercent %tmp.222 320 12 23 ];
+        %tmp.223 = 1.0;
+        %tmp.224 = gt %tmp.222 %tmp.223;
+        bf %tmp.224 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_320_8_320_52_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_320_8_320_52_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_320_31_320_52_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 320 33 ]
+        %tmp.225 = 1.0;
+        lputv %stepPercent.19 %tmp.225;
+        symbol [ stepPercent %stepPercent.19 320 33 44 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_320_31_320_52_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_320_8_320_52_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_320_8_320_52_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 322 8 ]
+        %tmp.226 = lgetv %dc;
+        symbol [ dc %tmp.226 322 8 10 ];
+        symbol [ setColor %tmp.227 322 11 19 ];
+        %tmp.227 = getv function %tmp.226 :setColor;
+        %tmp.228 = 0x0C2624;
+        symbol [ Graphics %tmp.229 322 30 38 ];
+        %tmp.229 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.230 322 39 56 ];
+        %tmp.230 = getv %tmp.229 :COLOR_TRANSPARENT;
+        invoke %tmp.226 %tmp.227(%tmp.228, %tmp.230);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 323 8 ]
+        %tmp.231 = lgetv %dc;
+        symbol [ dc %tmp.231 323 8 10 ];
+        symbol [ drawArc %tmp.232 323 11 18 ];
+        %tmp.232 = getv function %tmp.231 :drawArc;
+        %tmp.233 = lgetv %centerX.6;
+        symbol [ centerX %tmp.233 323 19 26 ];
+        %tmp.234 = lgetv %centerY.7;
+        symbol [ centerY %tmp.234 323 28 35 ];
+        %tmp.235 = lgetv %ringRadius.12;
+        symbol [ ringRadius %tmp.235 323 37 47 ];
+        symbol [ Graphics %tmp.236 323 49 57 ];
+        %tmp.236 = getm $.Toybox.Graphics;
+        symbol [ ARC_CLOCKWISE %tmp.237 323 58 71 ];
+        %tmp.237 = getv %tmp.236 :ARC_CLOCKWISE;
+        %tmp.238 = 270;
+        %tmp.239 = 180;
+        invoke %tmp.231 %tmp.232(%tmp.233, %tmp.234, %tmp.235, %tmp.237, %tmp.238, %tmp.239);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 325 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_325_8_328_8_if_stmt:
+        %tmp.240 = lgetv %stepPercent.19;
+        symbol [ stepPercent %tmp.240 325 12 23 ];
+        %tmp.241 = 0;
+        %tmp.242 = gt %tmp.240 %tmp.241;
+        bf %tmp.242 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_325_8_328_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_325_8_328_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_325_29_328_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 326 12 ]
+        %tmp.243 = lgetv %dc;
+        symbol [ dc %tmp.243 326 12 14 ];
+        symbol [ setColor %tmp.244 326 15 23 ];
+        %tmp.244 = getv function %tmp.243 :setColor;
+        %tmp.245 = 0x184D47;
+        symbol [ Graphics %tmp.246 326 34 42 ];
+        %tmp.246 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.247 326 43 60 ];
+        %tmp.247 = getv %tmp.246 :COLOR_TRANSPARENT;
+        invoke %tmp.243 %tmp.244(%tmp.245, %tmp.247);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 327 12 ]
+        %tmp.248 = lgetv %dc;
+        symbol [ dc %tmp.248 327 12 14 ];
+        symbol [ drawArc %tmp.249 327 15 22 ];
+        %tmp.249 = getv function %tmp.248 :drawArc;
+        %tmp.250 = lgetv %centerX.6;
+        symbol [ centerX %tmp.250 327 23 30 ];
+        %tmp.251 = lgetv %centerY.7;
+        symbol [ centerY %tmp.251 327 32 39 ];
+        %tmp.252 = lgetv %ringRadius.12;
+        symbol [ ringRadius %tmp.252 327 41 51 ];
+        symbol [ Graphics %tmp.253 327 53 61 ];
+        %tmp.253 = getm $.Toybox.Graphics;
+        symbol [ ARC_CLOCKWISE %tmp.254 327 62 75 ];
+        %tmp.254 = getv %tmp.253 :ARC_CLOCKWISE;
+        %tmp.255 = 270;
+        %tmp.256 = 270;
+        %tmp.257 = lgetv %stepPercent.19;
+        symbol [ stepPercent %tmp.257 327 89 100 ];
+        %tmp.258 = 90;
+        %tmp.259 = mul %tmp.257 %tmp.258;
+        symbol [ toNumber %tmp.260 327 107 115 ];
+        %tmp.260 = getv function %tmp.259 :toNumber;
+        %tmp.261 = invoke %tmp.259 %tmp.260();
+        %tmp.262 = sub %tmp.256 %tmp.261;
+        invoke %tmp.248 %tmp.249(%tmp.250, %tmp.251, %tmp.252, %tmp.254, %tmp.255, %tmp.262);
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_325_29_328_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_325_8_328_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_325_8_328_8_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 331 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %stats.20 = local;
+        symbol [ stats %stats.20 331 12 17 ];
+        symbol [ System %tmp.263 331 25 31 ];
+        %tmp.263 = getm $.Toybox.System;
+        symbol [ getSystemStats %tmp.264 331 32 46 ];
+        %tmp.264 = getv function %tmp.263 :getSystemStats;
+        %tmp.265 = invoke %tmp.263 %tmp.264();
+        lputv %stats.20 %tmp.265;
+        symbol [ stats %stats.20 331 12 17 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 332 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %battery.21 = local;
+        symbol [ battery %battery.21 332 12 19 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_332_25_332_75_begin:
+        %tmp.266 = lgetv %stats.20;
+        symbol [ stats %tmp.266 332 25 30 ];
+        symbol [ battery %tmp.267 332 31 38 ];
+        %tmp.267 = getv %tmp.266 :battery;
+        %tmp.268 = null;
+        %tmp.269 = ne %tmp.267 %tmp.268;
+        bf %tmp.269 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_332_25_332_75_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_332_25_332_75_true:
+        %tmp.270 = lgetv %stats.20;
+        symbol [ stats %tmp.270 332 49 54 ];
+        symbol [ battery %tmp.271 332 55 62 ];
+        %tmp.271 = getv %tmp.270 :battery;
+        symbol [ toFloat %tmp.272 332 63 70 ];
+        %tmp.272 = getv function %tmp.271 :toFloat;
+        %tmp.273 = invoke %tmp.271 %tmp.272();
+        push %tmp.273;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_332_25_332_75_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_332_25_332_75_else_false:
+        %tmp.274 = 100.0;
+        push %tmp.274;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_332_25_332_75_end:
+        %tmp.275 = phi [%tmp.269 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_332_25_332_75_begin] [%tmp.273 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_332_25_332_75_true] [%tmp.274 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_332_25_332_75_else_false] [%tmp.275 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_332_25_332_75_end];
+        lputv %battery.21 %tmp.275;
+        symbol [ battery %battery.21 332 12 19 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 333 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %batPercent.22 = local;
+        symbol [ batPercent %batPercent.22 333 12 22 ];
+        %tmp.276 = lgetv %battery.21;
+        symbol [ battery %tmp.276 333 25 32 ];
+        %tmp.277 = 100.0;
+        %tmp.278 = div %tmp.276 %tmp.277;
+        lputv %batPercent.22 %tmp.278;
+        symbol [ batPercent %batPercent.22 333 12 22 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 335 8 ]
+        %tmp.279 = lgetv %dc;
+        symbol [ dc %tmp.279 335 8 10 ];
+        symbol [ setColor %tmp.280 335 11 19 ];
+        %tmp.280 = getv function %tmp.279 :setColor;
+        %tmp.281 = 0x333333;
+        symbol [ Graphics %tmp.282 335 30 38 ];
+        %tmp.282 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.283 335 39 56 ];
+        %tmp.283 = getv %tmp.282 :COLOR_TRANSPARENT;
+        invoke %tmp.279 %tmp.280(%tmp.281, %tmp.283);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 336 8 ]
+        %tmp.284 = lgetv %dc;
+        symbol [ dc %tmp.284 336 8 10 ];
+        symbol [ drawArc %tmp.285 336 11 18 ];
+        %tmp.285 = getv function %tmp.284 :drawArc;
+        %tmp.286 = lgetv %centerX.6;
+        symbol [ centerX %tmp.286 336 19 26 ];
+        %tmp.287 = lgetv %centerY.7;
+        symbol [ centerY %tmp.287 336 28 35 ];
+        %tmp.288 = lgetv %ringRadius.12;
+        symbol [ ringRadius %tmp.288 336 37 47 ];
+        symbol [ Graphics %tmp.289 336 49 57 ];
+        %tmp.289 = getm $.Toybox.Graphics;
+        symbol [ ARC_CLOCKWISE %tmp.290 336 58 71 ];
+        %tmp.290 = getv %tmp.289 :ARC_CLOCKWISE;
+        %tmp.291 = 360;
+        %tmp.292 = 270;
+        invoke %tmp.284 %tmp.285(%tmp.286, %tmp.287, %tmp.288, %tmp.290, %tmp.291, %tmp.292);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 338 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %batColor.23 = local;
+        symbol [ batColor %batColor.23 338 12 20 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 339 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_339_8_345_8_if_stmt:
+        %tmp.293 = lgetv %battery.21;
+        symbol [ battery %tmp.293 339 12 19 ];
+        %tmp.294 = 50;
+        %tmp.295 = gt %tmp.293 %tmp.294;
+        bf %tmp.295 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_339_8_345_8_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_339_8_345_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_339_26_341_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 340 12 ]
+        %tmp.296 = 0x49FF00;
+        lputv %batColor.23 %tmp.296;
+        symbol [ batColor %batColor.23 340 12 20 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_339_26_341_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_339_8_345_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_339_8_345_8_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 341 15 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_341_15_345_8_if_stmt:
+        %tmp.297 = lgetv %battery.21;
+        symbol [ battery %tmp.297 341 19 26 ];
+        %tmp.298 = 20;
+        %tmp.299 = gt %tmp.297 %tmp.298;
+        bf %tmp.299 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_341_15_345_8_if_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_341_15_345_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_341_33_343_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 342 12 ]
+        %tmp.300 = 0xFBFF00;
+        lputv %batColor.23 %tmp.300;
+        symbol [ batColor %batColor.23 342 12 20 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_341_33_343_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_341_15_345_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_341_15_345_8_if_else_false:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_343_15_345_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 344 12 ]
+        %tmp.301 = 0xFF0000;
+        lputv %batColor.23 %tmp.301;
+        symbol [ batColor %batColor.23 344 12 20 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_343_15_345_8_stop:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_341_15_345_8_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_339_8_345_8_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 347 8 ]
+        %tmp.302 = lgetv %dc;
+        symbol [ dc %tmp.302 347 8 10 ];
+        symbol [ setColor %tmp.303 347 11 19 ];
+        %tmp.303 = getv function %tmp.302 :setColor;
+        %tmp.304 = lgetv %batColor.23;
+        symbol [ batColor %tmp.304 347 20 28 ];
+        symbol [ Graphics %tmp.305 347 30 38 ];
+        %tmp.305 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.306 347 39 56 ];
+        %tmp.306 = getv %tmp.305 :COLOR_TRANSPARENT;
+        invoke %tmp.302 %tmp.303(%tmp.304, %tmp.306);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 348 8 ]
+        %tmp.307 = lgetv %dc;
+        symbol [ dc %tmp.307 348 8 10 ];
+        symbol [ drawArc %tmp.308 348 11 18 ];
+        %tmp.308 = getv function %tmp.307 :drawArc;
+        %tmp.309 = lgetv %centerX.6;
+        symbol [ centerX %tmp.309 348 19 26 ];
+        %tmp.310 = lgetv %centerY.7;
+        symbol [ centerY %tmp.310 348 28 35 ];
+        %tmp.311 = lgetv %ringRadius.12;
+        symbol [ ringRadius %tmp.311 348 37 47 ];
+        symbol [ Graphics %tmp.312 348 49 57 ];
+        %tmp.312 = getm $.Toybox.Graphics;
+        symbol [ ARC_COUNTER_CLOCKWISE %tmp.313 348 58 79 ];
+        %tmp.313 = getv %tmp.312 :ARC_COUNTER_CLOCKWISE;
+        %tmp.314 = 270;
+        %tmp.315 = 270;
+        %tmp.316 = lgetv %batPercent.22;
+        symbol [ batPercent %tmp.316 348 93 103 ];
+        %tmp.317 = 90;
+        %tmp.318 = mul %tmp.316 %tmp.317;
+        symbol [ toNumber %tmp.319 348 110 118 ];
+        %tmp.319 = getv function %tmp.318 :toNumber;
+        %tmp.320 = invoke %tmp.318 %tmp.319();
+        %tmp.321 = add %tmp.315 %tmp.320;
+        invoke %tmp.307 %tmp.308(%tmp.309, %tmp.310, %tmp.311, %tmp.313, %tmp.314, %tmp.321);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 351 8 ]
+        symbol [ _weatherMgr %tmp.323 351 8 19 ];
+        %tmp.323 = getv ? :_weatherMgr;
+        symbol [ update %tmp.324 351 20 26 ];
+        %tmp.324 = getv function %tmp.323 :update;
+        invoke %tmp.323 %tmp.324();
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 353 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %weatherX.24 = local;
+        symbol [ weatherX %weatherX.24 353 12 20 ];
+        %tmp.325 = lgetv %width.4;
+        symbol [ width %tmp.325 353 23 28 ];
+        %tmp.326 = 85;
+        %tmp.327 = sub %tmp.325 %tmp.326;
+        lputv %weatherX.24 %tmp.327;
+        symbol [ weatherX %weatherX.24 353 12 20 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 354 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop" ]
+        %weatherY.25 = local;
+        symbol [ weatherY %weatherY.25 354 12 20 ];
+        %tmp.328 = 55;
+        lputv %weatherY.25 %tmp.328;
+        symbol [ weatherY %weatherY.25 354 12 20 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 356 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_8_415_8_if_stmt:
+        symbol [ _weatherMgr %tmp.330 356 12 23 ];
+        %tmp.330 = getv ? :_weatherMgr;
+        symbol [ isDataAvailable %tmp.331 356 24 39 ];
+        %tmp.331 = getv function %tmp.330 :isDataAvailable;
+        %tmp.332 = invoke %tmp.330 %tmp.331();
+        bf %tmp.332 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_8_415_8_if_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_8_415_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_43_412_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 357 12 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_43_412_8_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_43_412_8_stop" ]
+        %cond.26 = local;
+        symbol [ cond %cond.26 357 16 20 ];
+        symbol [ _weatherMgr %tmp.334 357 23 34 ];
+        %tmp.334 = getv ? :_weatherMgr;
+        symbol [ getConditionCode %tmp.335 357 35 51 ];
+        %tmp.335 = getv function %tmp.334 :getConditionCode;
+        %tmp.336 = invoke %tmp.334 %tmp.335();
+        lputv %cond.26 %tmp.336;
+        symbol [ cond %cond.26 357 16 20 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 359 12 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_43_412_8_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_43_412_8_stop" ]
+        %weatherIcon.27 = local;
+        symbol [ weatherIcon %weatherIcon.27 359 16 27 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 360 12 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_360_12_399_12_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_360_16_361_32_begin:
+        %tmp.337 = lgetv %cond.26;
+        symbol [ cond %tmp.337 360 16 20 ];
+        symbol [ Weather %tmp.338 360 24 31 ];
+        %tmp.338 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLEAR %tmp.339 360 32 47 ];
+        %tmp.339 = getv %tmp.338 :CONDITION_CLEAR;
+        %tmp.340 = eq %tmp.337 %tmp.339;
+        bt %tmp.340 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_360_12_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_361_16_361_32_false:
+        %tmp.341 = lgetv %cond.26;
+        symbol [ cond %tmp.341 361 16 20 ];
+        symbol [ Weather %tmp.342 361 24 31 ];
+        %tmp.342 = getm $.Toybox.Weather;
+        symbol [ CONDITION_PARTLY_CLOUDY %tmp.343 361 32 55 ];
+        %tmp.343 = getv %tmp.342 :CONDITION_PARTLY_CLOUDY;
+        %tmp.344 = eq %tmp.341 %tmp.343;
+        push %tmp.344;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_361_16_361_32_end:
+        %tmp.345 = phi [%tmp.340 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_360_16_361_32_begin] [%tmp.344 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_361_16_361_32_false] [%tmp.345 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_361_16_361_32_end];
+        bf %tmp.345 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_360_12_399_12_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_360_12_399_12_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_361_57_367_12_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 362 16 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_362_16_366_16_if_stmt:
+        %tmp.346 = lgetv %cond.26;
+        symbol [ cond %tmp.346 362 20 24 ];
+        symbol [ Weather %tmp.347 362 28 35 ];
+        %tmp.347 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLEAR %tmp.348 362 36 51 ];
+        %tmp.348 = getv %tmp.347 :CONDITION_CLEAR;
+        %tmp.349 = eq %tmp.346 %tmp.348;
+        bf %tmp.349 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_362_16_366_16_if_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_362_16_366_16_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_362_53_364_16_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 363 20 ]
+        symbol [ Rez %tmp.351 363 34 37 ];
+        %tmp.351 = getv ? :Rez;
+        symbol [ Drawables %tmp.352 363 38 47 ];
+        %tmp.352 = getv %tmp.351 :Drawables;
+        symbol [ ImgSunny %tmp.353 363 48 56 ];
+        %tmp.353 = getv %tmp.352 :ImgSunny;
+        lputv %weatherIcon.27 %tmp.353;
+        symbol [ weatherIcon %weatherIcon.27 363 20 31 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_362_53_364_16_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_362_16_366_16_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_362_16_366_16_if_else_false:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_364_23_366_16_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 365 20 ]
+        symbol [ Rez %tmp.355 365 34 37 ];
+        %tmp.355 = getv ? :Rez;
+        symbol [ Drawables %tmp.356 365 38 47 ];
+        %tmp.356 = getv %tmp.355 :Drawables;
+        symbol [ ImgPartlyCloudy %tmp.357 365 48 63 ];
+        %tmp.357 = getv %tmp.356 :ImgPartlyCloudy;
+        lputv %weatherIcon.27 %tmp.357;
+        symbol [ weatherIcon %weatherIcon.27 365 20 31 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_364_23_366_16_stop:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_362_16_366_16_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_361_57_367_12_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_360_12_399_12_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_360_12_399_12_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 367 19 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_367_19_399_12_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_367_23_369_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_367_23_368_39_begin:
+        %tmp.358 = lgetv %cond.26;
+        symbol [ cond %tmp.358 367 23 27 ];
+        symbol [ Weather %tmp.359 367 31 38 ];
+        %tmp.359 = getm $.Toybox.Weather;
+        symbol [ CONDITION_MOSTLY_CLOUDY %tmp.360 367 39 62 ];
+        %tmp.360 = getv %tmp.359 :CONDITION_MOSTLY_CLOUDY;
+        %tmp.361 = eq %tmp.358 %tmp.360;
+        bt %tmp.361 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_367_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_368_23_368_39_false:
+        %tmp.362 = lgetv %cond.26;
+        symbol [ cond %tmp.362 368 23 27 ];
+        symbol [ Weather %tmp.363 368 31 38 ];
+        %tmp.363 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLOUDY %tmp.364 368 39 55 ];
+        %tmp.364 = getv %tmp.363 :CONDITION_CLOUDY;
+        %tmp.365 = eq %tmp.362 %tmp.364;
+        push %tmp.365;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_368_23_368_39_end:
+        %tmp.366 = phi [%tmp.361 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_367_23_368_39_begin] [%tmp.365 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_368_23_368_39_false] [%tmp.366 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_368_23_368_39_end];
+        bt %tmp.366 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_367_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_369_23_369_39_false:
+        %tmp.367 = lgetv %cond.26;
+        symbol [ cond %tmp.367 369 23 27 ];
+        symbol [ Weather %tmp.368 369 31 38 ];
+        %tmp.368 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLOUDY_CHANCE_OF_RAIN %tmp.369 369 39 70 ];
+        %tmp.369 = getv %tmp.368 :CONDITION_CLOUDY_CHANCE_OF_RAIN;
+        %tmp.370 = eq %tmp.367 %tmp.369;
+        push %tmp.370;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_369_23_369_39_end:
+        %tmp.371 = phi [%tmp.366 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_367_23_369_39_begin] [%tmp.370 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_369_23_369_39_false] [%tmp.371 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_369_23_369_39_end];
+        bf %tmp.371 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_367_19_399_12_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_367_19_399_12_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_369_72_371_12_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 370 16 ]
+        symbol [ Rez %tmp.373 370 30 33 ];
+        %tmp.373 = getv ? :Rez;
+        symbol [ Drawables %tmp.374 370 34 43 ];
+        %tmp.374 = getv %tmp.373 :Drawables;
+        symbol [ ImgCloudy %tmp.375 370 44 53 ];
+        %tmp.375 = getv %tmp.374 :ImgCloudy;
+        lputv %weatherIcon.27 %tmp.375;
+        symbol [ weatherIcon %weatherIcon.27 370 16 27 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_369_72_371_12_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_367_19_399_12_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_367_19_399_12_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 371 19 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_19_399_12_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_23_375_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_23_374_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_23_373_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_23_372_39_begin:
+        %tmp.376 = lgetv %cond.26;
+        symbol [ cond %tmp.376 371 23 27 ];
+        symbol [ Weather %tmp.377 371 31 38 ];
+        %tmp.377 = getm $.Toybox.Weather;
+        symbol [ CONDITION_RAIN %tmp.378 371 39 53 ];
+        %tmp.378 = getv %tmp.377 :CONDITION_RAIN;
+        %tmp.379 = eq %tmp.376 %tmp.378;
+        bt %tmp.379 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_372_23_372_39_false:
+        %tmp.380 = lgetv %cond.26;
+        symbol [ cond %tmp.380 372 23 27 ];
+        symbol [ Weather %tmp.381 372 31 38 ];
+        %tmp.381 = getm $.Toybox.Weather;
+        symbol [ CONDITION_LIGHT_RAIN %tmp.382 372 39 59 ];
+        %tmp.382 = getv %tmp.381 :CONDITION_LIGHT_RAIN;
+        %tmp.383 = eq %tmp.380 %tmp.382;
+        push %tmp.383;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_372_23_372_39_end:
+        %tmp.384 = phi [%tmp.379 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_23_372_39_begin] [%tmp.383 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_372_23_372_39_false] [%tmp.384 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_372_23_372_39_end];
+        bt %tmp.384 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_373_23_373_39_false:
+        %tmp.385 = lgetv %cond.26;
+        symbol [ cond %tmp.385 373 23 27 ];
+        symbol [ Weather %tmp.386 373 31 38 ];
+        %tmp.386 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HEAVY_RAIN %tmp.387 373 39 59 ];
+        %tmp.387 = getv %tmp.386 :CONDITION_HEAVY_RAIN;
+        %tmp.388 = eq %tmp.385 %tmp.387;
+        push %tmp.388;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_373_23_373_39_end:
+        %tmp.389 = phi [%tmp.384 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_23_373_39_begin] [%tmp.388 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_373_23_373_39_false] [%tmp.389 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_373_23_373_39_end];
+        bt %tmp.389 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_374_23_374_39_false:
+        %tmp.390 = lgetv %cond.26;
+        symbol [ cond %tmp.390 374 23 27 ];
+        symbol [ Weather %tmp.391 374 31 38 ];
+        %tmp.391 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SCATTERED_SHOWERS %tmp.392 374 39 66 ];
+        %tmp.392 = getv %tmp.391 :CONDITION_SCATTERED_SHOWERS;
+        %tmp.393 = eq %tmp.390 %tmp.392;
+        push %tmp.393;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_374_23_374_39_end:
+        %tmp.394 = phi [%tmp.389 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_23_374_39_begin] [%tmp.393 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_374_23_374_39_false] [%tmp.394 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_374_23_374_39_end];
+        bt %tmp.394 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_375_23_375_39_false:
+        %tmp.395 = lgetv %cond.26;
+        symbol [ cond %tmp.395 375 23 27 ];
+        symbol [ Weather %tmp.396 375 31 38 ];
+        %tmp.396 = getm $.Toybox.Weather;
+        symbol [ CONDITION_DRIZZLE %tmp.397 375 39 56 ];
+        %tmp.397 = getv %tmp.396 :CONDITION_DRIZZLE;
+        %tmp.398 = eq %tmp.395 %tmp.397;
+        push %tmp.398;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_375_23_375_39_end:
+        %tmp.399 = phi [%tmp.394 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_23_375_39_begin] [%tmp.398 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_375_23_375_39_false] [%tmp.399 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_375_23_375_39_end];
+        bf %tmp.399 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_19_399_12_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_19_399_12_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_375_58_377_12_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 376 16 ]
+        symbol [ Rez %tmp.401 376 30 33 ];
+        %tmp.401 = getv ? :Rez;
+        symbol [ Drawables %tmp.402 376 34 43 ];
+        %tmp.402 = getv %tmp.401 :Drawables;
+        symbol [ ImgRainy %tmp.403 376 44 52 ];
+        %tmp.403 = getv %tmp.402 :ImgRainy;
+        lputv %weatherIcon.27 %tmp.403;
+        symbol [ weatherIcon %weatherIcon.27 376 16 27 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_375_58_377_12_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_19_399_12_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_19_399_12_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 377 19 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_19_399_12_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_23_383_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_23_382_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_23_381_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_23_380_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_23_379_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_23_378_39_begin:
+        %tmp.404 = lgetv %cond.26;
+        symbol [ cond %tmp.404 377 23 27 ];
+        symbol [ Weather %tmp.405 377 31 38 ];
+        %tmp.405 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SNOW %tmp.406 377 39 53 ];
+        %tmp.406 = getv %tmp.405 :CONDITION_SNOW;
+        %tmp.407 = eq %tmp.404 %tmp.406;
+        bt %tmp.407 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_378_23_378_39_false:
+        %tmp.408 = lgetv %cond.26;
+        symbol [ cond %tmp.408 378 23 27 ];
+        symbol [ Weather %tmp.409 378 31 38 ];
+        %tmp.409 = getm $.Toybox.Weather;
+        symbol [ CONDITION_LIGHT_SNOW %tmp.410 378 39 59 ];
+        %tmp.410 = getv %tmp.409 :CONDITION_LIGHT_SNOW;
+        %tmp.411 = eq %tmp.408 %tmp.410;
+        push %tmp.411;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_378_23_378_39_end:
+        %tmp.412 = phi [%tmp.407 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_23_378_39_begin] [%tmp.411 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_378_23_378_39_false] [%tmp.412 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_378_23_378_39_end];
+        bt %tmp.412 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_379_23_379_39_false:
+        %tmp.413 = lgetv %cond.26;
+        symbol [ cond %tmp.413 379 23 27 ];
+        symbol [ Weather %tmp.414 379 31 38 ];
+        %tmp.414 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HEAVY_SNOW %tmp.415 379 39 59 ];
+        %tmp.415 = getv %tmp.414 :CONDITION_HEAVY_SNOW;
+        %tmp.416 = eq %tmp.413 %tmp.415;
+        push %tmp.416;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_379_23_379_39_end:
+        %tmp.417 = phi [%tmp.412 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_23_379_39_begin] [%tmp.416 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_379_23_379_39_false] [%tmp.417 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_379_23_379_39_end];
+        bt %tmp.417 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_380_23_380_39_false:
+        %tmp.418 = lgetv %cond.26;
+        symbol [ cond %tmp.418 380 23 27 ];
+        symbol [ Weather %tmp.419 380 31 38 ];
+        %tmp.419 = getm $.Toybox.Weather;
+        symbol [ CONDITION_WINTRY_MIX %tmp.420 380 39 59 ];
+        %tmp.420 = getv %tmp.419 :CONDITION_WINTRY_MIX;
+        %tmp.421 = eq %tmp.418 %tmp.420;
+        push %tmp.421;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_380_23_380_39_end:
+        %tmp.422 = phi [%tmp.417 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_23_380_39_begin] [%tmp.421 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_380_23_380_39_false] [%tmp.422 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_380_23_380_39_end];
+        bt %tmp.422 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_381_23_381_39_false:
+        %tmp.423 = lgetv %cond.26;
+        symbol [ cond %tmp.423 381 23 27 ];
+        symbol [ Weather %tmp.424 381 31 38 ];
+        %tmp.424 = getm $.Toybox.Weather;
+        symbol [ CONDITION_RAIN_SNOW %tmp.425 381 39 58 ];
+        %tmp.425 = getv %tmp.424 :CONDITION_RAIN_SNOW;
+        %tmp.426 = eq %tmp.423 %tmp.425;
+        push %tmp.426;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_381_23_381_39_end:
+        %tmp.427 = phi [%tmp.422 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_23_381_39_begin] [%tmp.426 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_381_23_381_39_false] [%tmp.427 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_381_23_381_39_end];
+        bt %tmp.427 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_382_23_382_39_false:
+        %tmp.428 = lgetv %cond.26;
+        symbol [ cond %tmp.428 382 23 27 ];
+        symbol [ Weather %tmp.429 382 31 38 ];
+        %tmp.429 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_OF_RAIN_SNOW %tmp.430 382 39 68 ];
+        %tmp.430 = getv %tmp.429 :CONDITION_CHANCE_OF_RAIN_SNOW;
+        %tmp.431 = eq %tmp.428 %tmp.430;
+        push %tmp.431;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_382_23_382_39_end:
+        %tmp.432 = phi [%tmp.427 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_23_382_39_begin] [%tmp.431 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_382_23_382_39_false] [%tmp.432 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_382_23_382_39_end];
+        bt %tmp.432 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_383_23_383_39_false:
+        %tmp.433 = lgetv %cond.26;
+        symbol [ cond %tmp.433 383 23 27 ];
+        symbol [ Weather %tmp.434 383 31 38 ];
+        %tmp.434 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_OF_SNOW %tmp.435 383 39 63 ];
+        %tmp.435 = getv %tmp.434 :CONDITION_CHANCE_OF_SNOW;
+        %tmp.436 = eq %tmp.433 %tmp.435;
+        push %tmp.436;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_383_23_383_39_end:
+        %tmp.437 = phi [%tmp.432 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_23_383_39_begin] [%tmp.436 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_383_23_383_39_false] [%tmp.437 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_383_23_383_39_end];
+        bf %tmp.437 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_19_399_12_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_19_399_12_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_383_65_385_12_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 384 16 ]
+        symbol [ Rez %tmp.439 384 30 33 ];
+        %tmp.439 = getv ? :Rez;
+        symbol [ Drawables %tmp.440 384 34 43 ];
+        %tmp.440 = getv %tmp.439 :Drawables;
+        symbol [ ImgSnowy %tmp.441 384 44 52 ];
+        %tmp.441 = getv %tmp.440 :ImgSnowy;
+        lputv %weatherIcon.27 %tmp.441;
+        symbol [ weatherIcon %weatherIcon.27 384 16 27 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_383_65_385_12_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_19_399_12_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_19_399_12_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 385 19 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_385_19_399_12_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_385_23_387_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_385_23_386_39_begin:
+        %tmp.442 = lgetv %cond.26;
+        symbol [ cond %tmp.442 385 23 27 ];
+        symbol [ Weather %tmp.443 385 31 38 ];
+        %tmp.443 = getm $.Toybox.Weather;
+        symbol [ CONDITION_THUNDERSTORMS %tmp.444 385 39 62 ];
+        %tmp.444 = getv %tmp.443 :CONDITION_THUNDERSTORMS;
+        %tmp.445 = eq %tmp.442 %tmp.444;
+        bt %tmp.445 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_385_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_386_23_386_39_false:
+        %tmp.446 = lgetv %cond.26;
+        symbol [ cond %tmp.446 386 23 27 ];
+        symbol [ Weather %tmp.447 386 31 38 ];
+        %tmp.447 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SCATTERED_THUNDERSTORMS %tmp.448 386 39 72 ];
+        %tmp.448 = getv %tmp.447 :CONDITION_SCATTERED_THUNDERSTORMS;
+        %tmp.449 = eq %tmp.446 %tmp.448;
+        push %tmp.449;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_386_23_386_39_end:
+        %tmp.450 = phi [%tmp.445 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_385_23_386_39_begin] [%tmp.449 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_386_23_386_39_false] [%tmp.450 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_386_23_386_39_end];
+        bt %tmp.450 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_385_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_387_23_387_39_false:
+        %tmp.451 = lgetv %cond.26;
+        symbol [ cond %tmp.451 387 23 27 ];
+        symbol [ Weather %tmp.452 387 31 38 ];
+        %tmp.452 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_OF_THUNDERSTORMS %tmp.453 387 39 72 ];
+        %tmp.453 = getv %tmp.452 :CONDITION_CHANCE_OF_THUNDERSTORMS;
+        %tmp.454 = eq %tmp.451 %tmp.453;
+        push %tmp.454;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_387_23_387_39_end:
+        %tmp.455 = phi [%tmp.450 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_385_23_387_39_begin] [%tmp.454 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_387_23_387_39_false] [%tmp.455 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_387_23_387_39_end];
+        bf %tmp.455 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_385_19_399_12_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_385_19_399_12_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_387_74_389_12_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 388 16 ]
+        symbol [ Rez %tmp.457 388 30 33 ];
+        %tmp.457 = getv ? :Rez;
+        symbol [ Drawables %tmp.458 388 34 43 ];
+        %tmp.458 = getv %tmp.457 :Drawables;
+        symbol [ ImgStormy %tmp.459 388 44 53 ];
+        %tmp.459 = getv %tmp.458 :ImgStormy;
+        lputv %weatherIcon.27 %tmp.459;
+        symbol [ weatherIcon %weatherIcon.27 388 16 27 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_387_74_389_12_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_385_19_399_12_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_385_19_399_12_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 389 19 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_389_19_399_12_if_stmt:
+        %tmp.460 = lgetv %cond.26;
+        symbol [ cond %tmp.460 389 23 27 ];
+        symbol [ Weather %tmp.461 389 31 38 ];
+        %tmp.461 = getm $.Toybox.Weather;
+        symbol [ CONDITION_WINDY %tmp.462 389 39 54 ];
+        %tmp.462 = getv %tmp.461 :CONDITION_WINDY;
+        %tmp.463 = eq %tmp.460 %tmp.462;
+        bf %tmp.463 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_389_19_399_12_if_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_389_19_399_12_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_389_56_391_12_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 390 16 ]
+        symbol [ Rez %tmp.465 390 30 33 ];
+        %tmp.465 = getv ? :Rez;
+        symbol [ Drawables %tmp.466 390 34 43 ];
+        %tmp.466 = getv %tmp.465 :Drawables;
+        symbol [ ImgWindy %tmp.467 390 44 52 ];
+        %tmp.467 = getv %tmp.466 :ImgWindy;
+        lputv %weatherIcon.27 %tmp.467;
+        symbol [ weatherIcon %weatherIcon.27 390 16 27 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_389_56_391_12_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_389_19_399_12_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_389_19_399_12_if_false:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 391 19 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_19_399_12_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_23_395_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_23_394_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_23_393_39_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_23_392_39_begin:
+        %tmp.468 = lgetv %cond.26;
+        symbol [ cond %tmp.468 391 23 27 ];
+        symbol [ Weather %tmp.469 391 31 38 ];
+        %tmp.469 = getm $.Toybox.Weather;
+        symbol [ CONDITION_FOG %tmp.470 391 39 52 ];
+        %tmp.470 = getv %tmp.469 :CONDITION_FOG;
+        %tmp.471 = eq %tmp.468 %tmp.470;
+        bt %tmp.471 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_392_23_392_39_false:
+        %tmp.472 = lgetv %cond.26;
+        symbol [ cond %tmp.472 392 23 27 ];
+        symbol [ Weather %tmp.473 392 31 38 ];
+        %tmp.473 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HAZY %tmp.474 392 39 53 ];
+        %tmp.474 = getv %tmp.473 :CONDITION_HAZY;
+        %tmp.475 = eq %tmp.472 %tmp.474;
+        push %tmp.475;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_392_23_392_39_end:
+        %tmp.476 = phi [%tmp.471 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_23_392_39_begin] [%tmp.475 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_392_23_392_39_false] [%tmp.476 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_392_23_392_39_end];
+        bt %tmp.476 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_393_23_393_39_false:
+        %tmp.477 = lgetv %cond.26;
+        symbol [ cond %tmp.477 393 23 27 ];
+        symbol [ Weather %tmp.478 393 31 38 ];
+        %tmp.478 = getm $.Toybox.Weather;
+        symbol [ CONDITION_DUST %tmp.479 393 39 53 ];
+        %tmp.479 = getv %tmp.478 :CONDITION_DUST;
+        %tmp.480 = eq %tmp.477 %tmp.479;
+        push %tmp.480;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_393_23_393_39_end:
+        %tmp.481 = phi [%tmp.476 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_23_393_39_begin] [%tmp.480 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_393_23_393_39_false] [%tmp.481 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_393_23_393_39_end];
+        bt %tmp.481 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_394_23_394_39_false:
+        %tmp.482 = lgetv %cond.26;
+        symbol [ cond %tmp.482 394 23 27 ];
+        symbol [ Weather %tmp.483 394 31 38 ];
+        %tmp.483 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SMOKE %tmp.484 394 39 54 ];
+        %tmp.484 = getv %tmp.483 :CONDITION_SMOKE;
+        %tmp.485 = eq %tmp.482 %tmp.484;
+        push %tmp.485;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_394_23_394_39_end:
+        %tmp.486 = phi [%tmp.481 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_23_394_39_begin] [%tmp.485 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_394_23_394_39_false] [%tmp.486 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_394_23_394_39_end];
+        bt %tmp.486 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_19_399_12_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_395_23_395_39_false:
+        %tmp.487 = lgetv %cond.26;
+        symbol [ cond %tmp.487 395 23 27 ];
+        symbol [ Weather %tmp.488 395 31 38 ];
+        %tmp.488 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SANDSTORM %tmp.489 395 39 58 ];
+        %tmp.489 = getv %tmp.488 :CONDITION_SANDSTORM;
+        %tmp.490 = eq %tmp.487 %tmp.489;
+        push %tmp.490;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_395_23_395_39_end:
+        %tmp.491 = phi [%tmp.486 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_23_395_39_begin] [%tmp.490 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_395_23_395_39_false] [%tmp.491 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_395_23_395_39_end];
+        bf %tmp.491 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_19_399_12_if_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_19_399_12_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_395_60_397_12_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 396 16 ]
+        symbol [ Rez %tmp.493 396 30 33 ];
+        %tmp.493 = getv ? :Rez;
+        symbol [ Drawables %tmp.494 396 34 43 ];
+        %tmp.494 = getv %tmp.493 :Drawables;
+        symbol [ ImgCloudy %tmp.495 396 44 53 ];
+        %tmp.495 = getv %tmp.494 :ImgCloudy;
+        lputv %weatherIcon.27 %tmp.495;
+        symbol [ weatherIcon %weatherIcon.27 396 16 27 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_395_60_397_12_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_19_399_12_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_19_399_12_if_else_false:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_397_19_399_12_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 398 16 ]
+        symbol [ Rez %tmp.497 398 30 33 ];
+        %tmp.497 = getv ? :Rez;
+        symbol [ Drawables %tmp.498 398 34 43 ];
+        %tmp.498 = getv %tmp.497 :Drawables;
+        symbol [ ImgPartlyCloudy %tmp.499 398 44 59 ];
+        %tmp.499 = getv %tmp.498 :ImgPartlyCloudy;
+        lputv %weatherIcon.27 %tmp.499;
+        symbol [ weatherIcon %weatherIcon.27 398 16 27 ];
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_397_19_399_12_stop:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_391_19_399_12_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_389_19_399_12_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_385_19_399_12_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_377_19_399_12_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_371_19_399_12_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_367_19_399_12_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_360_12_399_12_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 401 12 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_43_412_8_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_43_412_8_stop" ]
+        %icon.28 = local;
+        symbol [ icon %icon.28 401 16 20 ];
+        symbol [ WatchUi %tmp.502 401 27 34 ];
+        %tmp.502 = getm $.Toybox.WatchUi;
+        symbol [ Bitmap %tmp.503 401 35 41 ];
+        %tmp.503 = getv function ? %tmp.502 :Bitmap;
+        %tmp.504 = newd 3;
+        %tmp.506 = const :rezId;
+        symbol [ rezId %tmp.506 402 17 22 const ];
+        %tmp.507 = lgetv %weatherIcon.27;
+        symbol [ weatherIcon %tmp.507 402 26 37 ];
+        %tmp.508 = dup %tmp.504;
+        %tmp.509 = aputv %tmp.508 %tmp.506 %tmp.507;
+        %tmp.511 = const :locX;
+        symbol [ locX %tmp.511 403 17 21 const ];
+        %tmp.512 = lgetv %weatherX.24;
+        symbol [ weatherX %tmp.512 403 26 34 ];
+        %tmp.513 = 20;
+        %tmp.514 = sub %tmp.512 %tmp.513;
+        %tmp.515 = dup %tmp.509;
+        %tmp.516 = aputv %tmp.515 %tmp.511 %tmp.514;
+        %tmp.518 = const :locY;
+        symbol [ locY %tmp.518 404 17 21 const ];
+        %tmp.519 = lgetv %weatherY.25;
+        symbol [ weatherY %tmp.519 404 26 34 ];
+        %tmp.520 = dup %tmp.516;
+        %tmp.521 = aputv %tmp.520 %tmp.518 %tmp.519;
+        %tmp.500 = newc %tmp.503 (%tmp.521);
+        lputv %icon.28 %tmp.500;
+        symbol [ icon %icon.28 401 16 20 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 406 12 ]
+        %tmp.522 = lgetv %icon.28;
+        symbol [ icon %tmp.522 406 12 16 ];
+        symbol [ draw %tmp.523 406 17 21 ];
+        %tmp.523 = getv function %tmp.522 :draw;
+        %tmp.524 = lgetv %dc;
+        symbol [ dc %tmp.524 406 22 24 ];
+        invoke %tmp.522 %tmp.523(%tmp.524);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 408 12 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_43_412_8_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_43_412_8_stop" ]
+        %tempStr.29 = local;
+        symbol [ tempStr %tempStr.29 408 16 23 ];
+        symbol [ _weatherMgr %tmp.526 408 26 37 ];
+        %tmp.526 = getv ? :_weatherMgr;
+        symbol [ getTemperature %tmp.527 408 38 52 ];
+        %tmp.527 = getv function %tmp.526 :getTemperature;
+        %tmp.528 = invoke %tmp.526 %tmp.527();
+        symbol [ format %tmp.529 408 55 61 ];
+        %tmp.529 = getv function %tmp.528 :format;
+        %tmp.530 = "%d";
+        %tmp.531 = invoke %tmp.528 %tmp.529(%tmp.530);
+        symbol [ _weatherMgr %tmp.533 408 70 81 ];
+        %tmp.533 = getv ? :_weatherMgr;
+        symbol [ getTemperatureUnit %tmp.534 408 82 100 ];
+        %tmp.534 = getv function %tmp.533 :getTemperatureUnit;
+        %tmp.535 = invoke %tmp.533 %tmp.534();
+        %tmp.536 = add %tmp.531 %tmp.535;
+        lputv %tempStr.29 %tmp.536;
+        symbol [ tempStr %tempStr.29 408 16 23 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 410 12 ]
+        %tmp.537 = lgetv %dc;
+        symbol [ dc %tmp.537 410 12 14 ];
+        symbol [ setColor %tmp.538 410 15 23 ];
+        %tmp.538 = getv function %tmp.537 :setColor;
+        %tmp.539 = self;
+        symbol [ getTimeColor %tmp.540 410 24 36 ];
+        %tmp.540 = getv function %tmp.539 :getTimeColor;
+        %tmp.541 = lgetv %hour.2;
+        symbol [ hour %tmp.541 410 37 41 ];
+        %tmp.542 = invoke %tmp.539 %tmp.540(%tmp.541);
+        symbol [ Graphics %tmp.543 410 44 52 ];
+        %tmp.543 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.544 410 53 70 ];
+        %tmp.544 = getv %tmp.543 :COLOR_TRANSPARENT;
+        invoke %tmp.537 %tmp.538(%tmp.542, %tmp.544);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 411 12 ]
+        %tmp.545 = lgetv %dc;
+        symbol [ dc %tmp.545 411 12 14 ];
+        symbol [ drawText %tmp.546 411 15 23 ];
+        %tmp.546 = getv function %tmp.545 :drawText;
+        %tmp.547 = lgetv %weatherX.24;
+        symbol [ weatherX %tmp.547 411 24 32 ];
+        %tmp.548 = lgetv %weatherY.25;
+        symbol [ weatherY %tmp.548 411 34 42 ];
+        %tmp.549 = 44;
+        %tmp.550 = add %tmp.548 %tmp.549;
+        symbol [ Graphics %tmp.551 411 49 57 ];
+        %tmp.551 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.552 411 58 68 ];
+        %tmp.552 = getv %tmp.551 :FONT_XTINY;
+        %tmp.553 = lgetv %tempStr.29;
+        symbol [ tempStr %tmp.553 411 70 77 ];
+        symbol [ Graphics %tmp.554 411 79 87 ];
+        %tmp.554 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.555 411 88 107 ];
+        %tmp.555 = getv %tmp.554 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.545 %tmp.546(%tmp.547, %tmp.550, %tmp.552, %tmp.553, %tmp.555);
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_43_412_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_8_415_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_8_415_8_if_else_false:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_412_15_415_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 413 12 ]
+        %tmp.556 = lgetv %dc;
+        symbol [ dc %tmp.556 413 12 14 ];
+        symbol [ setColor %tmp.557 413 15 23 ];
+        %tmp.557 = getv function %tmp.556 :setColor;
+        %tmp.558 = self;
+        symbol [ getDateColor %tmp.559 413 24 36 ];
+        %tmp.559 = getv function %tmp.558 :getDateColor;
+        %tmp.560 = lgetv %hour.2;
+        symbol [ hour %tmp.560 413 37 41 ];
+        %tmp.561 = invoke %tmp.558 %tmp.559(%tmp.560);
+        symbol [ Graphics %tmp.562 413 44 52 ];
+        %tmp.562 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.563 413 53 70 ];
+        %tmp.563 = getv %tmp.562 :COLOR_TRANSPARENT;
+        invoke %tmp.556 %tmp.557(%tmp.561, %tmp.563);
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc" 414 12 ]
+        %tmp.564 = lgetv %dc;
+        symbol [ dc %tmp.564 414 12 14 ];
+        symbol [ drawText %tmp.565 414 15 23 ];
+        %tmp.565 = getv function %tmp.564 :drawText;
+        %tmp.566 = lgetv %weatherX.24;
+        symbol [ weatherX %tmp.566 414 24 32 ];
+        %tmp.567 = lgetv %weatherY.25;
+        symbol [ weatherY %tmp.567 414 34 42 ];
+        %tmp.568 = 10;
+        %tmp.569 = add %tmp.567 %tmp.568;
+        symbol [ Graphics %tmp.570 414 49 57 ];
+        %tmp.570 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.571 414 58 68 ];
+        %tmp.571 = getv %tmp.570 :FONT_XTINY;
+        %tmp.572 = "--";
+        symbol [ Graphics %tmp.573 414 76 84 ];
+        %tmp.573 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.574 414 85 104 ];
+        %tmp.574 = getv %tmp.573 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.564 %tmp.565(%tmp.566, %tmp.569, %tmp.571, %tmp.572, %tmp.574);
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_412_15_415_8_stop:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_356_8_415_8_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_Watch_Face_ProjectView_mc_266_40_416_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 418; @symbol_functiondef = [onHide,418,13,19]; ]
+    function onHide() as Void {
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 421; @symbol_functiondef = [onExitSleep,421,13,24]; ]
+    function onExitSleep() as Void {
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 424; @symbol_functiondef = [onEnterSleep,424,13,25]; ]
+    function onEnterSleep() as Void {
+    }
+}
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\Watch_Face_ProjectView.mc"; @line = 1; ]
+<init> {
+}
