@@ -1,0 +1,1246 @@
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Weather,5,14,21]; ]
+import Toybox.Weather;
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Lang,6,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [System,7,14,20]; ]
+import Toybox.System;
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 9; @symbol_classdef = [WeatherManager,9,6,20]; ]
+class WeatherManager {
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 9; ]
+    <init> {
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 53 16 ]
+        symbol [ Weather %tmp.1 53 47 54 ];
+        %tmp.1 = getm $.Toybox.Weather;
+        symbol [ CONDITION_UNKNOWN %tmp.2 53 55 72 ];
+        %tmp.2 = getv %tmp.1 :CONDITION_UNKNOWN;
+        putv self :_conditionCode %tmp.2;
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 9; ]
+    static
+    <init> {
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 15 23 ]
+        %tmp.3 = newd 30;
+        symbol [ Weather %tmp.4 16 8 15 ];
+        %tmp.4 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLEAR %tmp.5 16 16 31 ];
+        %tmp.5 = getv %tmp.4 :CONDITION_CLEAR;
+        %tmp.6 = "Clear";
+        %tmp.7 = dup %tmp.3;
+        %tmp.8 = aputv %tmp.7 %tmp.5 %tmp.6;
+        symbol [ Weather %tmp.9 17 8 15 ];
+        %tmp.9 = getm $.Toybox.Weather;
+        symbol [ CONDITION_PARTLY_CLOUDY %tmp.10 17 16 39 ];
+        %tmp.10 = getv %tmp.9 :CONDITION_PARTLY_CLOUDY;
+        %tmp.11 = "Partly Cloudy";
+        %tmp.12 = dup %tmp.8;
+        %tmp.13 = aputv %tmp.12 %tmp.10 %tmp.11;
+        symbol [ Weather %tmp.14 18 8 15 ];
+        %tmp.14 = getm $.Toybox.Weather;
+        symbol [ CONDITION_MOSTLY_CLOUDY %tmp.15 18 16 39 ];
+        %tmp.15 = getv %tmp.14 :CONDITION_MOSTLY_CLOUDY;
+        %tmp.16 = "Mostly Cloudy";
+        %tmp.17 = dup %tmp.13;
+        %tmp.18 = aputv %tmp.17 %tmp.15 %tmp.16;
+        symbol [ Weather %tmp.19 19 8 15 ];
+        %tmp.19 = getm $.Toybox.Weather;
+        symbol [ CONDITION_RAIN %tmp.20 19 16 30 ];
+        %tmp.20 = getv %tmp.19 :CONDITION_RAIN;
+        %tmp.21 = "Rain";
+        %tmp.22 = dup %tmp.18;
+        %tmp.23 = aputv %tmp.22 %tmp.20 %tmp.21;
+        symbol [ Weather %tmp.24 20 8 15 ];
+        %tmp.24 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SNOW %tmp.25 20 16 30 ];
+        %tmp.25 = getv %tmp.24 :CONDITION_SNOW;
+        %tmp.26 = "Snow";
+        %tmp.27 = dup %tmp.23;
+        %tmp.28 = aputv %tmp.27 %tmp.25 %tmp.26;
+        symbol [ Weather %tmp.29 21 8 15 ];
+        %tmp.29 = getm $.Toybox.Weather;
+        symbol [ CONDITION_WINDY %tmp.30 21 16 31 ];
+        %tmp.30 = getv %tmp.29 :CONDITION_WINDY;
+        %tmp.31 = "Windy";
+        %tmp.32 = dup %tmp.28;
+        %tmp.33 = aputv %tmp.32 %tmp.30 %tmp.31;
+        symbol [ Weather %tmp.34 22 8 15 ];
+        %tmp.34 = getm $.Toybox.Weather;
+        symbol [ CONDITION_THUNDERSTORMS %tmp.35 22 16 39 ];
+        %tmp.35 = getv %tmp.34 :CONDITION_THUNDERSTORMS;
+        %tmp.36 = "Thunderstorms";
+        %tmp.37 = dup %tmp.33;
+        %tmp.38 = aputv %tmp.37 %tmp.35 %tmp.36;
+        symbol [ Weather %tmp.39 23 8 15 ];
+        %tmp.39 = getm $.Toybox.Weather;
+        symbol [ CONDITION_WINTRY_MIX %tmp.40 23 16 36 ];
+        %tmp.40 = getv %tmp.39 :CONDITION_WINTRY_MIX;
+        %tmp.41 = "Wintry Mix";
+        %tmp.42 = dup %tmp.38;
+        %tmp.43 = aputv %tmp.42 %tmp.40 %tmp.41;
+        symbol [ Weather %tmp.44 24 8 15 ];
+        %tmp.44 = getm $.Toybox.Weather;
+        symbol [ CONDITION_FOG %tmp.45 24 16 29 ];
+        %tmp.45 = getv %tmp.44 :CONDITION_FOG;
+        %tmp.46 = "Fog";
+        %tmp.47 = dup %tmp.43;
+        %tmp.48 = aputv %tmp.47 %tmp.45 %tmp.46;
+        symbol [ Weather %tmp.49 25 8 15 ];
+        %tmp.49 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HAZY %tmp.50 25 16 30 ];
+        %tmp.50 = getv %tmp.49 :CONDITION_HAZY;
+        %tmp.51 = "Hazy";
+        %tmp.52 = dup %tmp.48;
+        %tmp.53 = aputv %tmp.52 %tmp.50 %tmp.51;
+        symbol [ Weather %tmp.54 26 8 15 ];
+        %tmp.54 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HAIL %tmp.55 26 16 30 ];
+        %tmp.55 = getv %tmp.54 :CONDITION_HAIL;
+        %tmp.56 = "Hail";
+        %tmp.57 = dup %tmp.53;
+        %tmp.58 = aputv %tmp.57 %tmp.55 %tmp.56;
+        symbol [ Weather %tmp.59 27 8 15 ];
+        %tmp.59 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SCATTERED_SHOWERS %tmp.60 27 16 43 ];
+        %tmp.60 = getv %tmp.59 :CONDITION_SCATTERED_SHOWERS;
+        %tmp.61 = "Showers";
+        %tmp.62 = dup %tmp.58;
+        %tmp.63 = aputv %tmp.62 %tmp.60 %tmp.61;
+        symbol [ Weather %tmp.64 28 8 15 ];
+        %tmp.64 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SCATTERED_THUNDERSTORMS %tmp.65 28 16 49 ];
+        %tmp.65 = getv %tmp.64 :CONDITION_SCATTERED_THUNDERSTORMS;
+        %tmp.66 = "T-Storms";
+        %tmp.67 = dup %tmp.63;
+        %tmp.68 = aputv %tmp.67 %tmp.65 %tmp.66;
+        symbol [ Weather %tmp.69 29 8 15 ];
+        %tmp.69 = getm $.Toybox.Weather;
+        symbol [ CONDITION_UNKNOWN %tmp.70 29 16 33 ];
+        %tmp.70 = getv %tmp.69 :CONDITION_UNKNOWN;
+        %tmp.71 = "Unknown";
+        %tmp.72 = dup %tmp.68;
+        %tmp.73 = aputv %tmp.72 %tmp.70 %tmp.71;
+        symbol [ Weather %tmp.74 30 8 15 ];
+        %tmp.74 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLOUDY %tmp.75 30 16 32 ];
+        %tmp.75 = getv %tmp.74 :CONDITION_CLOUDY;
+        %tmp.76 = "Cloudy";
+        %tmp.77 = dup %tmp.73;
+        %tmp.78 = aputv %tmp.77 %tmp.75 %tmp.76;
+        symbol [ Weather %tmp.79 31 8 15 ];
+        %tmp.79 = getm $.Toybox.Weather;
+        symbol [ CONDITION_DRIZZLE %tmp.80 31 16 33 ];
+        %tmp.80 = getv %tmp.79 :CONDITION_DRIZZLE;
+        %tmp.81 = "Drizzle";
+        %tmp.82 = dup %tmp.78;
+        %tmp.83 = aputv %tmp.82 %tmp.80 %tmp.81;
+        symbol [ Weather %tmp.84 32 8 15 ];
+        %tmp.84 = getm $.Toybox.Weather;
+        symbol [ CONDITION_TORNADO %tmp.85 32 16 33 ];
+        %tmp.85 = getv %tmp.84 :CONDITION_TORNADO;
+        %tmp.86 = "Tornado";
+        %tmp.87 = dup %tmp.83;
+        %tmp.88 = aputv %tmp.87 %tmp.85 %tmp.86;
+        symbol [ Weather %tmp.89 33 8 15 ];
+        %tmp.89 = getm $.Toybox.Weather;
+        symbol [ CONDITION_FREEZING_RAIN %tmp.90 33 16 39 ];
+        %tmp.90 = getv %tmp.89 :CONDITION_FREEZING_RAIN;
+        %tmp.91 = "Freezing Rain";
+        %tmp.92 = dup %tmp.88;
+        %tmp.93 = aputv %tmp.92 %tmp.90 %tmp.91;
+        symbol [ Weather %tmp.94 34 8 15 ];
+        %tmp.94 = getm $.Toybox.Weather;
+        symbol [ CONDITION_DUST %tmp.95 34 16 30 ];
+        %tmp.95 = getv %tmp.94 :CONDITION_DUST;
+        %tmp.96 = "Dusty";
+        %tmp.97 = dup %tmp.93;
+        %tmp.98 = aputv %tmp.97 %tmp.95 %tmp.96;
+        symbol [ Weather %tmp.99 35 8 15 ];
+        %tmp.99 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SANDSTORM %tmp.100 35 16 35 ];
+        %tmp.100 = getv %tmp.99 :CONDITION_SANDSTORM;
+        %tmp.101 = "Sandstorm";
+        %tmp.102 = dup %tmp.98;
+        %tmp.103 = aputv %tmp.102 %tmp.100 %tmp.101;
+        symbol [ Weather %tmp.104 36 8 15 ];
+        %tmp.104 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLOUDY_CHANCE_RAIN %tmp.105 36 16 44 ];
+        %tmp.105 = getv %tmp.104 :CONDITION_CLOUDY_CHANCE_RAIN;
+        %tmp.106 = "Chance Rain";
+        %tmp.107 = dup %tmp.103;
+        %tmp.108 = aputv %tmp.107 %tmp.105 %tmp.106;
+        symbol [ Weather %tmp.109 37 8 15 ];
+        %tmp.109 = getm $.Toybox.Weather;
+        symbol [ CONDITION_RAIN_SNOW %tmp.110 37 16 35 ];
+        %tmp.110 = getv %tmp.109 :CONDITION_RAIN_SNOW;
+        %tmp.111 = "Rain/Snow";
+        %tmp.112 = dup %tmp.108;
+        %tmp.113 = aputv %tmp.112 %tmp.110 %tmp.111;
+        symbol [ Weather %tmp.114 38 8 15 ];
+        %tmp.114 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_RAIN_SNOW %tmp.115 38 16 42 ];
+        %tmp.115 = getv %tmp.114 :CONDITION_CHANCE_RAIN_SNOW;
+        %tmp.116 = "Chance Rain/Snow";
+        %tmp.117 = dup %tmp.113;
+        %tmp.118 = aputv %tmp.117 %tmp.115 %tmp.116;
+        symbol [ Weather %tmp.119 39 8 15 ];
+        %tmp.119 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_SNOW %tmp.120 39 16 37 ];
+        %tmp.120 = getv %tmp.119 :CONDITION_CHANCE_SNOW;
+        %tmp.121 = "Chance Snow";
+        %tmp.122 = dup %tmp.118;
+        %tmp.123 = aputv %tmp.122 %tmp.120 %tmp.121;
+        symbol [ Weather %tmp.124 40 8 15 ];
+        %tmp.124 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CHANCE_THUNDERSTORMS %tmp.125 40 16 46 ];
+        %tmp.125 = getv %tmp.124 :CONDITION_CHANCE_THUNDERSTORMS;
+        %tmp.126 = "Chance T-Storm";
+        %tmp.127 = dup %tmp.123;
+        %tmp.128 = aputv %tmp.127 %tmp.125 %tmp.126;
+        symbol [ Weather %tmp.129 41 8 15 ];
+        %tmp.129 = getm $.Toybox.Weather;
+        symbol [ CONDITION_LIGHT_RAIN %tmp.130 41 16 36 ];
+        %tmp.130 = getv %tmp.129 :CONDITION_LIGHT_RAIN;
+        %tmp.131 = "Light Rain";
+        %tmp.132 = dup %tmp.128;
+        %tmp.133 = aputv %tmp.132 %tmp.130 %tmp.131;
+        symbol [ Weather %tmp.134 42 8 15 ];
+        %tmp.134 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HEAVY_RAIN %tmp.135 42 16 36 ];
+        %tmp.135 = getv %tmp.134 :CONDITION_HEAVY_RAIN;
+        %tmp.136 = "Heavy Rain";
+        %tmp.137 = dup %tmp.133;
+        %tmp.138 = aputv %tmp.137 %tmp.135 %tmp.136;
+        symbol [ Weather %tmp.139 43 8 15 ];
+        %tmp.139 = getm $.Toybox.Weather;
+        symbol [ CONDITION_LIGHT_SNOW %tmp.140 43 16 36 ];
+        %tmp.140 = getv %tmp.139 :CONDITION_LIGHT_SNOW;
+        %tmp.141 = "Light Snow";
+        %tmp.142 = dup %tmp.138;
+        %tmp.143 = aputv %tmp.142 %tmp.140 %tmp.141;
+        symbol [ Weather %tmp.144 44 8 15 ];
+        %tmp.144 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HEAVY_SNOW %tmp.145 44 16 36 ];
+        %tmp.145 = getv %tmp.144 :CONDITION_HEAVY_SNOW;
+        %tmp.146 = "Heavy Snow";
+        %tmp.147 = dup %tmp.143;
+        %tmp.148 = aputv %tmp.147 %tmp.145 %tmp.146;
+        symbol [ Weather %tmp.149 45 8 15 ];
+        %tmp.149 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SMOKE %tmp.150 45 16 31 ];
+        %tmp.150 = getv %tmp.149 :CONDITION_SMOKE;
+        %tmp.151 = "Smoke";
+        %tmp.152 = dup %tmp.148;
+        %tmp.153 = aputv %tmp.152 %tmp.150 %tmp.151;
+        putv self :CONDITION_LABELS %tmp.153;
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 15; @position = 23; @symbol_vardef = [CONDITION_LABELS,15,23,39]; @symbol_type<0> = [Dictionary,15,43,53]; ]
+    private static
+    var CONDITION_LABELS as Dictionary;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 51; @position = 16; @symbol_vardef = [_tempCelsius,51,16,28]; @symbol_type<0> = [Number,51,37,43]; ]
+    private
+    var _tempCelsius as Number = 0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 52; @position = 16; @symbol_vardef = [_feelsLike,52,16,26]; @symbol_type<0> = [Number,52,37,43]; ]
+    private
+    var _feelsLike as Number = 0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 53; @position = 16; @symbol_vardef = [_conditionCode,53,16,30]; @symbol_type<0> = [Number,53,37,43]; ]
+    private
+    var _conditionCode as Number;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 54; @position = 16; @symbol_vardef = [_conditionLabel,54,16,31]; @symbol_type<0> = [String,54,37,43]; ]
+    private
+    var _conditionLabel as String = "Unknown";
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 55; @position = 16; @symbol_vardef = [_humidity,55,16,25]; @symbol_type<0> = [Number,55,37,43]; ]
+    private
+    var _humidity as Number = 0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 56; @position = 16; @symbol_vardef = [_windSpeed,56,16,26]; @symbol_type<0> = [Float,56,37,42]; ]
+    private
+    var _windSpeed as Float = 0.0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 57; @position = 16; @symbol_vardef = [_windDirection,57,16,30]; @symbol_type<0> = [Number,57,37,43]; ]
+    private
+    var _windDirection as Number = 0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 58; @position = 16; @symbol_vardef = [_precipitation,58,16,30]; @symbol_type<0> = [Float,58,37,42]; ]
+    private
+    var _precipitation as Float = 0.0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 59; @position = 16; @symbol_vardef = [_uvIndex,59,16,24]; @symbol_type<0> = [Number,59,37,43]; ]
+    private
+    var _uvIndex as Number = 0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 60; @position = 16; @symbol_vardef = [_isMetric,60,16,25]; @symbol_type<0> = [Boolean,60,37,44]; ]
+    private
+    var _isMetric as Boolean = true;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 61; @position = 16; @symbol_vardef = [_dataAvailable,61,16,30]; @symbol_type<0> = [Boolean,61,37,44]; ]
+    private
+    var _dataAvailable as Boolean = false;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 62; @position = 16; @symbol_vardef = [_lastUpdateEpoch,62,16,32]; @symbol_type<0> = [Number,62,37,43]; ]
+    private
+    var _lastUpdateEpoch as Number = 0;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 65; @position = 25; @symbol_constdef = [STALE_THRESHOLD_SEC,65,25,44]; @symbol_type<0> = [Number,65,48,54]; ]
+    private static
+    const STALE_THRESHOLD_SEC as Number = 1800;
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 71; @symbol_functiondef = [update,71,13,19]; ]
+    function update() as Void {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_71_30_102_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 73 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_71_30_102_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_71_30_102_4_stop" ]
+        %devSettings.1 = local;
+        symbol [ devSettings %devSettings.1 73 12 23 ];
+        symbol [ System %tmp.1 73 26 32 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.2 73 33 50 ];
+        %tmp.2 = getv function %tmp.1 :getDeviceSettings;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %devSettings.1 %tmp.3;
+        symbol [ devSettings %devSettings.1 73 12 23 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 74 8 ]
+        %tmp.4 = lgetv %devSettings.1;
+        symbol [ devSettings %tmp.4 74 21 32 ];
+        symbol [ temperatureUnits %tmp.5 74 33 49 ];
+        %tmp.5 = getv %tmp.4 :temperatureUnits;
+        symbol [ System %tmp.6 74 53 59 ];
+        %tmp.6 = getm $.Toybox.System;
+        symbol [ UNIT_METRIC %tmp.7 74 60 71 ];
+        %tmp.7 = getv %tmp.6 :UNIT_METRIC;
+        %tmp.8 = eq %tmp.5 %tmp.7;
+        symbol [ _isMetric ? 74 8 17 ];
+        putv self :_isMetric %tmp.8;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 76 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_71_30_102_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_71_30_102_4_stop" ]
+        %conditions.2 = local;
+        symbol [ conditions %conditions.2 76 12 22 ];
+        symbol [ Weather %tmp.9 76 25 32 ];
+        %tmp.9 = getm $.Toybox.Weather;
+        symbol [ getCurrentConditions %tmp.10 76 33 53 ];
+        %tmp.10 = getv function %tmp.9 :getCurrentConditions;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %conditions.2 %tmp.11;
+        symbol [ conditions %conditions.2 76 12 22 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 78 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_78_8_81_8_if_stmt:
+        %tmp.12 = lgetv %conditions.2;
+        symbol [ conditions %tmp.12 78 12 22 ];
+        %tmp.13 = null;
+        %tmp.14 = eq %tmp.12 %tmp.13;
+        bf %tmp.14 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_78_8_81_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_78_8_81_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_78_32_81_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 79 12 ]
+        %tmp.15 = false;
+        symbol [ _dataAvailable ? 79 12 26 ];
+        putv self :_dataAvailable %tmp.15;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 80 12 ]
+        ret ?;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_78_32_81_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_78_8_81_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_78_8_81_8_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 83 8 ]
+        %tmp.16 = true;
+        symbol [ _dataAvailable ? 83 8 22 ];
+        putv self :_dataAvailable %tmp.16;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 86 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_86_23_86_83_begin:
+        %tmp.17 = lgetv %conditions.2;
+        symbol [ conditions %tmp.17 86 24 34 ];
+        symbol [ temperature %tmp.18 86 35 46 ];
+        %tmp.18 = getv %tmp.17 :temperature;
+        %tmp.19 = null;
+        %tmp.20 = ne %tmp.18 %tmp.19;
+        bf %tmp.20 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_86_23_86_83_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_86_23_86_83_true:
+        %tmp.21 = lgetv %conditions.2;
+        symbol [ conditions %tmp.21 86 58 68 ];
+        symbol [ temperature %tmp.22 86 69 80 ];
+        %tmp.22 = getv %tmp.21 :temperature;
+        push %tmp.22;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_86_23_86_83_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_86_23_86_83_else_false:
+        %tmp.23 = 0;
+        push %tmp.23;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_86_23_86_83_end:
+        %tmp.24 = phi [%tmp.20 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_86_23_86_83_begin] [%tmp.22 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_86_23_86_83_true] [%tmp.23 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_86_23_86_83_else_false] [%tmp.24 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_86_23_86_83_end];
+        symbol [ _tempCelsius ? 86 8 20 ];
+        putv self :_tempCelsius %tmp.24;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 87 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_87_23_87_101_begin:
+        %tmp.25 = lgetv %conditions.2;
+        symbol [ conditions %tmp.25 87 24 34 ];
+        symbol [ feelsLikeTemperature %tmp.26 87 35 55 ];
+        %tmp.26 = getv %tmp.25 :feelsLikeTemperature;
+        %tmp.27 = null;
+        %tmp.28 = ne %tmp.26 %tmp.27;
+        bf %tmp.28 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_87_23_87_101_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_87_23_87_101_true:
+        %tmp.29 = lgetv %conditions.2;
+        symbol [ conditions %tmp.29 87 67 77 ];
+        symbol [ feelsLikeTemperature %tmp.30 87 78 98 ];
+        %tmp.30 = getv %tmp.29 :feelsLikeTemperature;
+        push %tmp.30;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_87_23_87_101_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_87_23_87_101_else_false:
+        symbol [ _tempCelsius %tmp.32 87 101 113 ];
+        %tmp.32 = getv ? :_tempCelsius;
+        push %tmp.32;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_87_23_87_101_end:
+        %tmp.33 = phi [%tmp.28 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_87_23_87_101_begin] [%tmp.30 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_87_23_87_101_true] [%tmp.32 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_87_23_87_101_else_false] [%tmp.33 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_87_23_87_101_end];
+        symbol [ _feelsLike ? 87 8 18 ];
+        putv self :_feelsLike %tmp.33;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 90 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_90_25_90_89_begin:
+        %tmp.34 = lgetv %conditions.2;
+        symbol [ conditions %tmp.34 90 26 36 ];
+        symbol [ condition %tmp.35 90 37 46 ];
+        %tmp.35 = getv %tmp.34 :condition;
+        %tmp.36 = null;
+        %tmp.37 = ne %tmp.35 %tmp.36;
+        bf %tmp.37 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_90_25_90_89_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_90_25_90_89_true:
+        %tmp.38 = lgetv %conditions.2;
+        symbol [ conditions %tmp.38 90 58 68 ];
+        symbol [ condition %tmp.39 90 69 78 ];
+        %tmp.39 = getv %tmp.38 :condition;
+        push %tmp.39;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_90_25_90_89_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_90_25_90_89_else_false:
+        symbol [ Weather %tmp.40 90 81 88 ];
+        %tmp.40 = getm $.Toybox.Weather;
+        symbol [ CONDITION_UNKNOWN %tmp.41 90 89 106 ];
+        %tmp.41 = getv %tmp.40 :CONDITION_UNKNOWN;
+        push %tmp.41;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_90_25_90_89_end:
+        %tmp.42 = phi [%tmp.37 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_90_25_90_89_begin] [%tmp.39 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_90_25_90_89_true] [%tmp.41 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_90_25_90_89_else_false] [%tmp.42 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_90_25_90_89_end];
+        symbol [ _conditionCode ? 90 8 22 ];
+        putv self :_conditionCode %tmp.42;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 91 8 ]
+        %tmp.43 = self;
+        symbol [ getLabel %tmp.44 91 26 34 ];
+        %tmp.44 = getv function %tmp.43 :getLabel;
+        symbol [ _conditionCode %tmp.46 91 35 49 ];
+        %tmp.46 = getv ? :_conditionCode;
+        %tmp.47 = invoke %tmp.43 %tmp.44(%tmp.46);
+        symbol [ _conditionLabel ? 91 8 23 ];
+        putv self :_conditionLabel %tmp.47;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 94 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_94_25_94_99_begin:
+        %tmp.48 = lgetv %conditions.2;
+        symbol [ conditions %tmp.48 94 26 36 ];
+        symbol [ relativeHumidity %tmp.49 94 37 53 ];
+        %tmp.49 = getv %tmp.48 :relativeHumidity;
+        %tmp.50 = null;
+        %tmp.51 = ne %tmp.49 %tmp.50;
+        bf %tmp.51 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_94_25_94_99_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_94_25_94_99_true:
+        %tmp.52 = lgetv %conditions.2;
+        symbol [ conditions %tmp.52 94 67 77 ];
+        symbol [ relativeHumidity %tmp.53 94 78 94 ];
+        %tmp.53 = getv %tmp.52 :relativeHumidity;
+        push %tmp.53;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_94_25_94_99_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_94_25_94_99_else_false:
+        %tmp.54 = 0;
+        push %tmp.54;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_94_25_94_99_end:
+        %tmp.55 = phi [%tmp.51 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_94_25_94_99_begin] [%tmp.53 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_94_25_94_99_true] [%tmp.54 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_94_25_94_99_else_false] [%tmp.55 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_94_25_94_99_end];
+        symbol [ _humidity ? 94 8 17 ];
+        putv self :_humidity %tmp.55;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 95 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_95_25_95_101_begin:
+        %tmp.56 = lgetv %conditions.2;
+        symbol [ conditions %tmp.56 95 26 36 ];
+        symbol [ windSpeed %tmp.57 95 37 46 ];
+        %tmp.57 = getv %tmp.56 :windSpeed;
+        %tmp.58 = null;
+        %tmp.59 = ne %tmp.57 %tmp.58;
+        bf %tmp.59 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_95_25_95_101_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_95_25_95_101_true:
+        %tmp.60 = lgetv %conditions.2;
+        symbol [ conditions %tmp.60 95 68 78 ];
+        symbol [ windSpeed %tmp.61 95 79 88 ];
+        %tmp.61 = getv %tmp.60 :windSpeed;
+        symbol [ toFloat %tmp.62 95 89 96 ];
+        %tmp.62 = getv function %tmp.61 :toFloat;
+        %tmp.63 = invoke %tmp.61 %tmp.62();
+        push %tmp.63;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_95_25_95_101_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_95_25_95_101_else_false:
+        %tmp.64 = 0.0;
+        push %tmp.64;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_95_25_95_101_end:
+        %tmp.65 = phi [%tmp.59 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_95_25_95_101_begin] [%tmp.63 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_95_25_95_101_true] [%tmp.64 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_95_25_95_101_else_false] [%tmp.65 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_95_25_95_101_end];
+        symbol [ _windSpeed ? 95 8 18 ];
+        putv self :_windSpeed %tmp.65;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 96 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_96_25_96_101_begin:
+        %tmp.66 = lgetv %conditions.2;
+        symbol [ conditions %tmp.66 96 26 36 ];
+        symbol [ windBearing %tmp.67 96 37 48 ];
+        %tmp.67 = getv %tmp.66 :windBearing;
+        %tmp.68 = null;
+        %tmp.69 = ne %tmp.67 %tmp.68;
+        bf %tmp.69 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_96_25_96_101_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_96_25_96_101_true:
+        %tmp.70 = lgetv %conditions.2;
+        symbol [ conditions %tmp.70 96 68 78 ];
+        symbol [ windBearing %tmp.71 96 79 90 ];
+        %tmp.71 = getv %tmp.70 :windBearing;
+        push %tmp.71;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_96_25_96_101_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_96_25_96_101_else_false:
+        %tmp.72 = 0;
+        push %tmp.72;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_96_25_96_101_end:
+        %tmp.73 = phi [%tmp.69 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_96_25_96_101_begin] [%tmp.71 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_96_25_96_101_true] [%tmp.72 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_96_25_96_101_else_false] [%tmp.73 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_96_25_96_101_end];
+        symbol [ _windDirection ? 96 8 22 ];
+        putv self :_windDirection %tmp.73;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 97 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_97_25_97_117_begin:
+        %tmp.74 = lgetv %conditions.2;
+        symbol [ conditions %tmp.74 97 26 36 ];
+        symbol [ precipitationIntensity %tmp.75 97 37 59 ];
+        %tmp.75 = getv %tmp.74 :precipitationIntensity;
+        %tmp.76 = null;
+        %tmp.77 = ne %tmp.75 %tmp.76;
+        bf %tmp.77 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_97_25_97_117_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_97_25_97_117_true:
+        %tmp.78 = lgetv %conditions.2;
+        symbol [ conditions %tmp.78 97 71 81 ];
+        symbol [ precipitationIntensity %tmp.79 97 82 104 ];
+        %tmp.79 = getv %tmp.78 :precipitationIntensity;
+        symbol [ toFloat %tmp.80 97 105 112 ];
+        %tmp.80 = getv function %tmp.79 :toFloat;
+        %tmp.81 = invoke %tmp.79 %tmp.80();
+        push %tmp.81;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_97_25_97_117_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_97_25_97_117_else_false:
+        %tmp.82 = 0.0;
+        push %tmp.82;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_97_25_97_117_end:
+        %tmp.83 = phi [%tmp.77 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_97_25_97_117_begin] [%tmp.81 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_97_25_97_117_true] [%tmp.82 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_97_25_97_117_else_false] [%tmp.83 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_97_25_97_117_end];
+        symbol [ _precipitation ? 97 8 22 ];
+        putv self :_precipitation %tmp.83;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 98 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_98_25_98_101_begin:
+        %tmp.84 = lgetv %conditions.2;
+        symbol [ conditions %tmp.84 98 26 36 ];
+        symbol [ uvIndex %tmp.85 98 37 44 ];
+        %tmp.85 = getv %tmp.84 :uvIndex;
+        %tmp.86 = null;
+        %tmp.87 = ne %tmp.85 %tmp.86;
+        bf %tmp.87 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_98_25_98_101_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_98_25_98_101_true:
+        %tmp.88 = lgetv %conditions.2;
+        symbol [ conditions %tmp.88 98 68 78 ];
+        symbol [ uvIndex %tmp.89 98 79 86 ];
+        %tmp.89 = getv %tmp.88 :uvIndex;
+        push %tmp.89;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_98_25_98_101_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_98_25_98_101_else_false:
+        %tmp.90 = 0;
+        push %tmp.90;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_98_25_98_101_end:
+        %tmp.91 = phi [%tmp.87 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_98_25_98_101_begin] [%tmp.89 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_98_25_98_101_true] [%tmp.90 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_98_25_98_101_else_false] [%tmp.91 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_98_25_98_101_end];
+        symbol [ _uvIndex ? 98 8 16 ];
+        putv self :_uvIndex %tmp.91;
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 101 8 ]
+        symbol [ System %tmp.92 101 27 33 ];
+        %tmp.92 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.93 101 34 46 ];
+        %tmp.93 = getv function %tmp.92 :getClockTime;
+        %tmp.94 = invoke %tmp.92 %tmp.93();
+        symbol [ sec %tmp.95 101 49 52 ];
+        %tmp.95 = getv %tmp.94 :sec;
+        symbol [ _lastUpdateEpoch ? 101 8 24 ];
+        putv self :_lastUpdateEpoch %tmp.95;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_71_30_102_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 109; @symbol_functiondef = [getTemperature,109,13,27]; @symbol_return<0> = [Number,109,33,39]; ]
+    function getTemperature() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_109_40_111_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 110 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_110_15_110_74_begin:
+        symbol [ _isMetric %tmp.2 110 15 24 ];
+        %tmp.2 = getv ? :_isMetric;
+        bf %tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_110_15_110_74_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_110_15_110_74_true:
+        symbol [ _tempCelsius %tmp.4 110 27 39 ];
+        %tmp.4 = getv ? :_tempCelsius;
+        push %tmp.4;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_110_15_110_74_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_110_15_110_74_else_false:
+        %tmp.5 = self;
+        symbol [ celsiusToFahrenheit %tmp.6 110 42 61 ];
+        %tmp.6 = getv function %tmp.5 :celsiusToFahrenheit;
+        symbol [ _tempCelsius %tmp.8 110 62 74 ];
+        %tmp.8 = getv ? :_tempCelsius;
+        %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
+        push %tmp.9;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_110_15_110_74_end:
+        %tmp.10 = phi [%tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_110_15_110_74_begin] [%tmp.4 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_110_15_110_74_true] [%tmp.9 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_110_15_110_74_else_false] [%tmp.10 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_110_15_110_74_end];
+        ret %tmp.10;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_109_40_111_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 113; @symbol_functiondef = [getTemperatureCelsius,113,13,34]; @symbol_return<0> = [Number,113,40,46]; ]
+    function getTemperatureCelsius() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_113_47_115_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 114 8 ]
+        symbol [ _tempCelsius %tmp.2 114 15 27 ];
+        %tmp.2 = getv ? :_tempCelsius;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_113_47_115_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 117; @symbol_functiondef = [getTemperatureFahrenheit,117,13,37]; @symbol_return<0> = [Number,117,43,49]; ]
+    function getTemperatureFahrenheit() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_117_50_119_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 118 8 ]
+        %tmp.1 = self;
+        symbol [ celsiusToFahrenheit %tmp.2 118 15 34 ];
+        %tmp.2 = getv function %tmp.1 :celsiusToFahrenheit;
+        symbol [ _tempCelsius %tmp.4 118 35 47 ];
+        %tmp.4 = getv ? :_tempCelsius;
+        %tmp.5 = invoke %tmp.1 %tmp.2(%tmp.4);
+        ret %tmp.5;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_117_50_119_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 121; @symbol_functiondef = [getFeelsLike,121,13,25]; @symbol_return<0> = [Number,121,31,37]; ]
+    function getFeelsLike() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_121_38_123_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 122 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_122_15_122_70_begin:
+        symbol [ _isMetric %tmp.2 122 15 24 ];
+        %tmp.2 = getv ? :_isMetric;
+        bf %tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_122_15_122_70_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_122_15_122_70_true:
+        symbol [ _feelsLike %tmp.4 122 27 37 ];
+        %tmp.4 = getv ? :_feelsLike;
+        push %tmp.4;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_122_15_122_70_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_122_15_122_70_else_false:
+        %tmp.5 = self;
+        symbol [ celsiusToFahrenheit %tmp.6 122 40 59 ];
+        %tmp.6 = getv function %tmp.5 :celsiusToFahrenheit;
+        symbol [ _feelsLike %tmp.8 122 60 70 ];
+        %tmp.8 = getv ? :_feelsLike;
+        %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
+        push %tmp.9;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_122_15_122_70_end:
+        %tmp.10 = phi [%tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_122_15_122_70_begin] [%tmp.4 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_122_15_122_70_true] [%tmp.9 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_122_15_122_70_else_false] [%tmp.10 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_122_15_122_70_end];
+        ret %tmp.10;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_121_38_123_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 125; @symbol_functiondef = [getTemperatureUnit,125,13,31]; @symbol_return<0> = [String,125,37,43]; ]
+    function getTemperatureUnit() as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_125_44_127_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 126 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_126_15_126_34_begin:
+        symbol [ _isMetric %tmp.2 126 15 24 ];
+        %tmp.2 = getv ? :_isMetric;
+        bf %tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_126_15_126_34_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_126_15_126_34_true:
+        %tmp.3 = "°C";
+        push %tmp.3;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_126_15_126_34_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_126_15_126_34_else_false:
+        %tmp.4 = "°F";
+        push %tmp.4;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_126_15_126_34_end:
+        %tmp.5 = phi [%tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_126_15_126_34_begin] [%tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_126_15_126_34_true] [%tmp.4 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_126_15_126_34_else_false] [%tmp.5 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_126_15_126_34_end];
+        ret %tmp.5;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_125_44_127_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 133; @symbol_functiondef = [getConditionCode,133,13,29]; @symbol_return<0> = [Number,133,35,41]; ]
+    function getConditionCode() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_133_42_135_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 134 8 ]
+        symbol [ _conditionCode %tmp.2 134 15 29 ];
+        %tmp.2 = getv ? :_conditionCode;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_133_42_135_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 137; @symbol_functiondef = [getConditionLabel,137,13,30]; @symbol_return<0> = [String,137,36,42]; ]
+    function getConditionLabel() as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_137_43_139_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 138 8 ]
+        symbol [ _conditionLabel %tmp.2 138 15 30 ];
+        %tmp.2 = getv ? :_conditionLabel;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_137_43_139_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 143; @symbol_functiondef = [getConditionIcon,143,13,29]; @symbol_return<0> = [String,143,35,41]; ]
+    function getConditionIcon() as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_143_42_161_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 144 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_144_8_144_82_if_stmt:
+        symbol [ _conditionCode %tmp.2 144 12 26 ];
+        %tmp.2 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.3 144 30 37 ];
+        %tmp.3 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLEAR %tmp.4 144 38 53 ];
+        %tmp.4 = getv %tmp.3 :CONDITION_CLEAR;
+        %tmp.5 = eq %tmp.2 %tmp.4;
+        bf %tmp.5 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_144_8_144_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_144_8_144_82_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_144_68_144_82_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 144 70 ]
+        %tmp.6 = "?";
+        ret %tmp.6;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_144_68_144_82_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_144_8_144_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_144_8_144_82_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 145 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_145_8_145_82_if_stmt:
+        symbol [ _conditionCode %tmp.8 145 12 26 ];
+        %tmp.8 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.9 145 30 37 ];
+        %tmp.9 = getm $.Toybox.Weather;
+        symbol [ CONDITION_PARTLY_CLOUDY %tmp.10 145 38 61 ];
+        %tmp.10 = getv %tmp.9 :CONDITION_PARTLY_CLOUDY;
+        %tmp.11 = eq %tmp.8 %tmp.10;
+        bf %tmp.11 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_145_8_145_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_145_8_145_82_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_145_68_145_82_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 145 70 ]
+        %tmp.12 = "?";
+        ret %tmp.12;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_145_68_145_82_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_145_8_145_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_145_8_145_82_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 146 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_146_8_147_82_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_146_12_147_38_begin:
+        symbol [ _conditionCode %tmp.14 146 12 26 ];
+        %tmp.14 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.15 146 30 37 ];
+        %tmp.15 = getm $.Toybox.Weather;
+        symbol [ CONDITION_MOSTLY_CLOUDY %tmp.16 146 38 61 ];
+        %tmp.16 = getv %tmp.15 :CONDITION_MOSTLY_CLOUDY;
+        %tmp.17 = eq %tmp.14 %tmp.16;
+        bt %tmp.17 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_146_8_147_82_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_147_12_147_38_false:
+        symbol [ _conditionCode %tmp.19 147 12 26 ];
+        %tmp.19 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.20 147 30 37 ];
+        %tmp.20 = getm $.Toybox.Weather;
+        symbol [ CONDITION_CLOUDY %tmp.21 147 38 54 ];
+        %tmp.21 = getv %tmp.20 :CONDITION_CLOUDY;
+        %tmp.22 = eq %tmp.19 %tmp.21;
+        push %tmp.22;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_147_12_147_38_end:
+        %tmp.23 = phi [%tmp.17 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_146_12_147_38_begin] [%tmp.22 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_147_12_147_38_false] [%tmp.23 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_147_12_147_38_end];
+        bf %tmp.23 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_146_8_147_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_146_8_147_82_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_147_68_147_82_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 147 70 ]
+        %tmp.24 = "?";
+        ret %tmp.24;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_147_68_147_82_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_146_8_147_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_146_8_147_82_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 148 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_8_151_82_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_12_151_38_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_12_150_38_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_12_149_38_begin:
+        symbol [ _conditionCode %tmp.26 148 12 26 ];
+        %tmp.26 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.27 148 30 37 ];
+        %tmp.27 = getm $.Toybox.Weather;
+        symbol [ CONDITION_RAIN %tmp.28 148 38 52 ];
+        %tmp.28 = getv %tmp.27 :CONDITION_RAIN;
+        %tmp.29 = eq %tmp.26 %tmp.28;
+        bt %tmp.29 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_8_151_82_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_149_12_149_38_false:
+        symbol [ _conditionCode %tmp.31 149 12 26 ];
+        %tmp.31 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.32 149 30 37 ];
+        %tmp.32 = getm $.Toybox.Weather;
+        symbol [ CONDITION_LIGHT_RAIN %tmp.33 149 38 58 ];
+        %tmp.33 = getv %tmp.32 :CONDITION_LIGHT_RAIN;
+        %tmp.34 = eq %tmp.31 %tmp.33;
+        push %tmp.34;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_149_12_149_38_end:
+        %tmp.35 = phi [%tmp.29 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_12_149_38_begin] [%tmp.34 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_149_12_149_38_false] [%tmp.35 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_149_12_149_38_end];
+        bt %tmp.35 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_8_151_82_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_150_12_150_38_false:
+        symbol [ _conditionCode %tmp.37 150 12 26 ];
+        %tmp.37 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.38 150 30 37 ];
+        %tmp.38 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HEAVY_RAIN %tmp.39 150 38 58 ];
+        %tmp.39 = getv %tmp.38 :CONDITION_HEAVY_RAIN;
+        %tmp.40 = eq %tmp.37 %tmp.39;
+        push %tmp.40;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_150_12_150_38_end:
+        %tmp.41 = phi [%tmp.35 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_12_150_38_begin] [%tmp.40 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_150_12_150_38_false] [%tmp.41 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_150_12_150_38_end];
+        bt %tmp.41 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_8_151_82_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_151_12_151_38_false:
+        symbol [ _conditionCode %tmp.43 151 12 26 ];
+        %tmp.43 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.44 151 30 37 ];
+        %tmp.44 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SCATTERED_SHOWERS %tmp.45 151 38 65 ];
+        %tmp.45 = getv %tmp.44 :CONDITION_SCATTERED_SHOWERS;
+        %tmp.46 = eq %tmp.43 %tmp.45;
+        push %tmp.46;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_151_12_151_38_end:
+        %tmp.47 = phi [%tmp.41 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_12_151_38_begin] [%tmp.46 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_151_12_151_38_false] [%tmp.47 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_151_12_151_38_end];
+        bf %tmp.47 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_8_151_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_8_151_82_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_151_68_151_82_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 151 70 ]
+        %tmp.48 = "?";
+        ret %tmp.48;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_151_68_151_82_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_8_151_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_148_8_151_82_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 152 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_152_8_154_82_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_152_12_154_38_begin:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_152_12_153_38_begin:
+        symbol [ _conditionCode %tmp.50 152 12 26 ];
+        %tmp.50 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.51 152 30 37 ];
+        %tmp.51 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SNOW %tmp.52 152 38 52 ];
+        %tmp.52 = getv %tmp.51 :CONDITION_SNOW;
+        %tmp.53 = eq %tmp.50 %tmp.52;
+        bt %tmp.53 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_152_8_154_82_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_153_12_153_38_false:
+        symbol [ _conditionCode %tmp.55 153 12 26 ];
+        %tmp.55 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.56 153 30 37 ];
+        %tmp.56 = getm $.Toybox.Weather;
+        symbol [ CONDITION_LIGHT_SNOW %tmp.57 153 38 58 ];
+        %tmp.57 = getv %tmp.56 :CONDITION_LIGHT_SNOW;
+        %tmp.58 = eq %tmp.55 %tmp.57;
+        push %tmp.58;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_153_12_153_38_end:
+        %tmp.59 = phi [%tmp.53 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_152_12_153_38_begin] [%tmp.58 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_153_12_153_38_false] [%tmp.59 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_153_12_153_38_end];
+        bt %tmp.59 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_152_8_154_82_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_154_12_154_38_false:
+        symbol [ _conditionCode %tmp.61 154 12 26 ];
+        %tmp.61 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.62 154 30 37 ];
+        %tmp.62 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HEAVY_SNOW %tmp.63 154 38 58 ];
+        %tmp.63 = getv %tmp.62 :CONDITION_HEAVY_SNOW;
+        %tmp.64 = eq %tmp.61 %tmp.63;
+        push %tmp.64;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_154_12_154_38_end:
+        %tmp.65 = phi [%tmp.59 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_152_12_154_38_begin] [%tmp.64 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_154_12_154_38_false] [%tmp.65 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_154_12_154_38_end];
+        bf %tmp.65 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_152_8_154_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_152_8_154_82_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_154_68_154_82_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 154 70 ]
+        %tmp.66 = "?";
+        ret %tmp.66;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_154_68_154_82_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_152_8_154_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_152_8_154_82_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 155 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_155_8_156_87_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_155_12_156_38_begin:
+        symbol [ _conditionCode %tmp.68 155 12 26 ];
+        %tmp.68 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.69 155 30 37 ];
+        %tmp.69 = getm $.Toybox.Weather;
+        symbol [ CONDITION_THUNDERSTORMS %tmp.70 155 38 61 ];
+        %tmp.70 = getv %tmp.69 :CONDITION_THUNDERSTORMS;
+        %tmp.71 = eq %tmp.68 %tmp.70;
+        bt %tmp.71 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_155_8_156_87_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_156_12_156_38_false:
+        symbol [ _conditionCode %tmp.73 156 12 26 ];
+        %tmp.73 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.74 156 30 37 ];
+        %tmp.74 = getm $.Toybox.Weather;
+        symbol [ CONDITION_SCATTERED_THUNDERSTORMS %tmp.75 156 38 71 ];
+        %tmp.75 = getv %tmp.74 :CONDITION_SCATTERED_THUNDERSTORMS;
+        %tmp.76 = eq %tmp.73 %tmp.75;
+        push %tmp.76;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_156_12_156_38_end:
+        %tmp.77 = phi [%tmp.71 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_155_12_156_38_begin] [%tmp.76 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_156_12_156_38_false] [%tmp.77 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_156_12_156_38_end];
+        bf %tmp.77 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_155_8_156_87_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_155_8_156_87_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_156_73_156_87_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 156 75 ]
+        %tmp.78 = "?";
+        ret %tmp.78;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_156_73_156_87_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_155_8_156_87_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_155_8_156_87_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 157 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_157_8_158_82_if_stmt:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_157_12_158_38_begin:
+        symbol [ _conditionCode %tmp.80 157 12 26 ];
+        %tmp.80 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.81 157 30 37 ];
+        %tmp.81 = getm $.Toybox.Weather;
+        symbol [ CONDITION_FOG %tmp.82 157 38 51 ];
+        %tmp.82 = getv %tmp.81 :CONDITION_FOG;
+        %tmp.83 = eq %tmp.80 %tmp.82;
+        bt %tmp.83 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_157_8_158_82_if_true;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_158_12_158_38_false:
+        symbol [ _conditionCode %tmp.85 158 12 26 ];
+        %tmp.85 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.86 158 30 37 ];
+        %tmp.86 = getm $.Toybox.Weather;
+        symbol [ CONDITION_HAZY %tmp.87 158 38 52 ];
+        %tmp.87 = getv %tmp.86 :CONDITION_HAZY;
+        %tmp.88 = eq %tmp.85 %tmp.87;
+        push %tmp.88;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_158_12_158_38_end:
+        %tmp.89 = phi [%tmp.83 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_157_12_158_38_begin] [%tmp.88 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_158_12_158_38_false] [%tmp.89 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_158_12_158_38_end];
+        bf %tmp.89 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_157_8_158_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_157_8_158_82_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_158_68_158_82_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 158 70 ]
+        %tmp.90 = "?";
+        ret %tmp.90;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_158_68_158_82_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_157_8_158_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_157_8_158_82_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 159 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_159_8_159_82_if_stmt:
+        symbol [ _conditionCode %tmp.92 159 12 26 ];
+        %tmp.92 = getv ? :_conditionCode;
+        symbol [ Weather %tmp.93 159 30 37 ];
+        %tmp.93 = getm $.Toybox.Weather;
+        symbol [ CONDITION_WINDY %tmp.94 159 38 53 ];
+        %tmp.94 = getv %tmp.93 :CONDITION_WINDY;
+        %tmp.95 = eq %tmp.92 %tmp.94;
+        bf %tmp.95 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_159_8_159_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_159_8_159_82_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_159_68_159_82_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 159 70 ]
+        %tmp.96 = "?";
+        ret %tmp.96;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_159_68_159_82_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_159_8_159_82_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_159_8_159_82_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 160 8 ]
+        %tmp.97 = "?";
+        ret %tmp.97;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_143_42_161_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 167; @symbol_functiondef = [getHumidity,167,13,24]; @symbol_return<0> = [Number,167,30,36]; ]
+    function getHumidity() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_167_37_169_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 168 8 ]
+        symbol [ _humidity %tmp.2 168 15 24 ];
+        %tmp.2 = getv ? :_humidity;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_167_37_169_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 172; @symbol_functiondef = [getWindSpeed,172,13,25]; @symbol_return<0> = [Float,172,31,36]; ]
+    function getWindSpeed() as Float {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_172_37_179_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 174 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_174_8_178_8_if_stmt:
+        symbol [ _isMetric %tmp.2 174 12 21 ];
+        %tmp.2 = getv ? :_isMetric;
+        bf %tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_174_8_178_8_if_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_174_8_178_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_174_23_176_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 175 12 ]
+        symbol [ _windSpeed %tmp.4 175 19 29 ];
+        %tmp.4 = getv ? :_windSpeed;
+        %tmp.5 = 3.6;
+        %tmp.6 = mul %tmp.4 %tmp.5;
+        ret %tmp.6;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_174_23_176_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_174_8_178_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_174_8_178_8_if_else_false:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_176_15_178_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 177 12 ]
+        symbol [ _windSpeed %tmp.8 177 19 29 ];
+        %tmp.8 = getv ? :_windSpeed;
+        %tmp.9 = 2.237;
+        %tmp.10 = mul %tmp.8 %tmp.9;
+        ret %tmp.10;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_176_15_178_8_stop:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_174_8_178_8_if_end:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_172_37_179_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 181; @symbol_functiondef = [getWindSpeedUnit,181,13,29]; @symbol_return<0> = [String,181,35,41]; ]
+    function getWindSpeedUnit() as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_181_42_183_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 182 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_182_15_182_36_begin:
+        symbol [ _isMetric %tmp.2 182 15 24 ];
+        %tmp.2 = getv ? :_isMetric;
+        bf %tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_182_15_182_36_else_false;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_182_15_182_36_true:
+        %tmp.3 = "km/h";
+        push %tmp.3;
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_182_15_182_36_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_182_15_182_36_else_false:
+        %tmp.4 = "mph";
+        push %tmp.4;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_182_15_182_36_end:
+        %tmp.5 = phi [%tmp.2 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_182_15_182_36_begin] [%tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_182_15_182_36_true] [%tmp.4 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_182_15_182_36_else_false] [%tmp.5 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_182_15_182_36_end];
+        ret %tmp.5;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_181_42_183_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 185; @symbol_functiondef = [getWindDirection,185,13,29]; @symbol_return<0> = [Number,185,35,41]; ]
+    function getWindDirection() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_185_42_187_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 186 8 ]
+        symbol [ _windDirection %tmp.2 186 15 29 ];
+        %tmp.2 = getv ? :_windDirection;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_185_42_187_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 190; @symbol_functiondef = [getWindCardinal,190,13,28]; @symbol_return<0> = [String,190,34,40]; ]
+    function getWindCardinal() as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_190_41_194_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 191 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_190_41_194_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_190_41_194_4_stop" ]
+        %dirs.1 = local;
+        symbol [ dirs %dirs.1 191 12 16 ];
+        %tmp.1 = newa 9;
+        %tmp.2 = "N";
+        %tmp.3 = dup %tmp.1;
+        %tmp.4 = aputv %tmp.3 0 %tmp.2;
+        %tmp.5 = "NE";
+        %tmp.6 = dup %tmp.4;
+        %tmp.7 = aputv %tmp.6 1 %tmp.5;
+        %tmp.8 = "E";
+        %tmp.9 = dup %tmp.7;
+        %tmp.10 = aputv %tmp.9 2 %tmp.8;
+        %tmp.11 = "SE";
+        %tmp.12 = dup %tmp.10;
+        %tmp.13 = aputv %tmp.12 3 %tmp.11;
+        %tmp.14 = "S";
+        %tmp.15 = dup %tmp.13;
+        %tmp.16 = aputv %tmp.15 4 %tmp.14;
+        %tmp.17 = "SW";
+        %tmp.18 = dup %tmp.16;
+        %tmp.19 = aputv %tmp.18 5 %tmp.17;
+        %tmp.20 = "W";
+        %tmp.21 = dup %tmp.19;
+        %tmp.22 = aputv %tmp.21 6 %tmp.20;
+        %tmp.23 = "NW";
+        %tmp.24 = dup %tmp.22;
+        %tmp.25 = aputv %tmp.24 7 %tmp.23;
+        %tmp.26 = "N";
+        %tmp.27 = dup %tmp.25;
+        %tmp.28 = aputv %tmp.27 8 %tmp.26;
+        lputv %dirs.1 %tmp.28;
+        symbol [ dirs %dirs.1 191 12 16 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 192 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_190_41_194_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_190_41_194_4_stop" ]
+        %idx.2 = local;
+        symbol [ idx %idx.2 192 12 15 ];
+        symbol [ _windDirection %tmp.30 192 20 34 ];
+        %tmp.30 = getv ? :_windDirection;
+        %tmp.31 = 22;
+        %tmp.32 = add %tmp.30 %tmp.31;
+        %tmp.33 = 45;
+        %tmp.34 = div %tmp.32 %tmp.33;
+        symbol [ toNumber %tmp.35 192 47 55 ];
+        %tmp.35 = getv function %tmp.34 :toNumber;
+        %tmp.36 = invoke %tmp.34 %tmp.35();
+        lputv %idx.2 %tmp.36;
+        symbol [ idx %idx.2 192 12 15 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 193 8 ]
+        %tmp.37 = lgetv %dirs.1;
+        symbol [ dirs %tmp.37 193 15 19 ];
+        %tmp.38 = lgetv %idx.2;
+        symbol [ idx %tmp.38 193 20 23 ];
+        %tmp.39 = agetv %tmp.37 %tmp.38;
+        ret %tmp.39;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_190_41_194_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 196; @symbol_functiondef = [getUVIndex,196,13,23]; @symbol_return<0> = [Number,196,29,35]; ]
+    function getUVIndex() as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_196_36_198_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 197 8 ]
+        symbol [ _uvIndex %tmp.2 197 15 23 ];
+        %tmp.2 = getv ? :_uvIndex;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_196_36_198_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 201; @symbol_functiondef = [getUVLabel,201,13,23]; @symbol_return<0> = [String,201,29,35]; ]
+    function getUVLabel() as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_201_36_207_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 202 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_202_8_202_44_if_stmt:
+        symbol [ _uvIndex %tmp.2 202 12 20 ];
+        %tmp.2 = getv ? :_uvIndex;
+        %tmp.3 = 2;
+        %tmp.4 = lte %tmp.2 %tmp.3;
+        bf %tmp.4 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_202_8_202_44_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_202_8_202_44_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_202_28_202_44_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 202 30 ]
+        %tmp.5 = "Low";
+        ret %tmp.5;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_202_28_202_44_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_202_8_202_44_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_202_8_202_44_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 203 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_203_8_203_49_if_stmt:
+        symbol [ _uvIndex %tmp.7 203 12 20 ];
+        %tmp.7 = getv ? :_uvIndex;
+        %tmp.8 = 5;
+        %tmp.9 = lte %tmp.7 %tmp.8;
+        bf %tmp.9 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_203_8_203_49_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_203_8_203_49_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_203_28_203_49_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 203 30 ]
+        %tmp.10 = "Moderate";
+        ret %tmp.10;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_203_28_203_49_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_203_8_203_49_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_203_8_203_49_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 204 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_204_8_204_45_if_stmt:
+        symbol [ _uvIndex %tmp.12 204 12 20 ];
+        %tmp.12 = getv ? :_uvIndex;
+        %tmp.13 = 7;
+        %tmp.14 = lte %tmp.12 %tmp.13;
+        bf %tmp.14 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_204_8_204_45_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_204_8_204_45_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_204_28_204_45_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 204 30 ]
+        %tmp.15 = "High";
+        ret %tmp.15;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_204_28_204_45_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_204_8_204_45_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_204_8_204_45_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 205 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_205_8_205_50_if_stmt:
+        symbol [ _uvIndex %tmp.17 205 12 20 ];
+        %tmp.17 = getv ? :_uvIndex;
+        %tmp.18 = 10;
+        %tmp.19 = lte %tmp.17 %tmp.18;
+        bf %tmp.19 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_205_8_205_50_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_205_8_205_50_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_205_28_205_50_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 205 30 ]
+        %tmp.20 = "Very High";
+        ret %tmp.20;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_205_28_205_50_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_205_8_205_50_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_205_8_205_50_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 206 8 ]
+        %tmp.21 = "Extreme";
+        ret %tmp.21;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_201_36_207_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 209; @symbol_functiondef = [getPrecipitation,209,13,29]; @symbol_return<0> = [Float,209,35,40]; ]
+    function getPrecipitation() as Float {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_209_41_211_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 210 8 ]
+        symbol [ _precipitation %tmp.2 210 15 29 ];
+        %tmp.2 = getv ? :_precipitation;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_209_41_211_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 217; @symbol_functiondef = [isDataAvailable,217,13,28]; @symbol_return<0> = [Boolean,217,34,41]; ]
+    function isDataAvailable() as Boolean {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_217_42_219_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 218 8 ]
+        symbol [ _dataAvailable %tmp.2 218 15 29 ];
+        %tmp.2 = getv ? :_dataAvailable;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_217_42_219_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 221; @symbol_functiondef = [isDataStale,221,13,24]; @symbol_return<0> = [Boolean,221,30,37]; ]
+    function isDataStale() as Boolean {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_221_38_225_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 222 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_222_8_222_44_if_stmt:
+        symbol [ _dataAvailable %tmp.2 222 13 27 ];
+        %tmp.2 = getv ? :_dataAvailable;
+        %tmp.3 = not %tmp.2;
+        bf %tmp.3 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_222_8_222_44_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_222_8_222_44_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_222_29_222_44_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 222 31 ]
+        %tmp.4 = true;
+        ret %tmp.4;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_222_29_222_44_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_222_8_222_44_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_222_8_222_44_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 223 8 ]
+        [ "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_221_38_225_4_start" "C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_221_38_225_4_stop" ]
+        %now.1 = local;
+        symbol [ now %now.1 223 12 15 ];
+        symbol [ System %tmp.5 223 18 24 ];
+        %tmp.5 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.6 223 25 37 ];
+        %tmp.6 = getv function %tmp.5 :getClockTime;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        symbol [ sec %tmp.8 223 40 43 ];
+        %tmp.8 = getv %tmp.7 :sec;
+        lputv %now.1 %tmp.8;
+        symbol [ now %now.1 223 12 15 ];
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 224 8 ]
+        %tmp.9 = lgetv %now.1;
+        symbol [ now %tmp.9 224 16 19 ];
+        symbol [ _lastUpdateEpoch %tmp.11 224 22 38 ];
+        %tmp.11 = getv ? :_lastUpdateEpoch;
+        %tmp.12 = sub %tmp.9 %tmp.11;
+        symbol [ STALE_THRESHOLD_SEC %tmp.14 224 42 61 ];
+        %tmp.14 = getv ? :STALE_THRESHOLD_SEC;
+        %tmp.15 = gt %tmp.12 %tmp.14;
+        ret %tmp.15;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_221_38_225_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 227; @symbol_functiondef = [isMetric,227,13,21]; @symbol_return<0> = [Boolean,227,27,34]; ]
+    function isMetric() as Boolean {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_227_35_229_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 228 8 ]
+        symbol [ _isMetric %tmp.2 228 15 24 ];
+        %tmp.2 = getv ? :_isMetric;
+        ret %tmp.2;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_227_35_229_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 235; @symbol_functiondef = [celsiusToFahrenheit,235,21,40]; @symbol_param<0> = [c,235,41,42]; @symbol_param<0>_type<0> = [Number,235,46,52]; @symbol_return<0> = [Number,235,57,63]; ]
+    private
+    function celsiusToFahrenheit(c as Number) as Number {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_235_64_237_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 236 8 ]
+        %tmp.1 = lgetv %c;
+        symbol [ c %tmp.1 236 16 17 ];
+        %tmp.2 = 9;
+        %tmp.3 = mul %tmp.1 %tmp.2;
+        %tmp.4 = 5;
+        %tmp.5 = div %tmp.3 %tmp.4;
+        %tmp.6 = 32;
+        %tmp.7 = add %tmp.5 %tmp.6;
+        ret %tmp.7;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_235_64_237_4_stop:
+    }
+    [ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 239; @symbol_functiondef = [getLabel,239,21,29]; @symbol_param<0> = [code,239,30,34]; @symbol_param<0>_type<0> = [Number,239,38,44]; @symbol_return<0> = [String,239,49,55]; ]
+    private
+    function getLabel(code as Number) as String {
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_239_56_244_4_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 240 8 ]
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_240_8_242_8_if_stmt:
+        symbol [ CONDITION_LABELS %tmp.2 240 12 28 ];
+        %tmp.2 = getv ? :CONDITION_LABELS;
+        symbol [ hasKey %tmp.3 240 29 35 ];
+        %tmp.3 = getv function %tmp.2 :hasKey;
+        %tmp.4 = lgetv %code;
+        symbol [ code %tmp.4 240 36 40 ];
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        bf %tmp.5 @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_240_8_242_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_240_8_242_8_if_true:
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_240_43_242_8_start:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 241 12 ]
+        symbol [ CONDITION_LABELS %tmp.7 241 19 35 ];
+        %tmp.7 = getv ? :CONDITION_LABELS;
+        %tmp.8 = lgetv %code;
+        symbol [ code %tmp.8 241 36 40 ];
+        %tmp.9 = agetv %tmp.7 %tmp.8;
+        %tmp.10 = as %tmp.9 String;
+        symbol [ String %tmp.10 241 45 51 ];
+        ret %tmp.10;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_240_43_242_8_stop:
+        goto @C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_240_8_242_8_if_end;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_240_8_242_8_if_end:
+[ "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc" 243 8 ]
+        %tmp.11 = "Unknown";
+        ret %tmp.11;
+C__Users_gbuss_OneDrive_Desktop_Watch_Face_Project_source_WeatherManager_mc_239_56_244_4_stop:
+    }
+}
+[ @file = "C:\Users\gbuss\OneDrive\Desktop\Watch_Face_Project\source\WeatherManager.mc"; @line = 5; ]
+<init> {
+}

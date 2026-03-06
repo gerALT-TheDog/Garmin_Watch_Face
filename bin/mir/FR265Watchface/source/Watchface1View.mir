@@ -1,0 +1,1305 @@
+[ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Application,1,14,25]; ]
+import Toybox.Application;
+[ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Graphics,2,14,22]; ]
+import Toybox.Graphics;
+[ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [System,4,14,20]; ]
+import Toybox.System;
+[ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [WatchUi,5,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Time,7,14,18]; ]
+import Toybox.Time;
+[ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Time,8,14,18]; @symbol_importdef<2> = [Gregorian,8,19,28]; ]
+import Toybox.Time.Gregorian;
+[ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 10; @symbol_importdef<0> = [Toybox,10,7,13]; @symbol_importdef<1> = [ActivityMonitor,10,14,29]; ]
+import Toybox.ActivityMonitor;
+[ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 12; @symbol_importdef<0> = [Toybox,12,7,13]; @symbol_importdef<1> = [Weather,12,14,21]; ]
+import Toybox.Weather;
+[ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 14; @symbol_classdef = [Watchface1View,14,6,20]; @symbol_extends<0> = [WatchUi,14,29,36]; @symbol_extends<1> = [WatchFace,14,37,46]; ]
+class Watchface1View extends WatchUi.WatchFace {
+    [ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 14; ]
+    <init> {
+    }
+    [ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 14; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 16; @symbol_functiondef = [initialize,16,13,23]; ]
+    function initialize() as Void {
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_16_26_18_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 17 8 ]
+        symbol [ WatchFace %tmp.2 17 8 17 ];
+        %tmp.2 = getv ? :WatchFace;
+        symbol [ initialize %tmp.3 17 18 28 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_16_26_18_4_stop:
+    }
+    [ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 21; @symbol_functiondef = [onLayout,21,13,21]; @symbol_param<0> = [dc,21,22,24]; @symbol_param<0>_type<0> = [Dc,21,28,30]; ]
+    function onLayout(dc as Dc) as Void {
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_21_40_23_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 22 8 ]
+        %tmp.1 = self;
+        symbol [ setLayout %tmp.2 22 8 17 ];
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        symbol [ Rez %tmp.4 22 18 21 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Layouts %tmp.5 22 22 29 ];
+        %tmp.5 = getv %tmp.4 :Layouts;
+        symbol [ WatchFace %tmp.6 22 30 39 ];
+        %tmp.6 = getv function %tmp.5 :WatchFace;
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 22 40 42 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        invoke %tmp.1 %tmp.2(%tmp.8);
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_21_40_23_4_stop:
+    }
+    [ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 28; @symbol_functiondef = [onShow,28,13,19]; ]
+    function onShow() as Void {
+    }
+    [ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 31; @symbol_functiondef = [onUpdate,31,13,21]; @symbol_param<0> = [dc,31,22,24]; @symbol_param<0>_type<0> = [Dc,31,28,30]; ]
+    function onUpdate(dc as Dc) as Void {
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 33 4 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 33 4 6 ];
+        symbol [ setColor %tmp.2 33 7 15 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Graphics %tmp.3 33 16 24 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.4 33 25 36 ];
+        %tmp.4 = getv %tmp.3 :COLOR_BLACK;
+        symbol [ Graphics %tmp.5 33 38 46 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.6 33 47 58 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 34 4 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 34 4 6 ];
+        symbol [ clear %tmp.8 34 7 12 ];
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 36 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %width.1 = local;
+        symbol [ width %width.1 36 8 13 ];
+        %tmp.9 = lgetv %dc;
+        symbol [ dc %tmp.9 36 16 18 ];
+        symbol [ getWidth %tmp.10 36 19 27 ];
+        %tmp.10 = getv function %tmp.9 :getWidth;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %width.1 %tmp.11;
+        symbol [ width %width.1 36 8 13 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 37 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %height.2 = local;
+        symbol [ height %height.2 37 8 14 ];
+        %tmp.12 = lgetv %dc;
+        symbol [ dc %tmp.12 37 17 19 ];
+        symbol [ getHeight %tmp.13 37 20 29 ];
+        %tmp.13 = getv function %tmp.12 :getHeight;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        lputv %height.2 %tmp.14;
+        symbol [ height %height.2 37 8 14 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 38 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %centerX.3 = local;
+        symbol [ centerX %centerX.3 38 8 15 ];
+        %tmp.15 = lgetv %width.1;
+        symbol [ width %tmp.15 38 18 23 ];
+        %tmp.16 = 2;
+        %tmp.17 = div %tmp.15 %tmp.16;
+        lputv %centerX.3 %tmp.17;
+        symbol [ centerX %centerX.3 38 8 15 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 39 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %centerY.4 = local;
+        symbol [ centerY %centerY.4 39 8 15 ];
+        %tmp.18 = lgetv %height.2;
+        symbol [ height %tmp.18 39 18 24 ];
+        %tmp.19 = 2;
+        %tmp.20 = div %tmp.18 %tmp.19;
+        lputv %centerY.4 %tmp.20;
+        symbol [ centerY %centerY.4 39 8 15 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 42 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %clockTime.5 = local;
+        symbol [ clockTime %clockTime.5 42 8 17 ];
+        symbol [ System %tmp.21 42 20 26 ];
+        %tmp.21 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.22 42 27 39 ];
+        %tmp.22 = getv function %tmp.21 :getClockTime;
+        %tmp.23 = invoke %tmp.21 %tmp.22();
+        lputv %clockTime.5 %tmp.23;
+        symbol [ clockTime %clockTime.5 42 8 17 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 43 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %hours.6 = local;
+        symbol [ hours %hours.6 43 8 13 ];
+        %tmp.24 = lgetv %clockTime.5;
+        symbol [ clockTime %tmp.24 43 16 25 ];
+        symbol [ hour %tmp.25 43 26 30 ];
+        %tmp.25 = getv %tmp.24 :hour;
+        lputv %hours.6 %tmp.25;
+        symbol [ hours %hours.6 43 8 13 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 44 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %minutes.7 = local;
+        symbol [ minutes %minutes.7 44 8 15 ];
+        %tmp.26 = lgetv %clockTime.5;
+        symbol [ clockTime %tmp.26 44 18 27 ];
+        symbol [ min %tmp.27 44 28 31 ];
+        %tmp.27 = getv %tmp.26 :min;
+        symbol [ format %tmp.28 44 32 38 ];
+        %tmp.28 = getv function %tmp.27 :format;
+        %tmp.29 = "%02d";
+        %tmp.30 = invoke %tmp.27 %tmp.28(%tmp.29);
+        lputv %minutes.7 %tmp.30;
+        symbol [ minutes %minutes.7 44 8 15 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 45 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %timeString.8 = local;
+        symbol [ timeString %timeString.8 45 8 18 ];
+        symbol [ Lang %tmp.31 45 21 25 ];
+        %tmp.31 = getm $.Toybox.Lang;
+        symbol [ format %tmp.32 45 26 32 ];
+        %tmp.32 = getv function %tmp.31 :format;
+        %tmp.33 = "$1$:$2$";
+        %tmp.34 = newa 2;
+        %tmp.35 = lgetv %hours.6;
+        symbol [ hours %tmp.35 45 45 50 ];
+        symbol [ format %tmp.36 45 51 57 ];
+        %tmp.36 = getv function %tmp.35 :format;
+        %tmp.37 = "%02d";
+        %tmp.38 = invoke %tmp.35 %tmp.36(%tmp.37);
+        %tmp.39 = dup %tmp.34;
+        %tmp.40 = aputv %tmp.39 0 %tmp.38;
+        %tmp.41 = lgetv %minutes.7;
+        symbol [ minutes %tmp.41 45 67 74 ];
+        %tmp.42 = dup %tmp.40;
+        %tmp.43 = aputv %tmp.42 1 %tmp.41;
+        %tmp.44 = invoke %tmp.31 %tmp.32(%tmp.33, %tmp.43);
+        lputv %timeString.8 %tmp.44;
+        symbol [ timeString %timeString.8 45 8 18 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 47 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %today.9 = local;
+        symbol [ today %today.9 47 8 13 ];
+        symbol [ Gregorian %tmp.45 47 16 25 ];
+        %tmp.45 = getm $.Toybox.Time.Gregorian;
+        symbol [ info %tmp.46 47 26 30 ];
+        %tmp.46 = getv function %tmp.45 :info;
+        symbol [ Time %tmp.47 47 31 35 ];
+        %tmp.47 = getm $.Toybox.Time;
+        symbol [ now %tmp.48 47 36 39 ];
+        %tmp.48 = getv function %tmp.47 :now;
+        %tmp.49 = invoke %tmp.47 %tmp.48();
+        symbol [ Time %tmp.50 47 43 47 ];
+        %tmp.50 = getm $.Toybox.Time;
+        symbol [ FORMAT_MEDIUM %tmp.51 47 48 61 ];
+        %tmp.51 = getv %tmp.50 :FORMAT_MEDIUM;
+        %tmp.52 = invoke %tmp.45 %tmp.46(%tmp.49, %tmp.51);
+        lputv %today.9 %tmp.52;
+        symbol [ today %today.9 47 8 13 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 48 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %dateString.10 = local;
+        symbol [ dateString %dateString.10 48 8 18 ];
+        symbol [ Lang %tmp.53 48 21 25 ];
+        %tmp.53 = getm $.Toybox.Lang;
+        symbol [ format %tmp.54 48 26 32 ];
+        %tmp.54 = getv function %tmp.53 :format;
+        %tmp.55 = "$1$ $2$ $3$";
+        %tmp.56 = newa 3;
+        %tmp.57 = lgetv %today.9;
+        symbol [ today %tmp.57 48 49 54 ];
+        symbol [ day_of_week %tmp.58 48 55 66 ];
+        %tmp.58 = getv %tmp.57 :day_of_week;
+        %tmp.59 = dup %tmp.56;
+        %tmp.60 = aputv %tmp.59 0 %tmp.58;
+        %tmp.61 = lgetv %today.9;
+        symbol [ today %tmp.61 48 68 73 ];
+        symbol [ month %tmp.62 48 74 79 ];
+        %tmp.62 = getv %tmp.61 :month;
+        %tmp.63 = dup %tmp.60;
+        %tmp.64 = aputv %tmp.63 1 %tmp.62;
+        %tmp.65 = lgetv %today.9;
+        symbol [ today %tmp.65 48 81 86 ];
+        symbol [ day %tmp.66 48 87 90 ];
+        %tmp.66 = getv %tmp.65 :day;
+        %tmp.67 = dup %tmp.64;
+        %tmp.68 = aputv %tmp.67 2 %tmp.66;
+        %tmp.69 = invoke %tmp.53 %tmp.54(%tmp.55, %tmp.68);
+        lputv %dateString.10 %tmp.69;
+        symbol [ dateString %dateString.10 48 8 18 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 50 4 ]
+        %tmp.70 = lgetv %dc;
+        symbol [ dc %tmp.70 50 4 6 ];
+        symbol [ setColor %tmp.71 50 7 15 ];
+        %tmp.71 = getv function %tmp.70 :setColor;
+        symbol [ Graphics %tmp.72 50 16 24 ];
+        %tmp.72 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.73 50 25 36 ];
+        %tmp.73 = getv %tmp.72 :COLOR_WHITE;
+        symbol [ Graphics %tmp.74 50 38 46 ];
+        %tmp.74 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.75 50 47 64 ];
+        %tmp.75 = getv %tmp.74 :COLOR_TRANSPARENT;
+        invoke %tmp.70 %tmp.71(%tmp.73, %tmp.75);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 51 4 ]
+        %tmp.76 = lgetv %dc;
+        symbol [ dc %tmp.76 51 4 6 ];
+        symbol [ drawText %tmp.77 51 7 15 ];
+        %tmp.77 = getv function %tmp.76 :drawText;
+        %tmp.78 = lgetv %centerX.3;
+        symbol [ centerX %tmp.78 51 16 23 ];
+        %tmp.79 = lgetv %centerY.4;
+        symbol [ centerY %tmp.79 51 25 32 ];
+        %tmp.80 = 60;
+        %tmp.81 = sub %tmp.79 %tmp.80;
+        symbol [ Graphics %tmp.82 51 39 47 ];
+        %tmp.82 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.83 51 48 58 ];
+        %tmp.83 = getv %tmp.82 :FONT_LARGE;
+        %tmp.84 = lgetv %timeString.8;
+        symbol [ timeString %tmp.84 51 60 70 ];
+        symbol [ Graphics %tmp.85 51 72 80 ];
+        %tmp.85 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.86 51 81 100 ];
+        %tmp.86 = getv %tmp.85 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.76 %tmp.77(%tmp.78, %tmp.81, %tmp.83, %tmp.84, %tmp.86);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 53 4 ]
+        %tmp.87 = lgetv %dc;
+        symbol [ dc %tmp.87 53 4 6 ];
+        symbol [ setPenWidth %tmp.88 53 7 18 ];
+        %tmp.88 = getv function %tmp.87 :setPenWidth;
+        %tmp.89 = 1;
+        invoke %tmp.87 %tmp.88(%tmp.89);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 54 4 ]
+        %tmp.90 = lgetv %dc;
+        symbol [ dc %tmp.90 54 4 6 ];
+        symbol [ setColor %tmp.91 54 7 15 ];
+        %tmp.91 = getv function %tmp.90 :setColor;
+        symbol [ Graphics %tmp.92 54 16 24 ];
+        %tmp.92 = getm $.Toybox.Graphics;
+        symbol [ COLOR_LT_GRAY %tmp.93 54 25 38 ];
+        %tmp.93 = getv %tmp.92 :COLOR_LT_GRAY;
+        symbol [ Graphics %tmp.94 54 40 48 ];
+        %tmp.94 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.95 54 49 66 ];
+        %tmp.95 = getv %tmp.94 :COLOR_TRANSPARENT;
+        invoke %tmp.90 %tmp.91(%tmp.93, %tmp.95);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 55 4 ]
+        %tmp.96 = lgetv %dc;
+        symbol [ dc %tmp.96 55 4 6 ];
+        symbol [ drawLine %tmp.97 55 7 15 ];
+        %tmp.97 = getv function %tmp.96 :drawLine;
+        %tmp.98 = lgetv %centerX.3;
+        symbol [ centerX %tmp.98 55 16 23 ];
+        %tmp.99 = 50;
+        %tmp.100 = sub %tmp.98 %tmp.99;
+        %tmp.101 = lgetv %centerY.4;
+        symbol [ centerY %tmp.101 55 30 37 ];
+        %tmp.102 = 5;
+        %tmp.103 = add %tmp.101 %tmp.102;
+        %tmp.104 = lgetv %centerX.3;
+        symbol [ centerX %tmp.104 55 43 50 ];
+        %tmp.105 = 50;
+        %tmp.106 = add %tmp.104 %tmp.105;
+        %tmp.107 = lgetv %centerY.4;
+        symbol [ centerY %tmp.107 55 57 64 ];
+        %tmp.108 = 5;
+        %tmp.109 = add %tmp.107 %tmp.108;
+        invoke %tmp.96 %tmp.97(%tmp.100, %tmp.103, %tmp.106, %tmp.109);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 57 4 ]
+        %tmp.110 = lgetv %dc;
+        symbol [ dc %tmp.110 57 4 6 ];
+        symbol [ setColor %tmp.111 57 7 15 ];
+        %tmp.111 = getv function %tmp.110 :setColor;
+        symbol [ Graphics %tmp.112 57 16 24 ];
+        %tmp.112 = getm $.Toybox.Graphics;
+        symbol [ COLOR_LT_GRAY %tmp.113 57 25 38 ];
+        %tmp.113 = getv %tmp.112 :COLOR_LT_GRAY;
+        symbol [ Graphics %tmp.114 57 40 48 ];
+        %tmp.114 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.115 57 49 66 ];
+        %tmp.115 = getv %tmp.114 :COLOR_TRANSPARENT;
+        invoke %tmp.110 %tmp.111(%tmp.113, %tmp.115);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 58 4 ]
+        %tmp.116 = lgetv %dc;
+        symbol [ dc %tmp.116 58 4 6 ];
+        symbol [ drawText %tmp.117 58 7 15 ];
+        %tmp.117 = getv function %tmp.116 :drawText;
+        %tmp.118 = lgetv %centerX.3;
+        symbol [ centerX %tmp.118 58 16 23 ];
+        %tmp.119 = lgetv %centerY.4;
+        symbol [ centerY %tmp.119 58 25 32 ];
+        %tmp.120 = 10;
+        %tmp.121 = add %tmp.119 %tmp.120;
+        symbol [ Graphics %tmp.122 58 39 47 ];
+        %tmp.122 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.123 58 48 58 ];
+        %tmp.123 = getv %tmp.122 :FONT_SMALL;
+        %tmp.124 = lgetv %dateString.10;
+        symbol [ dateString %tmp.124 58 60 70 ];
+        symbol [ Graphics %tmp.125 58 72 80 ];
+        %tmp.125 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.126 58 81 100 ];
+        %tmp.126 = getv %tmp.125 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.116 %tmp.117(%tmp.118, %tmp.121, %tmp.123, %tmp.124, %tmp.126);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 61 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %ringRadius.11 = local;
+        symbol [ ringRadius %ringRadius.11 61 8 18 ];
+        %tmp.127 = lgetv %centerX.3;
+        symbol [ centerX %tmp.127 61 21 28 ];
+        %tmp.128 = 10;
+        %tmp.129 = sub %tmp.127 %tmp.128;
+        lputv %ringRadius.11 %tmp.129;
+        symbol [ ringRadius %ringRadius.11 61 8 18 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 62 4 ]
+        %tmp.130 = lgetv %dc;
+        symbol [ dc %tmp.130 62 4 6 ];
+        symbol [ setPenWidth %tmp.131 62 7 18 ];
+        %tmp.131 = getv function %tmp.130 :setPenWidth;
+        %tmp.132 = 10;
+        invoke %tmp.130 %tmp.131(%tmp.132);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 65 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %stepInfo.12 = local;
+        symbol [ stepInfo %stepInfo.12 65 8 16 ];
+        symbol [ ActivityMonitor %tmp.133 65 19 34 ];
+        %tmp.133 = getm $.Toybox.ActivityMonitor;
+        symbol [ getInfo %tmp.134 65 35 42 ];
+        %tmp.134 = getv function %tmp.133 :getInfo;
+        %tmp.135 = invoke %tmp.133 %tmp.134();
+        lputv %stepInfo.12 %tmp.135;
+        symbol [ stepInfo %stepInfo.12 65 8 16 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 66 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %steps.13 = local;
+        symbol [ steps %steps.13 66 8 13 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_66_16_66_68_begin:
+        %tmp.136 = lgetv %stepInfo.12;
+        symbol [ stepInfo %tmp.136 66 16 24 ];
+        symbol [ steps %tmp.137 66 25 30 ];
+        %tmp.137 = getv %tmp.136 :steps;
+        %tmp.138 = null;
+        %tmp.139 = ne %tmp.137 %tmp.138;
+        bf %tmp.139 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_66_16_66_68_else_false;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_66_16_66_68_true:
+        %tmp.140 = lgetv %stepInfo.12;
+        symbol [ stepInfo %tmp.140 66 41 49 ];
+        symbol [ steps %tmp.141 66 50 55 ];
+        %tmp.141 = getv %tmp.140 :steps;
+        symbol [ toFloat %tmp.142 66 56 63 ];
+        %tmp.142 = getv function %tmp.141 :toFloat;
+        %tmp.143 = invoke %tmp.141 %tmp.142();
+        push %tmp.143;
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_66_16_66_68_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_66_16_66_68_else_false:
+        %tmp.144 = 0.0;
+        push %tmp.144;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_66_16_66_68_end:
+        %tmp.145 = phi [%tmp.139 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_66_16_66_68_begin] [%tmp.143 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_66_16_66_68_true] [%tmp.144 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_66_16_66_68_else_false] [%tmp.145 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_66_16_66_68_end];
+        lputv %steps.13 %tmp.145;
+        symbol [ steps %steps.13 66 8 13 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 67 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %stepGoal.14 = local;
+        symbol [ stepGoal %stepGoal.14 67 8 16 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_67_19_67_77_begin:
+        %tmp.146 = lgetv %stepInfo.12;
+        symbol [ stepInfo %tmp.146 67 19 27 ];
+        symbol [ stepGoal %tmp.147 67 28 36 ];
+        %tmp.147 = getv %tmp.146 :stepGoal;
+        %tmp.148 = null;
+        %tmp.149 = ne %tmp.147 %tmp.148;
+        bf %tmp.149 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_67_19_67_77_else_false;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_67_19_67_77_true:
+        %tmp.150 = lgetv %stepInfo.12;
+        symbol [ stepInfo %tmp.150 67 47 55 ];
+        symbol [ stepGoal %tmp.151 67 56 64 ];
+        %tmp.151 = getv %tmp.150 :stepGoal;
+        symbol [ toFloat %tmp.152 67 65 72 ];
+        %tmp.152 = getv function %tmp.151 :toFloat;
+        %tmp.153 = invoke %tmp.151 %tmp.152();
+        push %tmp.153;
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_67_19_67_77_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_67_19_67_77_else_false:
+        %tmp.154 = 10000.0;
+        push %tmp.154;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_67_19_67_77_end:
+        %tmp.155 = phi [%tmp.149 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_67_19_67_77_begin] [%tmp.153 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_67_19_67_77_true] [%tmp.154 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_67_19_67_77_else_false] [%tmp.155 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_67_19_67_77_end];
+        lputv %stepGoal.14 %tmp.155;
+        symbol [ stepGoal %stepGoal.14 67 8 16 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 68 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %stepPercent.15 = local;
+        symbol [ stepPercent %stepPercent.15 68 8 19 ];
+        %tmp.156 = lgetv %steps.13;
+        symbol [ steps %tmp.156 68 22 27 ];
+        %tmp.157 = lgetv %stepGoal.14;
+        symbol [ stepGoal %tmp.157 68 30 38 ];
+        %tmp.158 = div %tmp.156 %tmp.157;
+        lputv %stepPercent.15 %tmp.158;
+        symbol [ stepPercent %stepPercent.15 68 8 19 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 69 4 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_69_4_69_48_if_stmt:
+        %tmp.159 = lgetv %stepPercent.15;
+        symbol [ stepPercent %tmp.159 69 8 19 ];
+        %tmp.160 = 1.0;
+        %tmp.161 = gt %tmp.159 %tmp.160;
+        bf %tmp.161 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_69_4_69_48_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_69_4_69_48_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_69_27_69_48_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 69 29 ]
+        %tmp.162 = 1.0;
+        lputv %stepPercent.15 %tmp.162;
+        symbol [ stepPercent %stepPercent.15 69 29 40 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_69_27_69_48_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_69_4_69_48_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_69_4_69_48_if_end:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 72 4 ]
+        %tmp.163 = lgetv %dc;
+        symbol [ dc %tmp.163 72 4 6 ];
+        symbol [ setColor %tmp.164 72 7 15 ];
+        %tmp.164 = getv function %tmp.163 :setColor;
+        %tmp.165 = 0x0C2624;
+        symbol [ Graphics %tmp.166 72 26 34 ];
+        %tmp.166 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.167 72 35 52 ];
+        %tmp.167 = getv %tmp.166 :COLOR_TRANSPARENT;
+        invoke %tmp.163 %tmp.164(%tmp.165, %tmp.167);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 73 4 ]
+        %tmp.168 = lgetv %dc;
+        symbol [ dc %tmp.168 73 4 6 ];
+        symbol [ drawArc %tmp.169 73 7 14 ];
+        %tmp.169 = getv function %tmp.168 :drawArc;
+        %tmp.170 = lgetv %centerX.3;
+        symbol [ centerX %tmp.170 73 15 22 ];
+        %tmp.171 = lgetv %centerY.4;
+        symbol [ centerY %tmp.171 73 24 31 ];
+        %tmp.172 = lgetv %ringRadius.11;
+        symbol [ ringRadius %tmp.172 73 33 43 ];
+        symbol [ Graphics %tmp.173 73 45 53 ];
+        %tmp.173 = getm $.Toybox.Graphics;
+        symbol [ ARC_CLOCKWISE %tmp.174 73 54 67 ];
+        %tmp.174 = getv %tmp.173 :ARC_CLOCKWISE;
+        %tmp.175 = 180;
+        %tmp.176 = 90;
+        invoke %tmp.168 %tmp.169(%tmp.170, %tmp.171, %tmp.172, %tmp.174, %tmp.175, %tmp.176);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 76 4 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_76_4_79_4_if_stmt:
+        %tmp.177 = lgetv %stepPercent.15;
+        symbol [ stepPercent %tmp.177 76 8 19 ];
+        %tmp.178 = 0;
+        %tmp.179 = gt %tmp.177 %tmp.178;
+        bf %tmp.179 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_76_4_79_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_76_4_79_4_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_76_25_79_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 77 8 ]
+        %tmp.180 = lgetv %dc;
+        symbol [ dc %tmp.180 77 8 10 ];
+        symbol [ setColor %tmp.181 77 11 19 ];
+        %tmp.181 = getv function %tmp.180 :setColor;
+        %tmp.182 = 0x184D47;
+        symbol [ Graphics %tmp.183 77 30 38 ];
+        %tmp.183 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.184 77 39 56 ];
+        %tmp.184 = getv %tmp.183 :COLOR_TRANSPARENT;
+        invoke %tmp.180 %tmp.181(%tmp.182, %tmp.184);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 78 8 ]
+        %tmp.185 = lgetv %dc;
+        symbol [ dc %tmp.185 78 8 10 ];
+        symbol [ drawArc %tmp.186 78 11 18 ];
+        %tmp.186 = getv function %tmp.185 :drawArc;
+        %tmp.187 = lgetv %centerX.3;
+        symbol [ centerX %tmp.187 78 19 26 ];
+        %tmp.188 = lgetv %centerY.4;
+        symbol [ centerY %tmp.188 78 28 35 ];
+        %tmp.189 = lgetv %ringRadius.11;
+        symbol [ ringRadius %tmp.189 78 37 47 ];
+        symbol [ Graphics %tmp.190 78 49 57 ];
+        %tmp.190 = getm $.Toybox.Graphics;
+        symbol [ ARC_CLOCKWISE %tmp.191 78 58 71 ];
+        %tmp.191 = getv %tmp.190 :ARC_CLOCKWISE;
+        %tmp.192 = 180;
+        %tmp.193 = 180;
+        %tmp.194 = lgetv %stepPercent.15;
+        symbol [ stepPercent %tmp.194 78 85 96 ];
+        %tmp.195 = 90;
+        %tmp.196 = mul %tmp.194 %tmp.195;
+        symbol [ toNumber %tmp.197 78 103 111 ];
+        %tmp.197 = getv function %tmp.196 :toNumber;
+        %tmp.198 = invoke %tmp.196 %tmp.197();
+        %tmp.199 = sub %tmp.193 %tmp.198;
+        invoke %tmp.185 %tmp.186(%tmp.187, %tmp.188, %tmp.189, %tmp.191, %tmp.192, %tmp.199);
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_76_25_79_4_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_76_4_79_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_76_4_79_4_if_end:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 82 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %calories.16 = local;
+        symbol [ calories %calories.16 82 8 16 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_82_19_82_77_begin:
+        %tmp.200 = lgetv %stepInfo.12;
+        symbol [ stepInfo %tmp.200 82 19 27 ];
+        symbol [ calories %tmp.201 82 28 36 ];
+        %tmp.201 = getv %tmp.200 :calories;
+        %tmp.202 = null;
+        %tmp.203 = ne %tmp.201 %tmp.202;
+        bf %tmp.203 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_82_19_82_77_else_false;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_82_19_82_77_true:
+        %tmp.204 = lgetv %stepInfo.12;
+        symbol [ stepInfo %tmp.204 82 47 55 ];
+        symbol [ calories %tmp.205 82 56 64 ];
+        %tmp.205 = getv %tmp.204 :calories;
+        symbol [ toFloat %tmp.206 82 65 72 ];
+        %tmp.206 = getv function %tmp.205 :toFloat;
+        %tmp.207 = invoke %tmp.205 %tmp.206();
+        push %tmp.207;
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_82_19_82_77_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_82_19_82_77_else_false:
+        %tmp.208 = 0.0;
+        push %tmp.208;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_82_19_82_77_end:
+        %tmp.209 = phi [%tmp.203 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_82_19_82_77_begin] [%tmp.207 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_82_19_82_77_true] [%tmp.208 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_82_19_82_77_else_false] [%tmp.209 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_82_19_82_77_end];
+        lputv %calories.16 %tmp.209;
+        symbol [ calories %calories.16 82 8 16 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 83 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %calGoal.17 = local;
+        symbol [ calGoal %calGoal.17 83 8 15 ];
+        %tmp.210 = 500.0;
+        lputv %calGoal.17 %tmp.210;
+        symbol [ calGoal %calGoal.17 83 8 15 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 84 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %calPercent.18 = local;
+        symbol [ calPercent %calPercent.18 84 8 18 ];
+        %tmp.211 = lgetv %calories.16;
+        symbol [ calories %tmp.211 84 21 29 ];
+        %tmp.212 = lgetv %calGoal.17;
+        symbol [ calGoal %tmp.212 84 32 39 ];
+        %tmp.213 = div %tmp.211 %tmp.212;
+        lputv %calPercent.18 %tmp.213;
+        symbol [ calPercent %calPercent.18 84 8 18 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 85 4 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_85_4_85_46_if_stmt:
+        %tmp.214 = lgetv %calPercent.18;
+        symbol [ calPercent %tmp.214 85 8 18 ];
+        %tmp.215 = 1.0;
+        %tmp.216 = gt %tmp.214 %tmp.215;
+        bf %tmp.216 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_85_4_85_46_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_85_4_85_46_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_85_26_85_46_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 85 28 ]
+        %tmp.217 = 1.0;
+        lputv %calPercent.18 %tmp.217;
+        symbol [ calPercent %calPercent.18 85 28 38 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_85_26_85_46_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_85_4_85_46_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_85_4_85_46_if_end:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 88 4 ]
+        %tmp.218 = lgetv %dc;
+        symbol [ dc %tmp.218 88 4 6 ];
+        symbol [ setColor %tmp.219 88 7 15 ];
+        %tmp.219 = getv function %tmp.218 :setColor;
+        %tmp.220 = 0x4A5C3C;
+        symbol [ Graphics %tmp.221 88 26 34 ];
+        %tmp.221 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.222 88 35 52 ];
+        %tmp.222 = getv %tmp.221 :COLOR_TRANSPARENT;
+        invoke %tmp.218 %tmp.219(%tmp.220, %tmp.222);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 89 4 ]
+        %tmp.223 = lgetv %dc;
+        symbol [ dc %tmp.223 89 4 6 ];
+        symbol [ drawArc %tmp.224 89 7 14 ];
+        %tmp.224 = getv function %tmp.223 :drawArc;
+        %tmp.225 = lgetv %centerX.3;
+        symbol [ centerX %tmp.225 89 15 22 ];
+        %tmp.226 = lgetv %centerY.4;
+        symbol [ centerY %tmp.226 89 24 31 ];
+        %tmp.227 = lgetv %ringRadius.11;
+        symbol [ ringRadius %tmp.227 89 33 43 ];
+        symbol [ Graphics %tmp.228 89 45 53 ];
+        %tmp.228 = getm $.Toybox.Graphics;
+        symbol [ ARC_CLOCKWISE %tmp.229 89 54 67 ];
+        %tmp.229 = getv %tmp.228 :ARC_CLOCKWISE;
+        %tmp.230 = 270;
+        %tmp.231 = 180;
+        invoke %tmp.223 %tmp.224(%tmp.225, %tmp.226, %tmp.227, %tmp.229, %tmp.230, %tmp.231);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 92 4 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_92_4_95_4_if_stmt:
+        %tmp.232 = lgetv %calPercent.18;
+        symbol [ calPercent %tmp.232 92 8 18 ];
+        %tmp.233 = 0;
+        %tmp.234 = gt %tmp.232 %tmp.233;
+        bf %tmp.234 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_92_4_95_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_92_4_95_4_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_92_24_95_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 93 8 ]
+        %tmp.235 = lgetv %dc;
+        symbol [ dc %tmp.235 93 8 10 ];
+        symbol [ setColor %tmp.236 93 11 19 ];
+        %tmp.236 = getv function %tmp.235 :setColor;
+        %tmp.237 = 0x96BB7C;
+        symbol [ Graphics %tmp.238 93 30 38 ];
+        %tmp.238 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.239 93 39 56 ];
+        %tmp.239 = getv %tmp.238 :COLOR_TRANSPARENT;
+        invoke %tmp.235 %tmp.236(%tmp.237, %tmp.239);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 94 8 ]
+        %tmp.240 = lgetv %dc;
+        symbol [ dc %tmp.240 94 8 10 ];
+        symbol [ drawArc %tmp.241 94 11 18 ];
+        %tmp.241 = getv function %tmp.240 :drawArc;
+        %tmp.242 = lgetv %centerX.3;
+        symbol [ centerX %tmp.242 94 19 26 ];
+        %tmp.243 = lgetv %centerY.4;
+        symbol [ centerY %tmp.243 94 28 35 ];
+        %tmp.244 = lgetv %ringRadius.11;
+        symbol [ ringRadius %tmp.244 94 37 47 ];
+        symbol [ Graphics %tmp.245 94 49 57 ];
+        %tmp.245 = getm $.Toybox.Graphics;
+        symbol [ ARC_CLOCKWISE %tmp.246 94 58 71 ];
+        %tmp.246 = getv %tmp.245 :ARC_CLOCKWISE;
+        %tmp.247 = 270;
+        %tmp.248 = 270;
+        %tmp.249 = lgetv %calPercent.18;
+        symbol [ calPercent %tmp.249 94 85 95 ];
+        %tmp.250 = 90;
+        %tmp.251 = mul %tmp.249 %tmp.250;
+        symbol [ toNumber %tmp.252 94 102 110 ];
+        %tmp.252 = getv function %tmp.251 :toNumber;
+        %tmp.253 = invoke %tmp.251 %tmp.252();
+        %tmp.254 = sub %tmp.248 %tmp.253;
+        invoke %tmp.240 %tmp.241(%tmp.242, %tmp.243, %tmp.244, %tmp.246, %tmp.247, %tmp.254);
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_92_24_95_4_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_92_4_95_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_92_4_95_4_if_end:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 98 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %stats.19 = local;
+        symbol [ stats %stats.19 98 8 13 ];
+        symbol [ System %tmp.255 98 16 22 ];
+        %tmp.255 = getm $.Toybox.System;
+        symbol [ getSystemStats %tmp.256 98 23 37 ];
+        %tmp.256 = getv function %tmp.255 :getSystemStats;
+        %tmp.257 = invoke %tmp.255 %tmp.256();
+        lputv %stats.19 %tmp.257;
+        symbol [ stats %stats.19 98 8 13 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 99 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %battery.20 = local;
+        symbol [ battery %battery.20 99 8 15 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_99_18_99_68_begin:
+        %tmp.258 = lgetv %stats.19;
+        symbol [ stats %tmp.258 99 18 23 ];
+        symbol [ battery %tmp.259 99 24 31 ];
+        %tmp.259 = getv %tmp.258 :battery;
+        %tmp.260 = null;
+        %tmp.261 = ne %tmp.259 %tmp.260;
+        bf %tmp.261 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_99_18_99_68_else_false;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_99_18_99_68_true:
+        %tmp.262 = lgetv %stats.19;
+        symbol [ stats %tmp.262 99 42 47 ];
+        symbol [ battery %tmp.263 99 48 55 ];
+        %tmp.263 = getv %tmp.262 :battery;
+        symbol [ toFloat %tmp.264 99 56 63 ];
+        %tmp.264 = getv function %tmp.263 :toFloat;
+        %tmp.265 = invoke %tmp.263 %tmp.264();
+        push %tmp.265;
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_99_18_99_68_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_99_18_99_68_else_false:
+        %tmp.266 = 100.0;
+        push %tmp.266;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_99_18_99_68_end:
+        %tmp.267 = phi [%tmp.261 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_99_18_99_68_begin] [%tmp.265 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_99_18_99_68_true] [%tmp.266 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_99_18_99_68_else_false] [%tmp.267 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_99_18_99_68_end];
+        lputv %battery.20 %tmp.267;
+        symbol [ battery %battery.20 99 8 15 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 100 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %batPercent.21 = local;
+        symbol [ batPercent %batPercent.21 100 8 18 ];
+        %tmp.268 = lgetv %battery.20;
+        symbol [ battery %tmp.268 100 21 28 ];
+        %tmp.269 = 100.0;
+        %tmp.270 = div %tmp.268 %tmp.269;
+        lputv %batPercent.21 %tmp.270;
+        symbol [ batPercent %batPercent.21 100 8 18 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 103 4 ]
+        %tmp.271 = lgetv %dc;
+        symbol [ dc %tmp.271 103 4 6 ];
+        symbol [ setColor %tmp.272 103 7 15 ];
+        %tmp.272 = getv function %tmp.271 :setColor;
+        %tmp.273 = 0x333333;
+        symbol [ Graphics %tmp.274 103 26 34 ];
+        %tmp.274 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.275 103 35 52 ];
+        %tmp.275 = getv %tmp.274 :COLOR_TRANSPARENT;
+        invoke %tmp.271 %tmp.272(%tmp.273, %tmp.275);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 104 4 ]
+        %tmp.276 = lgetv %dc;
+        symbol [ dc %tmp.276 104 4 6 ];
+        symbol [ drawArc %tmp.277 104 7 14 ];
+        %tmp.277 = getv function %tmp.276 :drawArc;
+        %tmp.278 = lgetv %centerX.3;
+        symbol [ centerX %tmp.278 104 15 22 ];
+        %tmp.279 = lgetv %centerY.4;
+        symbol [ centerY %tmp.279 104 24 31 ];
+        %tmp.280 = lgetv %ringRadius.11;
+        symbol [ ringRadius %tmp.280 104 33 43 ];
+        symbol [ Graphics %tmp.281 104 45 53 ];
+        %tmp.281 = getm $.Toybox.Graphics;
+        symbol [ ARC_CLOCKWISE %tmp.282 104 54 67 ];
+        %tmp.282 = getv %tmp.281 :ARC_CLOCKWISE;
+        %tmp.283 = 360;
+        %tmp.284 = 270;
+        invoke %tmp.276 %tmp.277(%tmp.278, %tmp.279, %tmp.280, %tmp.282, %tmp.283, %tmp.284);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 107 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %batColor.22 = local;
+        symbol [ batColor %batColor.22 107 8 16 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 108 4 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_108_4_114_4_if_stmt:
+        %tmp.285 = lgetv %battery.20;
+        symbol [ battery %tmp.285 108 8 15 ];
+        %tmp.286 = 50;
+        %tmp.287 = gt %tmp.285 %tmp.286;
+        bf %tmp.287 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_108_4_114_4_if_false;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_108_4_114_4_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_108_22_110_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 109 8 ]
+        %tmp.288 = 0x49FF00;
+        lputv %batColor.22 %tmp.288;
+        symbol [ batColor %batColor.22 109 8 16 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_108_22_110_4_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_108_4_114_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_108_4_114_4_if_false:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 110 11 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_110_11_114_4_if_stmt:
+        %tmp.289 = lgetv %battery.20;
+        symbol [ battery %tmp.289 110 15 22 ];
+        %tmp.290 = 20;
+        %tmp.291 = gt %tmp.289 %tmp.290;
+        bf %tmp.291 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_110_11_114_4_if_else_false;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_110_11_114_4_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_110_29_112_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 111 8 ]
+        %tmp.292 = 0xFBFF00;
+        lputv %batColor.22 %tmp.292;
+        symbol [ batColor %batColor.22 111 8 16 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_110_29_112_4_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_110_11_114_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_110_11_114_4_if_else_false:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_112_11_114_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 113 8 ]
+        %tmp.293 = 0xFF0000;
+        lputv %batColor.22 %tmp.293;
+        symbol [ batColor %batColor.22 113 8 16 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_112_11_114_4_stop:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_110_11_114_4_if_end:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_108_4_114_4_if_end:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 117 4 ]
+        %tmp.294 = lgetv %dc;
+        symbol [ dc %tmp.294 117 4 6 ];
+        symbol [ setColor %tmp.295 117 7 15 ];
+        %tmp.295 = getv function %tmp.294 :setColor;
+        %tmp.296 = lgetv %batColor.22;
+        symbol [ batColor %tmp.296 117 16 24 ];
+        symbol [ Graphics %tmp.297 117 26 34 ];
+        %tmp.297 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.298 117 35 52 ];
+        %tmp.298 = getv %tmp.297 :COLOR_TRANSPARENT;
+        invoke %tmp.294 %tmp.295(%tmp.296, %tmp.298);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 118 4 ]
+        %tmp.299 = lgetv %dc;
+        symbol [ dc %tmp.299 118 4 6 ];
+        symbol [ drawArc %tmp.300 118 7 14 ];
+        %tmp.300 = getv function %tmp.299 :drawArc;
+        %tmp.301 = lgetv %centerX.3;
+        symbol [ centerX %tmp.301 118 15 22 ];
+        %tmp.302 = lgetv %centerY.4;
+        symbol [ centerY %tmp.302 118 24 31 ];
+        %tmp.303 = lgetv %ringRadius.11;
+        symbol [ ringRadius %tmp.303 118 33 43 ];
+        symbol [ Graphics %tmp.304 118 45 53 ];
+        %tmp.304 = getm $.Toybox.Graphics;
+        symbol [ ARC_COUNTER_CLOCKWISE %tmp.305 118 54 75 ];
+        %tmp.305 = getv %tmp.304 :ARC_COUNTER_CLOCKWISE;
+        %tmp.306 = 270;
+        %tmp.307 = 270;
+        %tmp.308 = lgetv %batPercent.21;
+        symbol [ batPercent %tmp.308 118 89 99 ];
+        %tmp.309 = 90;
+        %tmp.310 = mul %tmp.308 %tmp.309;
+        symbol [ toNumber %tmp.311 118 106 114 ];
+        %tmp.311 = getv function %tmp.310 :toNumber;
+        %tmp.312 = invoke %tmp.310 %tmp.311();
+        %tmp.313 = add %tmp.307 %tmp.312;
+        invoke %tmp.299 %tmp.300(%tmp.301, %tmp.302, %tmp.303, %tmp.305, %tmp.306, %tmp.313);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 122 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %weatherX.23 = local;
+        symbol [ weatherX %weatherX.23 122 8 16 ];
+        %tmp.314 = lgetv %width.1;
+        symbol [ width %tmp.314 122 19 24 ];
+        %tmp.315 = 85;
+        %tmp.316 = sub %tmp.314 %tmp.315;
+        lputv %weatherX.23 %tmp.316;
+        symbol [ weatherX %weatherX.23 122 8 16 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 123 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %weatherY.24 = local;
+        symbol [ weatherY %weatherY.24 123 8 16 ];
+        %tmp.317 = 55;
+        lputv %weatherY.24 %tmp.317;
+        symbol [ weatherY %weatherY.24 123 8 16 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 125 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %conditions.25 = local;
+        symbol [ conditions %conditions.25 125 8 18 ];
+        symbol [ Weather %tmp.318 125 21 28 ];
+        %tmp.318 = getm $.Toybox.Weather;
+        symbol [ getCurrentConditions %tmp.319 125 29 49 ];
+        %tmp.319 = getv function %tmp.318 :getCurrentConditions;
+        %tmp.320 = invoke %tmp.318 %tmp.319();
+        lputv %conditions.25 %tmp.320;
+        symbol [ conditions %conditions.25 125 8 18 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 126 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %cond.26 = local;
+        symbol [ cond %cond.26 126 8 12 ];
+        %tmp.321 = 0;
+        lputv %cond.26 %tmp.321;
+        symbol [ cond %cond.26 126 8 12 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 127 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %tempF.27 = local;
+        symbol [ tempF %tempF.27 127 8 13 ];
+        %tmp.322 = "---";
+        lputv %tempF.27 %tmp.322;
+        symbol [ tempF %tempF.27 127 8 13 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 129 4 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_129_4_137_4_if_stmt:
+        %tmp.323 = lgetv %conditions.25;
+        symbol [ conditions %tmp.323 129 8 18 ];
+        %tmp.324 = null;
+        %tmp.325 = ne %tmp.323 %tmp.324;
+        bf %tmp.325 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_129_4_137_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_129_4_137_4_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_129_28_137_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 130 8 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_130_8_132_8_if_stmt:
+        %tmp.326 = lgetv %conditions.25;
+        symbol [ conditions %tmp.326 130 12 22 ];
+        %tmp.327 = as %tmp.326 { (!Null) };
+        symbol [ condition %tmp.328 130 23 32 ];
+        %tmp.328 = getv %tmp.327 :condition;
+        %tmp.329 = null;
+        %tmp.330 = ne %tmp.328 %tmp.329;
+        bf %tmp.330 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_130_8_132_8_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_130_8_132_8_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_130_42_132_8_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 131 12 ]
+        %tmp.331 = lgetv %conditions.25;
+        symbol [ conditions %tmp.331 131 19 29 ];
+        %tmp.332 = as %tmp.331 { (!Null) };
+        symbol [ condition %tmp.333 131 30 39 ];
+        %tmp.333 = getv %tmp.332 :condition;
+        symbol [ toNumber %tmp.334 131 40 48 ];
+        %tmp.334 = getv function %tmp.333 :toNumber;
+        %tmp.335 = invoke %tmp.333 %tmp.334();
+        lputv %cond.26 %tmp.335;
+        symbol [ cond %cond.26 131 12 16 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_130_42_132_8_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_130_8_132_8_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_130_8_132_8_if_end:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 133 8 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_133_8_136_8_if_stmt:
+        %tmp.336 = lgetv %conditions.25;
+        symbol [ conditions %tmp.336 133 12 22 ];
+        %tmp.337 = as %tmp.336 { (!Null) };
+        symbol [ temperature %tmp.338 133 23 34 ];
+        %tmp.338 = getv %tmp.337 :temperature;
+        %tmp.339 = null;
+        %tmp.340 = ne %tmp.338 %tmp.339;
+        bf %tmp.340 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_133_8_136_8_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_133_8_136_8_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_133_44_136_8_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 134 12 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_133_44_136_8_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_133_44_136_8_stop" ]
+        %tempC.28 = local;
+        symbol [ tempC %tempC.28 134 16 21 ];
+        %tmp.341 = lgetv %conditions.25;
+        symbol [ conditions %tmp.341 134 24 34 ];
+        %tmp.342 = as %tmp.341 { (!Null) };
+        symbol [ temperature %tmp.343 134 35 46 ];
+        %tmp.343 = getv %tmp.342 :temperature;
+        lputv %tempC.28 %tmp.343;
+        symbol [ tempC %tempC.28 134 16 21 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 135 12 ]
+        %tmp.344 = lgetv %tempC.28;
+        symbol [ tempC %tmp.344 135 23 28 ];
+        %tmp.345 = 9;
+        %tmp.346 = mul %tmp.344 %tmp.345;
+        %tmp.347 = 5;
+        %tmp.348 = div %tmp.346 %tmp.347;
+        %tmp.349 = 32;
+        %tmp.350 = add %tmp.348 %tmp.349;
+        symbol [ format %tmp.351 135 45 51 ];
+        %tmp.351 = getv function %tmp.350 :format;
+        %tmp.352 = "%d";
+        %tmp.353 = invoke %tmp.350 %tmp.351(%tmp.352);
+        %tmp.354 = "F";
+        %tmp.355 = add %tmp.353 %tmp.354;
+        lputv %tempF.27 %tmp.355;
+        symbol [ tempF %tempF.27 135 12 17 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_133_44_136_8_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_133_8_136_8_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_133_8_136_8_if_end:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_129_28_137_4_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_129_4_137_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_129_4_137_4_if_end:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 140 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %weatherIcon.29 = local;
+        symbol [ weatherIcon %weatherIcon.29 140 8 19 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 141 4 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_4_155_4_if_stmt:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_8_141_29_begin:
+        %tmp.356 = lgetv %cond.26;
+        symbol [ cond %tmp.356 141 8 12 ];
+        %tmp.357 = 0;
+        %tmp.358 = eq %tmp.356 %tmp.357;
+        bt %tmp.358 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_4_155_4_if_true;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_21_141_29_false:
+        %tmp.359 = lgetv %cond.26;
+        symbol [ cond %tmp.359 141 21 25 ];
+        %tmp.360 = 40;
+        %tmp.361 = eq %tmp.359 %tmp.360;
+        push %tmp.361;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_21_141_29_end:
+        %tmp.362 = phi [%tmp.358 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_8_141_29_begin] [%tmp.361 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_21_141_29_false] [%tmp.362 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_21_141_29_end];
+        bf %tmp.362 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_4_155_4_if_false;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_4_155_4_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_33_143_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 142 8 ]
+        symbol [ Rez %tmp.364 142 22 25 ];
+        %tmp.364 = getv ? :Rez;
+        symbol [ Drawables %tmp.365 142 26 35 ];
+        %tmp.365 = getv %tmp.364 :Drawables;
+        symbol [ ImgSunny %tmp.366 142 36 44 ];
+        %tmp.366 = getv %tmp.365 :ImgSunny;
+        lputv %weatherIcon.29 %tmp.366;
+        symbol [ weatherIcon %weatherIcon.29 142 8 19 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_33_143_4_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_4_155_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_4_155_4_if_false:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 143 11 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_11_155_4_if_stmt:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_15_143_49_begin:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_15_143_36_begin:
+        %tmp.367 = lgetv %cond.26;
+        symbol [ cond %tmp.367 143 15 19 ];
+        %tmp.368 = 2;
+        %tmp.369 = eq %tmp.367 %tmp.368;
+        bt %tmp.369 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_11_155_4_if_true;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_28_143_36_false:
+        %tmp.370 = lgetv %cond.26;
+        symbol [ cond %tmp.370 143 28 32 ];
+        %tmp.371 = 1;
+        %tmp.372 = eq %tmp.370 %tmp.371;
+        push %tmp.372;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_28_143_36_end:
+        %tmp.373 = phi [%tmp.369 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_15_143_36_begin] [%tmp.372 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_28_143_36_false] [%tmp.373 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_28_143_36_end];
+        bt %tmp.373 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_11_155_4_if_true;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_41_143_49_false:
+        %tmp.374 = lgetv %cond.26;
+        symbol [ cond %tmp.374 143 41 45 ];
+        %tmp.375 = 52;
+        %tmp.376 = eq %tmp.374 %tmp.375;
+        push %tmp.376;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_41_143_49_end:
+        %tmp.377 = phi [%tmp.373 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_15_143_49_begin] [%tmp.376 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_41_143_49_false] [%tmp.377 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_41_143_49_end];
+        bf %tmp.377 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_11_155_4_if_false;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_11_155_4_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_53_145_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 144 8 ]
+        symbol [ Rez %tmp.379 144 22 25 ];
+        %tmp.379 = getv ? :Rez;
+        symbol [ Drawables %tmp.380 144 26 35 ];
+        %tmp.380 = getv %tmp.379 :Drawables;
+        symbol [ ImgCloudy %tmp.381 144 36 45 ];
+        %tmp.381 = getv %tmp.380 :ImgCloudy;
+        lputv %weatherIcon.29 %tmp.381;
+        symbol [ weatherIcon %weatherIcon.29 144 8 19 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_53_145_4_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_11_155_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_11_155_4_if_false:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 145 11 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_11_155_4_if_stmt:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_15_145_64_begin:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_15_145_50_begin:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_15_145_36_begin:
+        %tmp.382 = lgetv %cond.26;
+        symbol [ cond %tmp.382 145 15 19 ];
+        %tmp.383 = 3;
+        %tmp.384 = eq %tmp.382 %tmp.383;
+        bt %tmp.384 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_11_155_4_if_true;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_28_145_36_false:
+        %tmp.385 = lgetv %cond.26;
+        symbol [ cond %tmp.385 145 28 32 ];
+        %tmp.386 = 11;
+        %tmp.387 = eq %tmp.385 %tmp.386;
+        push %tmp.387;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_28_145_36_end:
+        %tmp.388 = phi [%tmp.384 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_15_145_36_begin] [%tmp.387 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_28_145_36_false] [%tmp.388 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_28_145_36_end];
+        bt %tmp.388 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_11_155_4_if_true;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_42_145_50_false:
+        %tmp.389 = lgetv %cond.26;
+        symbol [ cond %tmp.389 145 42 46 ];
+        %tmp.390 = 13;
+        %tmp.391 = eq %tmp.389 %tmp.390;
+        push %tmp.391;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_42_145_50_end:
+        %tmp.392 = phi [%tmp.388 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_15_145_50_begin] [%tmp.391 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_42_145_50_false] [%tmp.392 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_42_145_50_end];
+        bt %tmp.392 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_11_155_4_if_true;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_56_145_64_false:
+        %tmp.393 = lgetv %cond.26;
+        symbol [ cond %tmp.393 145 56 60 ];
+        %tmp.394 = 14;
+        %tmp.395 = eq %tmp.393 %tmp.394;
+        push %tmp.395;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_56_145_64_end:
+        %tmp.396 = phi [%tmp.392 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_15_145_64_begin] [%tmp.395 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_56_145_64_false] [%tmp.396 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_56_145_64_end];
+        bf %tmp.396 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_11_155_4_if_false;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_11_155_4_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_68_147_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 146 8 ]
+        symbol [ Rez %tmp.398 146 22 25 ];
+        %tmp.398 = getv ? :Rez;
+        symbol [ Drawables %tmp.399 146 26 35 ];
+        %tmp.399 = getv %tmp.398 :Drawables;
+        symbol [ ImgRainy %tmp.400 146 36 44 ];
+        %tmp.400 = getv %tmp.399 :ImgRainy;
+        lputv %weatherIcon.29 %tmp.400;
+        symbol [ weatherIcon %weatherIcon.29 146 8 19 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_68_147_4_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_11_155_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_11_155_4_if_false:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 147 11 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_11_155_4_if_stmt:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_15_147_49_begin:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_15_147_36_begin:
+        %tmp.401 = lgetv %cond.26;
+        symbol [ cond %tmp.401 147 15 19 ];
+        %tmp.402 = 5;
+        %tmp.403 = eq %tmp.401 %tmp.402;
+        bt %tmp.403 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_11_155_4_if_true;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_28_147_36_false:
+        %tmp.404 = lgetv %cond.26;
+        symbol [ cond %tmp.404 147 28 32 ];
+        %tmp.405 = 8;
+        %tmp.406 = eq %tmp.404 %tmp.405;
+        push %tmp.406;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_28_147_36_end:
+        %tmp.407 = phi [%tmp.403 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_15_147_36_begin] [%tmp.406 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_28_147_36_false] [%tmp.407 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_28_147_36_end];
+        bt %tmp.407 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_11_155_4_if_true;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_41_147_49_false:
+        %tmp.408 = lgetv %cond.26;
+        symbol [ cond %tmp.408 147 41 45 ];
+        %tmp.409 = 9;
+        %tmp.410 = eq %tmp.408 %tmp.409;
+        push %tmp.410;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_41_147_49_end:
+        %tmp.411 = phi [%tmp.407 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_15_147_49_begin] [%tmp.410 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_41_147_49_false] [%tmp.411 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_41_147_49_end];
+        bf %tmp.411 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_11_155_4_if_false;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_11_155_4_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_52_149_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 148 8 ]
+        symbol [ Rez %tmp.413 148 22 25 ];
+        %tmp.413 = getv ? :Rez;
+        symbol [ Drawables %tmp.414 148 26 35 ];
+        %tmp.414 = getv %tmp.413 :Drawables;
+        symbol [ ImgSnowy %tmp.415 148 36 44 ];
+        %tmp.415 = getv %tmp.414 :ImgSnowy;
+        lputv %weatherIcon.29 %tmp.415;
+        symbol [ weatherIcon %weatherIcon.29 148 8 19 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_52_149_4_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_11_155_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_11_155_4_if_false:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 149 11 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_11_155_4_if_stmt:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_15_149_37_begin:
+        %tmp.416 = lgetv %cond.26;
+        symbol [ cond %tmp.416 149 15 19 ];
+        %tmp.417 = 32;
+        %tmp.418 = eq %tmp.416 %tmp.417;
+        bt %tmp.418 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_11_155_4_if_true;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_29_149_37_false:
+        %tmp.419 = lgetv %cond.26;
+        symbol [ cond %tmp.419 149 29 33 ];
+        %tmp.420 = 38;
+        %tmp.421 = eq %tmp.419 %tmp.420;
+        push %tmp.421;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_29_149_37_end:
+        %tmp.422 = phi [%tmp.418 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_15_149_37_begin] [%tmp.421 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_29_149_37_false] [%tmp.422 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_29_149_37_end];
+        bf %tmp.422 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_11_155_4_if_false;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_11_155_4_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_41_151_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 150 8 ]
+        symbol [ Rez %tmp.424 150 22 25 ];
+        %tmp.424 = getv ? :Rez;
+        symbol [ Drawables %tmp.425 150 26 35 ];
+        %tmp.425 = getv %tmp.424 :Drawables;
+        symbol [ ImgWindy %tmp.426 150 36 44 ];
+        %tmp.426 = getv %tmp.425 :ImgWindy;
+        lputv %weatherIcon.29 %tmp.426;
+        symbol [ weatherIcon %weatherIcon.29 150 8 19 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_41_151_4_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_11_155_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_11_155_4_if_false:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 151 11 ]
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_11_155_4_if_stmt:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_15_151_36_begin:
+        %tmp.427 = lgetv %cond.26;
+        symbol [ cond %tmp.427 151 15 19 ];
+        %tmp.428 = 6;
+        %tmp.429 = eq %tmp.427 %tmp.428;
+        bt %tmp.429 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_11_155_4_if_true;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_28_151_36_false:
+        %tmp.430 = lgetv %cond.26;
+        symbol [ cond %tmp.430 151 28 32 ];
+        %tmp.431 = 7;
+        %tmp.432 = eq %tmp.430 %tmp.431;
+        push %tmp.432;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_28_151_36_end:
+        %tmp.433 = phi [%tmp.429 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_15_151_36_begin] [%tmp.432 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_28_151_36_false] [%tmp.433 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_28_151_36_end];
+        bf %tmp.433 @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_11_155_4_if_else_false;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_11_155_4_if_true:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_39_153_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 152 8 ]
+        symbol [ Rez %tmp.435 152 22 25 ];
+        %tmp.435 = getv ? :Rez;
+        symbol [ Drawables %tmp.436 152 26 35 ];
+        %tmp.436 = getv %tmp.435 :Drawables;
+        symbol [ ImgStormy %tmp.437 152 36 45 ];
+        %tmp.437 = getv %tmp.436 :ImgStormy;
+        lputv %weatherIcon.29 %tmp.437;
+        symbol [ weatherIcon %weatherIcon.29 152 8 19 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_39_153_4_stop:
+        goto @C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_11_155_4_if_end;
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_11_155_4_if_else_false:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_153_11_155_4_start:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 154 8 ]
+        symbol [ Rez %tmp.439 154 22 25 ];
+        %tmp.439 = getv ? :Rez;
+        symbol [ Drawables %tmp.440 154 26 35 ];
+        %tmp.440 = getv %tmp.439 :Drawables;
+        symbol [ ImgPartlyCloudy %tmp.441 154 36 51 ];
+        %tmp.441 = getv %tmp.440 :ImgPartlyCloudy;
+        lputv %weatherIcon.29 %tmp.441;
+        symbol [ weatherIcon %weatherIcon.29 154 8 19 ];
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_153_11_155_4_stop:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_151_11_155_4_if_end:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_149_11_155_4_if_end:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_147_11_155_4_if_end:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_145_11_155_4_if_end:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_143_11_155_4_if_end:
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_141_4_155_4_if_end:
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 158 4 ]
+        [ "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_start" "C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop" ]
+        %icon.30 = local;
+        symbol [ icon %icon.30 158 8 12 ];
+        symbol [ WatchUi %tmp.444 158 19 26 ];
+        %tmp.444 = getm $.Toybox.WatchUi;
+        symbol [ Bitmap %tmp.445 158 27 33 ];
+        %tmp.445 = getv function ? %tmp.444 :Bitmap;
+        %tmp.446 = newd 3;
+        %tmp.448 = const :rezId;
+        symbol [ rezId %tmp.448 159 9 14 const ];
+        %tmp.449 = lgetv %weatherIcon.29;
+        symbol [ weatherIcon %tmp.449 159 18 29 ];
+        %tmp.450 = dup %tmp.446;
+        %tmp.451 = aputv %tmp.450 %tmp.448 %tmp.449;
+        %tmp.453 = const :locX;
+        symbol [ locX %tmp.453 160 9 13 const ];
+        %tmp.454 = lgetv %weatherX.23;
+        symbol [ weatherX %tmp.454 160 17 25 ];
+        %tmp.455 = 20;
+        %tmp.456 = sub %tmp.454 %tmp.455;
+        %tmp.457 = dup %tmp.451;
+        %tmp.458 = aputv %tmp.457 %tmp.453 %tmp.456;
+        %tmp.460 = const :locY;
+        symbol [ locY %tmp.460 161 9 13 const ];
+        %tmp.461 = lgetv %weatherY.24;
+        symbol [ weatherY %tmp.461 161 17 25 ];
+        %tmp.462 = dup %tmp.458;
+        %tmp.463 = aputv %tmp.462 %tmp.460 %tmp.461;
+        %tmp.442 = newc %tmp.445 (%tmp.463);
+        lputv %icon.30 %tmp.442;
+        symbol [ icon %icon.30 158 8 12 ];
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 163 4 ]
+        %tmp.464 = lgetv %icon.30;
+        symbol [ icon %tmp.464 163 4 8 ];
+        symbol [ draw %tmp.465 163 9 13 ];
+        %tmp.465 = getv function %tmp.464 :draw;
+        %tmp.466 = lgetv %dc;
+        symbol [ dc %tmp.466 163 14 16 ];
+        invoke %tmp.464 %tmp.465(%tmp.466);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 166 4 ]
+        %tmp.467 = lgetv %dc;
+        symbol [ dc %tmp.467 166 4 6 ];
+        symbol [ setColor %tmp.468 166 7 15 ];
+        %tmp.468 = getv function %tmp.467 :setColor;
+        symbol [ Graphics %tmp.469 166 16 24 ];
+        %tmp.469 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.470 166 25 36 ];
+        %tmp.470 = getv %tmp.469 :COLOR_WHITE;
+        symbol [ Graphics %tmp.471 166 38 46 ];
+        %tmp.471 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.472 166 47 64 ];
+        %tmp.472 = getv %tmp.471 :COLOR_TRANSPARENT;
+        invoke %tmp.467 %tmp.468(%tmp.470, %tmp.472);
+[ "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc" 167 4 ]
+        %tmp.473 = lgetv %dc;
+        symbol [ dc %tmp.473 167 4 6 ];
+        symbol [ drawText %tmp.474 167 7 15 ];
+        %tmp.474 = getv function %tmp.473 :drawText;
+        %tmp.475 = lgetv %weatherX.23;
+        symbol [ weatherX %tmp.475 167 16 24 ];
+        %tmp.476 = lgetv %weatherY.24;
+        symbol [ weatherY %tmp.476 167 26 34 ];
+        %tmp.477 = 44;
+        %tmp.478 = add %tmp.476 %tmp.477;
+        symbol [ Graphics %tmp.479 167 41 49 ];
+        %tmp.479 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.480 167 50 60 ];
+        %tmp.480 = getv %tmp.479 :FONT_XTINY;
+        %tmp.481 = lgetv %tempF.27;
+        symbol [ tempF %tmp.481 167 62 67 ];
+        symbol [ Graphics %tmp.482 167 69 77 ];
+        %tmp.482 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.483 167 78 97 ];
+        %tmp.483 = getv %tmp.482 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.473 %tmp.474(%tmp.475, %tmp.478, %tmp.480, %tmp.481, %tmp.483);
+C__GarminDev_Garmin_Watch_Face_main_FR265Watchface_source_Watchface1View_mc_31_40_168_0_stop:
+    }
+    [ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 172; @symbol_functiondef = [onHide,172,13,19]; ]
+    function onHide() as Void {
+    }
+    [ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 176; @symbol_functiondef = [onExitSleep,176,13,24]; ]
+    function onExitSleep() as Void {
+    }
+    [ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 180; @symbol_functiondef = [onEnterSleep,180,13,25]; ]
+    function onEnterSleep() as Void {
+    }
+}
+[ @file = "C:\GarminDev\Garmin_Watch_Face-main\FR265Watchface\source\Watchface1View.mc"; @line = 1; ]
+<init> {
+}

@@ -1,0 +1,6 @@
+<resources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <font id="AudiowideFont" filename="Audiowide.fnt" antialias="true"/>
+    <font id="AudiowideSmall" filename="AudiowideSmall.fnt" antialias="true"/>
+    <font id="AudiowideLarge" filename="AudiowideLarge.fnt" antialias="true"/>
+    <font id="fontXSmall" filename="fontXSmall.fnt" antialias="true"/>
+</resources>
