@@ -1,0 +1,114 @@
+// ActivityManager.mc
+// Handles all step counter and calorie data via Toybox.ActivityMonitor
+
+import Toybox.ActivityMonitor;
+import Toybox.Lang;
+
+class ActivityManager {
+
+    // ─────────────────────────────────────────
+    //  Stored values (updated each draw cycle)
+    // ─────────────────────────────────────────
+    private var _steps        as Number = 0;
+    private var _stepGoal     as Number = 0;
+    private var _calories     as Number = 0;   // active calories burned
+    private var _totalCals    as Number = 0;   // active + resting
+    private var _distance     as Float  = 0.0; // meters
+    private var _floors       as Number = 0;
+    private var _activeTime   as Number = 0;   // seconds
+    private var _moveBar      as Number = 0;   // 0–5, move-bar level
+
+    // ─────────────────────────────────────────
+    //  Public update – call from onUpdate()
+    // ─────────────────────────────────────────
+
+    (:inline)
+    function update() as Void {
+        var info = ActivityMonitor.getInfo();
+
+        if (info != null) {
+            // Steps
+            _steps    = (info.steps    != null) ? info.steps    : 0;
+            _stepGoal = (info.stepGoal != null) ? info.stepGoal : 10000;
+
+            // Calories
+            // info.calories      = active calories (exercise-only on some devices)
+            // info.caloriesExpended is the total (active + resting BMR)
+            _calories  = (info.calories          != null) ? info.calories          : 0;
+            _totalCals = (info.caloriesExpended   != null) ? info.caloriesExpended  : _calories;
+
+            // Distance (meters – convert in getters as needed)
+            _distance = (info.distance != null) ? info.distance.toFloat() : 0.0;
+
+            // Floors climbed
+            _floors = (info.floorsClimbed != null) ? info.floorsClimbed : 0;
+
+            // Active minutes (returns Duration object on newer SDK, Number on older)
+            if (info has :activeMinutesDay) {
+                var amt = info.activeMinutesDay;
+                _activeTime = (amt != null) ? amt.toNumber() * 60 : 0;
+            }
+
+            // Move bar (0 = no bar, up to 5 segments)
+            _moveBar = (info.moveBarLevel != null) ? info.moveBarLevel : 0;
+        }
+    }
+
+    // ─────────────────────────────────────────
+    //  Getters
+    // ─────────────────────────────────────────
+
+    function getSteps() as Number {
+        return _steps;
+    }
+
+    function getStepGoal() as Number {
+        return _stepGoal;
+    }
+
+    // Returns 0.0–1.0 progress toward daily step goal
+    function getStepProgress() as Float {
+        if (_stepGoal <= 0) { return 0.0; }
+        var progress = _steps.toFloat() / _stepGoal.toFloat();
+        return (progress > 1.0) ? 1.0 : progress;
+    }
+
+    // Active calories only
+    function getCalories() as Number {
+        return _calories;
+    }
+
+    // Total calories (active + resting BMR) – more useful for display
+    function getTotalCalories() as Number {
+        return _totalCals;
+    }
+
+    // Distance in kilometers (rounded to 2 dp)
+    function getDistanceKm() as Float {
+        return (_distance / 1000.0 * 100.0).toFloat().toNumber() / 100.0;
+    }
+
+    // Distance in miles (rounded to 2 dp)
+    function getDistanceMiles() as Float {
+        return (_distance * 0.000621371 * 100.0).toFloat().toNumber() / 100.0;
+    }
+
+    function getFloors() as Number {
+        return _floors;
+    }
+
+    // Active minutes today
+    function getActiveMinutes() as Number {
+        return _activeTime / 60;
+    }
+
+    // Move bar level 0–5 (0 = clear, 5 = full, move now!)
+    function getMoveBarLevel() as Number {
+        return _moveBar;
+    }
+
+    // Convenience: has the daily step goal been reached?
+    function isStepGoalReached() as Boolean {
+        return _steps >= _stepGoal;
+    }
+}

@@ -1,0 +1,245 @@
+// WeatherManager.mc
+// Handles weather data via Toybox.Weather (Connect IQ 3.0+)
+// Data is sourced from the paired phone's Garmin Connect app.
+
+import Toybox.Weather;
+import Toybox.Lang;
+import Toybox.System;
+
+class WeatherManager {
+
+    // ─────────────────────────────────────────
+    //  Condition code → human-readable label map
+    // ─────────────────────────────────────────
+    // Garmin condition constants live in Weather module
+    private static var CONDITION_LABELS as Dictionary = {
+        Weather.CONDITION_CLEAR                 => "Clear",
+        Weather.CONDITION_PARTLY_CLOUDY         => "Partly Cloudy",
+        Weather.CONDITION_MOSTLY_CLOUDY         => "Mostly Cloudy",
+        Weather.CONDITION_RAIN                  => "Rain",
+        Weather.CONDITION_SNOW                  => "Snow",
+        Weather.CONDITION_WINDY                 => "Windy",
+        Weather.CONDITION_THUNDERSTORMS         => "Thunderstorms",
+        Weather.CONDITION_WINTRY_MIX            => "Wintry Mix",
+        Weather.CONDITION_FOG                   => "Fog",
+        Weather.CONDITION_HAZY                  => "Hazy",
+        Weather.CONDITION_HAIL                  => "Hail",
+        Weather.CONDITION_SCATTERED_SHOWERS     => "Showers",
+        Weather.CONDITION_SCATTERED_THUNDERSTORMS => "T-Storms",
+        Weather.CONDITION_UNKNOWN               => "Unknown",
+        Weather.CONDITION_CLOUDY                => "Cloudy",
+        Weather.CONDITION_DRIZZLE               => "Drizzle",
+        Weather.CONDITION_TORNADO               => "Tornado",
+        Weather.CONDITION_FREEZING_RAIN         => "Freezing Rain",
+        Weather.CONDITION_DUST                  => "Dusty",
+        Weather.CONDITION_SANDSTORM             => "Sandstorm",
+        Weather.CONDITION_CLOUDY_CHANCE_RAIN    => "Chance Rain",
+        Weather.CONDITION_RAIN_SNOW             => "Rain/Snow",
+        Weather.CONDITION_CHANCE_RAIN_SNOW      => "Chance Rain/Snow",
+        Weather.CONDITION_CHANCE_SNOW           => "Chance Snow",
+        Weather.CONDITION_CHANCE_THUNDERSTORMS  => "Chance T-Storm",
+        Weather.CONDITION_LIGHT_RAIN            => "Light Rain",
+        Weather.CONDITION_HEAVY_RAIN            => "Heavy Rain",
+        Weather.CONDITION_LIGHT_SNOW            => "Light Snow",
+        Weather.CONDITION_HEAVY_SNOW            => "Heavy Snow",
+        Weather.CONDITION_SMOKE                 => "Smoke"
+    };
+
+    // ─────────────────────────────────────────
+    //  Cached weather values
+    // ─────────────────────────────────────────
+    private var _tempCelsius      as Number  = 0;
+    private var _feelsLike        as Number  = 0;
+    private var _conditionCode    as Number  = Weather.CONDITION_UNKNOWN;
+    private var _conditionLabel   as String  = "Unknown";
+    private var _humidity         as Number  = 0;   // percent 0–100
+    private var _windSpeed        as Float   = 0.0; // m/s
+    private var _windDirection    as Number  = 0;   // degrees 0–360
+    private var _precipitation    as Float   = 0.0; // mm (hourly probability on some devices)
+    private var _uvIndex          as Number  = 0;
+    private var _isMetric         as Boolean = true; // mirrors device setting
+    private var _dataAvailable    as Boolean = false;
+    private var _lastUpdateEpoch  as Number  = 0;   // System.getClockTime epoch
+
+    // How stale before we consider weather "unavailable" (30 minutes)
+    private static const STALE_THRESHOLD_SEC as Number = 1800;
+
+    // ─────────────────────────────────────────
+    //  Public update – call from onUpdate()
+    // ─────────────────────────────────────────
+
+    function update() as Void {
+        // Determine device temperature unit preference
+        var devSettings = System.getDeviceSettings();
+        _isMetric = (devSettings.temperatureUnits == System.UNIT_METRIC);
+
+        var conditions = Weather.getCurrentConditions();
+
+        if (conditions == null) {
+            _dataAvailable = false;
+            return;
+        }
+
+        _dataAvailable = true;
+
+        // Temperature – Garmin always provides in Celsius internally
+        _tempCelsius = (conditions.temperature != null) ? conditions.temperature : 0;
+        _feelsLike   = (conditions.feelsLikeTemperature != null) ? conditions.feelsLikeTemperature : _tempCelsius;
+
+        // Condition
+        _conditionCode = (conditions.condition != null) ? conditions.condition : Weather.CONDITION_UNKNOWN;
+        _conditionLabel = getLabel(_conditionCode);
+
+        // Extras
+        _humidity      = (conditions.relativeHumidity   != null) ? conditions.relativeHumidity   : 0;
+        _windSpeed     = (conditions.windSpeed           != null) ? conditions.windSpeed.toFloat() : 0.0;
+        _windDirection = (conditions.windBearing         != null) ? conditions.windBearing         : 0;
+        _precipitation = (conditions.precipitationIntensity != null) ? conditions.precipitationIntensity.toFloat() : 0.0;
+        _uvIndex       = (conditions.uvIndex             != null) ? conditions.uvIndex             : 0;
+
+        // Timestamp – observationLocationLat/Lon available but we just note time
+        _lastUpdateEpoch = System.getClockTime().sec;
+    }
+
+    // ─────────────────────────────────────────
+    //  Temperature getters
+    // ─────────────────────────────────────────
+
+    // Returns temp in the device's preferred unit (°C or °F)
+    function getTemperature() as Number {
+        return _isMetric ? _tempCelsius : celsiusToFahrenheit(_tempCelsius);
+    }
+
+    function getTemperatureCelsius() as Number {
+        return _tempCelsius;
+    }
+
+    function getTemperatureFahrenheit() as Number {
+        return celsiusToFahrenheit(_tempCelsius);
+    }
+
+    function getFeelsLike() as Number {
+        return _isMetric ? _feelsLike : celsiusToFahrenheit(_feelsLike);
+    }
+
+    function getTemperatureUnit() as String {
+        return _isMetric ? "°C" : "°F";
+    }
+
+    // ─────────────────────────────────────────
+    //  Condition getters
+    // ─────────────────────────────────────────
+
+    function getConditionCode() as Number {
+        return _conditionCode;
+    }
+
+    function getConditionLabel() as String {
+        return _conditionLabel;
+    }
+
+    // Short icon character – map to your chosen icon font or bitmap resource
+    // This returns a simple ASCII placeholder; replace with your resource IDs.
+    function getConditionIcon() as String {
+        if (_conditionCode == Weather.CONDITION_CLEAR)              { return "☀"; }
+        if (_conditionCode == Weather.CONDITION_PARTLY_CLOUDY)      { return "⛅"; }
+        if (_conditionCode == Weather.CONDITION_MOSTLY_CLOUDY ||
+            _conditionCode == Weather.CONDITION_CLOUDY)             { return "☁"; }
+        if (_conditionCode == Weather.CONDITION_RAIN ||
+            _conditionCode == Weather.CONDITION_LIGHT_RAIN ||
+            _conditionCode == Weather.CONDITION_HEAVY_RAIN ||
+            _conditionCode == Weather.CONDITION_SCATTERED_SHOWERS)  { return "🌧"; }
+        if (_conditionCode == Weather.CONDITION_SNOW ||
+            _conditionCode == Weather.CONDITION_LIGHT_SNOW ||
+            _conditionCode == Weather.CONDITION_HEAVY_SNOW)         { return "❄"; }
+        if (_conditionCode == Weather.CONDITION_THUNDERSTORMS ||
+            _conditionCode == Weather.CONDITION_SCATTERED_THUNDERSTORMS) { return "⛈"; }
+        if (_conditionCode == Weather.CONDITION_FOG ||
+            _conditionCode == Weather.CONDITION_HAZY)               { return "🌫"; }
+        if (_conditionCode == Weather.CONDITION_WINDY)              { return "💨"; }
+        return "?";
+    }
+
+    // ─────────────────────────────────────────
+    //  Additional weather getters
+    // ─────────────────────────────────────────
+
+    function getHumidity() as Number {
+        return _humidity;
+    }
+
+    // Wind speed in km/h (metric) or mph (imperial)
+    function getWindSpeed() as Float {
+        // _windSpeed is in m/s from Garmin SDK
+        if (_isMetric) {
+            return _windSpeed * 3.6;   // m/s → km/h
+        } else {
+            return _windSpeed * 2.237; // m/s → mph
+        }
+    }
+
+    function getWindSpeedUnit() as String {
+        return _isMetric ? "km/h" : "mph";
+    }
+
+    function getWindDirection() as Number {
+        return _windDirection;
+    }
+
+    // Cardinal wind direction (N, NE, E, etc.)
+    function getWindCardinal() as String {
+        var dirs = ["N", "NE", "E", "SE", "S", "SW", "W", "NW", "N"];
+        var idx = ((_windDirection + 22) / 45).toNumber();
+        return dirs[idx];
+    }
+
+    function getUVIndex() as Number {
+        return _uvIndex;
+    }
+
+    // UV risk label
+    function getUVLabel() as String {
+        if (_uvIndex <= 2)  { return "Low"; }
+        if (_uvIndex <= 5)  { return "Moderate"; }
+        if (_uvIndex <= 7)  { return "High"; }
+        if (_uvIndex <= 10) { return "Very High"; }
+        return "Extreme";
+    }
+
+    function getPrecipitation() as Float {
+        return _precipitation;
+    }
+
+    // ─────────────────────────────────────────
+    //  Status helpers
+    // ─────────────────────────────────────────
+
+    function isDataAvailable() as Boolean {
+        return _dataAvailable;
+    }
+
+    function isDataStale() as Boolean {
+        if (!_dataAvailable) { return true; }
+        var now = System.getClockTime().sec;
+        return (now - _lastUpdateEpoch) > STALE_THRESHOLD_SEC;
+    }
+
+    function isMetric() as Boolean {
+        return _isMetric;
+    }
+
+    // ─────────────────────────────────────────
+    //  Private helpers
+    // ─────────────────────────────────────────
+
+    private function celsiusToFahrenheit(c as Number) as Number {
+        return (c * 9 / 5) + 32;
+    }
+
+    private function getLabel(code as Number) as String {
+        if (CONDITION_LABELS.hasKey(code)) {
+            return CONDITION_LABELS[code] as String;
+        }
+        return "Unknown";
+    }
+}
